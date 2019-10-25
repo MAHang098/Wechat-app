@@ -1,0 +1,34 @@
+<view class="big-box">
+
+<!-- 剩余积分 -->
+<view class="exchange-integrad">
+  <view class="exchange-integrad-inner">
+    <image src="http://www.zhongjubang.com/api/upload/applet_resource/exchange-integrad.png"></image>
+  </view>
+</view>
+
+<view class="number">
+{{score}}
+</view>
+
+<view class="surplusScore">
+  (剩余积分)
+</view>
+
+<!-- 积分兑换公告 -->
+<view class="orderScore">
+  兑换比例为100积分=1元现金，兑换积分数量必须是100的整数倍
+</view>
+
+<!-- 兑换输入框 -->
+<view class="exchangeInputModule">
+  <label class="fl">兑换现金</label>
+  <input class="fl" type="number" placeholder="请输入兑换的积分" bindinput="getMoney"></input>
+  <view class="clear"></view>
+</view>
+
+<!-- 兑换按钮 -->
+<view class="bottom" bindtap="exchangeSubmit">
+  兑换
+</view>
+</view>

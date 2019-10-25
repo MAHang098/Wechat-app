@@ -1,0 +1,81 @@
+
+<!-- 推荐客户广告图 -->
+<view class="recommendAdvertisementImg">
+  <image src="http://www.zhongjubang.com/api/upload/applet_resource/banner-recommend.png"></image>
+</view>
+
+<view class="recommend-title">推荐客户</view>
+<!-- 上传信息区域 -->
+<view wx:for="{{recommendMessageArr}}" wx:key="">
+  
+  <view class="recommendMessageModule">
+    <view class="recommendMessageInput fl">
+      <label class="fl">姓名 :</label><input class="inputStyle" data-tag="name" bindblur='setInputValue' data-index="{{index}}" name="name" type="text" placeholder="请填写客户姓名" value="{{item.name}}"></input>
+    </view>
+    <view class="recommendMessageInput2 fl">
+      <label class="fl">手机 :</label><input class="inputStyle" data-tag="phone" bindblur='setInputValue' data-index="{{index}}" type="number" name="phone" maxlength="11" placeholder="请填写客户手机号" value="{{item.phone}}"></input>
+    </view>
+    <view class="recommendMessageInput fl">
+      <label class="fl">意向产品 :</label><input class="inputStyle2" name="intention" bindblur='setInputValue' data-tag="intention" data-index="{{index}}" type="text" placeholder="请填写欲购产品" value="{{intention}}"></input>
+    </view>
+    <picker class="recommendMessageInput3 fl" data-index="{{index}}" data-tag="homeStatus" name="status" bindchange="bindPickerChange" value="" range="{{recommendStatusArr}}">
+      <view class="fl">
+      
+        状态： <text class="text2">{{recommendStatusArr[item.homeStatus]?recommendStatusArr[item.homeStatus]:"请选择"}}</text>
+        <!-- 状态： <text class="text2">{{recommendStatusArr[item.homeStatus]?recommendStatusArr[item.recommendStatus]:"请选择"}}</text> -->
+      </view>
+    </picker>
+    <view class="deleteModule" hidden="{{recommendMessageArr.length > 1 ? false : true}}">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/delete.png" data-index="{{index}}" bindtap="delRecommendMessage"></image>
+    </view>
+    <view class="clear"></view>
+  </view>
+</view>
+
+
+<!-- 添加按钮 -->
+<view wx:if="{{recommendMessageArr.length == 1}}">
+  <view class="addModule">
+    <view class="addMessageText fl">
+      <view>Tip:点击右侧加号按钮，可新增客户资源同时推荐</view>
+      <view class="text3">点击右侧减号按钮，可删除已填写资源。</view>
+    </view>
+    <view class="addButton">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/add.png" bindtap="addRecommendMessage"></image>
+    </view>
+    <view class="clear"></view>
+  </view>
+</view>
+<view wx:else>
+  <view class="addModule2">
+    <view class="addMessageText fl">
+      <view>Tip:点击右侧加号按钮，可新增客户资源同时推荐</view>
+      <view>点击右侧减号按钮，可删除已填写资源</view>
+    </view>
+    <view class="addButton2">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/add.png" bindtap="addRecommendMessage"></image>
+    </view>
+    <view class="clear"></view>
+  </view>
+</view>
+
+<!-- 注意事项 -->
+<view class="{{recommendMessageArr.length > 1 ? 'orderText2' : 'orderText'}}">
+  <view class="image-box">
+    <image class="image1" src="http://www.zhongjubang.com/api/upload/applet_resource/notice.png"></image>
+  </view>
+  <view class="text10">请推荐人确保推荐客户来源真实合法，客户本人知晓并同意提交。</view>
+
+</view>
+
+<!-- 提交按钮 -->
+<view class="submitButton" bindtap="submitMessageCheck">
+  提交客户
+</view>
+
+
+<!-- 推荐等级规则 -->
+<view class="image11">
+  <image src="http://www.zhongjubang.com/api/upload/applet_resource/lALPBE1XYbQALtfNAuLNAu4_750_738.png"></image>
+</view>
+

@@ -1,0 +1,125 @@
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+<!-- 标题栏 -->
+<!-- 轮播图 -->
+<view class="lunbo">
+  <swiper class="swiper"
+  indicator-dots="true"
+  circular
+  autoplay
+  interval="3000"
+  indicator-color="rgba(255,255,255,.3)"
+  indicator-active-color="#fff">
+    <block wx:for="{{slider}}" wx:key="">
+      <swiper-item>
+      <image bindtap="bannertoresource" class="slider-image" src="{{item.resource}}" data-srcs="{{item.url}}">
+      </image> 
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+  <!-- 导航栏 -->
+<view class="nav">
+
+  <view class="tuwen-dibu">
+    <block wx:for="{{navimage}}" wx:key="brandTypeId" wx:for-index="index">
+      <view class="nav-a" id="{{item.brandTypeId}}" bindtap="bindTap" data-id="brandTypeId">
+        <image src="{{ item.icon }}"></image>
+        <view class="nav-b">{{ item.typeName }}</view>
+      </view>
+    </block>
+  </view> 
+
+  <view class="tuwen-dibu">
+    <block wx:for="{{navimages}}" wx:key="brandTypeId">
+      <view class="nav-a" id="{{item.brandTypeId}}" bindtap="bindTap" data-id="brandTypeId">
+        <image src="{{ item.icon }}"></image>
+        <view class="nav-b">{{ item.typeName }}</view>
+      </view>
+    </block>
+  </view> 
+
+</view>
+  
+
+
+<!-- 公告部分 -->
+<view class="gonggao" ></view>
+  <!-- <view class="gonggao-a" hidden="{{hideNotice}}">
+   <view class="biankuang">
+    <view class="image"><image  src="http://www.zhongjubang.com/api/upload/applet_resource/2x.png"></image></view>
+    
+
+    <scroll-view class="tongzhitext" scroll-x="true"  >
+    　　　　<text class="tongzhi-text" >{{notice}}</text>
+    </scroll-view>
+
+
+　　<view bindtap='switchNotice' class="closeView">x</view>
+
+  </view>
+ </view> -->
+
+ 
+<!-- 滑动图文部分第一块 首推品牌 -->
+<!-- 文字 -->
+<view class="quan">
+  <view class="tuwen-top">
+    <view class="su">丨</view>
+    <view class="tuwen-top-l">首推品牌</view>
+    <view class="tuwen-top-r">></view>
+    <navigator url="/pages/all-category/all-category" class="search">
+       <view class="tuwen-top-z">更多</view>
+    </navigator>
+    
+  </view>
+  
+  
+  <view class="test1">
+    <scroll-view scroll-x style="width: 100%;white-space:nowrap;height: 100%;">
+      <block wx:for="{{shopImgs}}" wx:key="brandId" > 
+          <view class="image-all" bindtap="nimin" data-name="{{item.brandName}}">
+          <image src="{{item.brandIcon}}"></image>
+          </view>
+      </block>
+          <view class="tu-r"><image src="/images/the-arrow.png" bindtap="niming"></image></view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 横线 -->
+<view class="hangxian">
+</view>
+
+<!-- 众咨询 -->
+<view class="tuz">
+
+  <view class="tuwen-to">
+    <view class="su">丨</view>
+    <view class="tuwen-top-l">众资讯</view>
+    <view class="zz">实时资讯报道，带您在线赚钱</view>
+    <view class="tuwen-top-r">></view>
+    <navigator url="/pages/consulting/consulting">
+    <view class="tuwen-top-z">更多</view>
+    </navigator>
+  </view>
+
+  
+
+  <view class="tuwen-dibuu">
+    <block wx:for="{{shimag}}" wx:key="newsId">
+      <view class="image-d" bindtap="informationtowebview" data-srcs="{{item.url}}">
+        <image src="{{ item.newsImg }}"></image>
+        <view class="zhi-a">{{tools.sub(item.newsTitle)}}</view>
+      </view>
+    </block>
+  </view>  
+</view>
+
+
+
+<!-- 底部提示 -->
+<view class='loading' hidden='{{!loadingMore}}'>正在加载更多</view>
+
+
+<view class='loading' hidden='{{!loadingOver}}'><text>一一一一一一</text>亲,已经到底了~<text>一一一一一一</text></view>

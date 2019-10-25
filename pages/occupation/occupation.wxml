@@ -1,0 +1,18 @@
+<view class="loding">
+  <!-- 图片和文字 -->
+  <view class="tu">
+    <view class="{{isChecked1?'image-a':'image-as'}}" bindtap="serviceSelection1">
+      <image src="/images/loding.png"></image>
+    </view>
+    <view class="{{isChecked2?'image-b':'image-bs'}}" bindtap="serviceSelection2">
+      <image src="/images/loding-to.png"></image>
+    </view>
+    <view class="wenzi">
+      <view class="zi-a">我是泛家居</view>  <view class="zi-b">我是置业</view>
+    </view>
+  </view>
+
+  <!-- 立即登陆 -->
+  <button class="denglu" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="loginUser">确定并提交</button>
+  
+</view>

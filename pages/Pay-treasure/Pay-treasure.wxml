@@ -1,0 +1,35 @@
+
+<view class="pay">
+
+  <view class="payto">
+    <view class="pay-a">
+      支付宝账号:
+    </view>
+    <input name="aliPayAccount" bindinput='changeInput' value="{{aliPayAccount}}" data-prop='aliPayAccount'></input>
+  </view>
+  <view class="hangx"></view>
+
+  <!-- <view class="payfor">
+    <view class="pay-b">
+      支付宝用户名:
+    </view>
+    <input class="input" name="aliPayName" bindinput='changeInput' value="{{aliPayName}}" data-prop='aliPayName'></input>
+  </view>
+  <view class="hang"></view> -->
+
+  <view class="payto">
+    <view class="pay-b">
+      支付宝用户名:
+    </view>
+    <input name="aliPayName" bindinput='changeInput' value="{{aliPayName}}" data-prop='aliPayName'></input>
+  </view>
+  <view class="hangx"></view>
+
+</view>
+
+
+<view >
+  <view class="idCardMessageButtonModule" bindtap="submitMessage">
+    绑定
+  </view>
+</view> 

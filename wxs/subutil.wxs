@@ -1,0 +1,41 @@
+var sub = function (val) {
+
+  if (val.length == 0 || val == undefined) {
+
+    return;
+
+  }
+
+  if (val.length > 17) {
+
+    return val.substring(0, 12) + "...";
+
+  } else {
+
+    return val;
+
+  }
+
+}
+var sub2 = function (val) {
+
+  if (val.length == 0 || val == undefined) {
+
+    return;
+
+  }
+
+  if (val.length > 5) {
+
+    return val.substring(0, 4) + "...";
+
+  } else {
+
+    return val;
+
+  }
+
+}
+
+// module.exports.sub = sub;
+module.exports.sub2 = sub2;

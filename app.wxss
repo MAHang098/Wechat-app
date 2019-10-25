@@ -1,0 +1,92 @@
+/* 原始样式 */
+
+.container {
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+padding: 56px 0;
+padding-top: 0;
+padding-bottom: 0;
+box-sizing: border-box;
+/* background-color: #F9F9F9; */
+} 
+
+
+.bottomLine {
+  border-bottom: 1rpx #e6e6e6 solid;
+}
+
+.clear {
+  clear: both;
+}
+
+.moduleContainer {
+  width: 100%;
+  border-bottom: 1rpx #e6e6e6 solid;
+  padding-bottom: 20rpx;
+}
+
+.borderRight {
+  border-right: 1px #efefef solid;
+}
+
+.inputLine {
+  width: 90%;
+  margin: 20rpx auto;
+  border-bottom: 1px #cccccc solid; 
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.mask{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color:#353535;
+  z-index:9998;
+  top:0;
+  left:0;
+  opacity:0.5;
+}
+
+/* 底部按钮 */
+.bottomButton {
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  color: #fff;
+  background-color: #ff6600;
+  text-align: center;
+  font-size: 26rpx;
+  position: absolute;
+  bottom: 0;
+}
+
+.bottomButtonGrey {
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  color: #fff;
+  background-color: #999999;
+  text-align: center;
+  font-size: 26rpx;
+  position: absolute;
+  bottom: 0;
+}
+
+.noMessage {
+  font-size: 26rpx;
+  width: 100%;
+  height: 120rpx;
+  text-align: center;
+  line-height: 120rpx;
+  color: #353535;
+}

@@ -1,0 +1,97 @@
+<!-- 数据加载 -->
+<!-- <loading hidden="{{loading}}">正在加载</loading>  -->
+<!-- <view class="top"> -->
+<!-- 页面标题 -->
+  <!-- 图片上传区域 -->
+  <view class="uploadImgModule">
+    <view class="identityTitle">
+    请上传本人名片照片
+  </view>
+    <view wx:if="{{business_card_check_status == 1}}">
+      <image src="{{identityImgPath}}"></image>
+    </view>
+    <view wx:elif="{{business_card_check_status == 2}}">
+      <image src="{{identityImgPath}}"></image>
+    </view>
+    <view wx:elif="{{business_card_check_status == 3}}">
+      <image src="{{identityImgPath}}" bindtap="chooseImg"></image>
+    </view>
+    <view wx:else>
+      <image src="{{identityImgPath}}" bindtap="chooseImg"></image>
+    </view>
+  </view>
+<!-- </view> -->
+
+<!-- 信息标题 -->
+<view class="messageTitle">
+  身份信息（上传个人名片后填写下方信息）
+</view>
+
+<!-- 信息输入区域 -->
+<view class="bottom">
+<view class="inputMessageModule">
+  <view class="messageName">
+    真实姓名
+  </view>
+  <view class="messageContent">
+    <view wx:if="{{business_card_check_status == 1}}">
+      <input type="text" placeholder="{{getRealName}}" disabled="true"></input>
+    </view>
+    <view wx:elif="{{business_card_check_status == 2}}">
+      <input type="text" placeholder="{{getRealName}}" disabled="true"></input>
+    </view>
+    <view wx:elif="{{business_card_check_status == 3}}">
+      <input type="text" placeholder="请输入真实姓名" value="{{getRealName}}" bindinput="getRealName"></input>
+    </view>
+    <view wx:else>
+      <input type="text" placeholder="请输入真实姓名" value="{{getRealName}}" bindinput="getRealName"></input>
+    </view>
+  </view>
+  <view class="clear"></view>
+</view>
+
+
+<view class="inputMessageModule">
+  <view class="messageName">
+    公司名称
+  </view>
+  <view class="messageContent">
+    <view wx:if="{{business_card_check_status == 1}}">
+      <input type="text" placeholder="{{getCompanyName}}" disabled="true"></input>
+    </view>
+    <view wx:elif="{{business_card_check_status == 2}}">
+      <input type="text" placeholder="{{getCompanyName}}" disabled="true"></input>
+    </view>
+    <view wx:elif="{{business_card_check_status == 3}}">
+      <input type="text" placeholder="请输入公司名称" value="{{getCompanyName}}" bindinput="getCompanyName"></input>
+    </view>
+    <view wx:else>
+      <input type="text" placeholder="请输入公司名称" value="{{getCompanyName}}" bindinput="getCompanyName"></input>
+    </view>
+  </view>
+  <view class="clear"></view>
+</view>
+</view>
+
+<!-- 提交按钮 -->
+
+<view wx:if="{{business_card_check_status == 1}}">
+  <view class="identityMessageButtonModule2">
+    审核中
+  </view>
+</view>
+<view wx:elif="{{business_card_check_status == 2}}">
+  <view class="identityMessageButtonModule2">
+    认证成功
+  </view>
+</view>
+<view wx:elif="{{business_card_check_status == 3}}">
+  <view class="identityMessageButtonModule" bindtap="submitMessage">
+    重新认证
+  </view>
+</view>
+<view wx:else>
+  <view class="identityMessageButtonModule" bindtap="submitMessage">
+    立即认证
+  </view>
+</view>

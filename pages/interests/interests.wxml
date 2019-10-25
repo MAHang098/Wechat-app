@@ -1,0 +1,97 @@
+<view class="container">
+  <view class="bg">
+    <view class="bg-inner">
+      
+      
+        <image class="userinfo-avatar" src="{{head}}" mode="cover"></image>
+        <view class="nickname">
+          <text class="userinfo-nickname">{{nickName}}</text>
+        </view>
+      
+      <image class="no-get" src="{{image}}"></image>
+    </view>
+  </view>
+  <view class="getVip">
+    <view class="title-getVip">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/title-getVip.png"></image>
+    </view>
+    <view class="icon_content">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/icon_1.png"></image>
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/icon_2.png"></image>
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/icon_3.png"></image>
+    </view>
+    <view class="text">
+      <view class="text1">等级提升至白金</view>
+      <view class="text2">享受派单服务</view>
+      <view class="text3">获得更多奖励权限</view>
+    </view>
+    <view class="icon_content2">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/icon_4.png"></image>
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/icon_5.png"></image>
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/icon_6.png"></image>
+    </view>
+    <view class="text">
+      <view class="text4">家装培训课程</view>
+      <view class="text5">VIP专属客户服务</view>
+      <view class="text6">出国观展机会</view>
+    </view>
+
+  </view>
+  <view class="get-inmmedial">
+    <view bindtap="vipPays"  class="get-inmmedial-inner">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/get-immedial.png"></image>
+    </view>
+
+  </view>
+
+  <view class="condition">
+    <view class="condition-title">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/condition.png"></image>
+    </view>
+    <view class="certification">
+      <view class="identity">
+        <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/identity.png"></image>
+      </view>
+
+      <view class="center-text">1、平台用户已完成名片认证</view>
+      <view class="go-pay">
+        <navigator url="/pages/identity/identity">
+          <image src="{{image1}}"></image>
+        </navigator>
+
+      </view>
+
+    </view>
+    <view class="certification">
+      <view class="identity">
+        <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/IDcard.png"></image>
+      </view>
+
+      <view class="center-text">2、平台用户已完成实名认证</view>
+      <view class="go-pay">
+        <view bindtap="submitMessage">
+          <image src="{{image2}}"></image>
+        </view>
+
+      </view>
+
+    </view>
+    <view class="certification">
+      <view class="identity">
+        <image src="http://www.zhongjubang.com/api/upload/applet_resource/interests/pay.png"></image>
+      </view>
+
+      <view class="center-text">
+        3、需要缴纳平台299元人民币
+
+      </view>
+      <view class="go-pay">
+        <view bindtap="vipPays">
+          <image src="/images/interests/go-pay.png"></image>
+        </view>
+        
+      </view>
+
+    </view>
+  </view>
+</view>

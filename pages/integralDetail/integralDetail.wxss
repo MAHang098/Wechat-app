@@ -1,0 +1,40 @@
+.big-box{
+  position: fixed;
+  top: 0rpx;
+  height: 700rpx;
+  width: 750rpx;
+  /* background-color: white; */
+}
+page{
+  background:rgba(255,255,255,1);
+}
+.note{
+  display: flex;
+  justify-content: space-around;
+  width:750rpx;
+  height:120rpx;
+  padding-top: 25rpx;
+  /* padding: 3% 6%; */
+  background:rgba(255,255,255,1);
+  border-bottom: 1rpx solid #CCCCCC;
+}
+.signe{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height: 60rpx;
+}
+.date{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+}
+.integral{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height: 80rpx;
+}

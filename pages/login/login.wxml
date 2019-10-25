@@ -1,0 +1,10 @@
+<view class="quanbu">
+
+<view class="logo">
+  <image src="/images/logo.png"></image>
+</view>
+
+  <button class="denglu" bindtap="toLoding">微信登陆</button>  
+
+</view>
+

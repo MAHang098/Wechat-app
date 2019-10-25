@@ -1,0 +1,66 @@
+
+<view class="top">
+  <!-- 全局图 -->
+  <image src="/images/Sign.png"></image>
+  <!-- 中间积分图 -->
+  <view class="image-to"><image src="/images/Sign-a.png"></image>
+    
+  </view> 
+  <view class="a">199</view>
+
+<!-- 下面部分 -->
+  <view class="bottom">
+    
+    <view class="tubiao">
+      <!-- 图标 -->
+      <view class="tu">
+        <view class="tu-a"><image src="/images/notice.png"></image></view>
+        <!-- 横线部分 -->
+        <view class="hengx"></view>
+
+        <view class="tu-a"><image src="/images/money-a.png"></image></view>
+        <!-- 横线部分 -->
+        <view class="hengx"></view>
+
+        <view class="tu-a"><image src="/images/money-a.png"></image></view>
+        <!-- 横线部分 -->
+        <view class="hengx"></view>
+
+        <view class="tu-a"><image src="/images/money-a.png"></image></view>
+        <!-- 横线部分 -->
+        <view class="hengx"></view>
+
+        <view class="tu-a"><image src="/images/money-a.png"></image></view>
+        <!-- 横线部分 -->
+        <view class="hengx"></view>
+
+        <view class="tu-a"><image src="/images/money-a.png"></image></view>
+        <!-- 横线部分 -->
+        <view class="hengx"></view>
+
+        <view class="tu-a"><image src="/images/gift.png"></image></view>
+      </view>
+
+      <!-- 日期 -->
+      <view class="riqi">
+         <text>今天</text> <text>10.1</text> <text>10.2</text> <text>10.3</text> <text>10.4</text> <text>10.5</text> <text>10.5</text>
+      </view>
+
+      <!-- 立即签到部分 -->
+      <view class="qiandao">
+        <view class="pai"><image src="/images/brand.png"></image></view>
+        <view class="zi">您已经连续签到</view>
+        <view class="zi-a">365天</view>
+        <view class="zi-b"><image src="/images/qiandao.png"></image></view>
+      </view>
+
+      <!-- 文字介绍 -->
+
+      <view class="text"><image src="/images/text.png"></image></view>
+
+    </view>
+  </view>
+
+</view>
+
+

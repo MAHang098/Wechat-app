@@ -1,0 +1,67 @@
+.Addcard{
+  height: 86rpx;
+  width: 750rpx;
+  background-color: white;
+}
+.wenzi{
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  color: #333333;
+  float: left;
+}
+.jiant{
+  margin-top: 26rpx;
+  margin-right: 30rpx;
+  float: right;
+}
+.jiant image{
+  width: 28rpx;
+  height: 30rpx;
+}
+
+/* 横向 */
+.hang{
+  height: 6rpx;
+  width: 750rpx;
+  background-color: #F9F9F9;
+}
+
+/* 图文下 */
+.z{
+  height: 1110rpx;
+  width: 750rpx;
+  background-color: white;
+  float: left;
+  font-size: 26rpx;
+  color: #666666;
+}
+.tu{
+  float: left;
+}
+.tu image{
+  width: 84rpx;
+  height: 84rpx;
+  margin-top: 24rpx;
+  margin-left: 30rpx;
+}
+.zi{
+  width: 400rpx;
+  height: 100rpx;
+  margin-left: 136rpx;
+  margin-top: 16rpx;
+}
+.top{
+  margin-bottom: 2rpx;
+}
+.zhong{
+   margin-bottom: 2rpx; 
+}
+.xia{
+    margin-bottom: 2rpx;
+}
+.hangto{
+  margin-top: 20rpx;
+width: 750rpx;
+height: 2rpx;
+background-color: #DADADA;
+}

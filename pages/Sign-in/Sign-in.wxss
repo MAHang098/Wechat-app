@@ -1,0 +1,135 @@
+
+.top{
+  height: 1200rpx;
+  width: 750rpx;
+  /* background-color: yellow; */
+}
+.top image{
+  position: absolute;
+  /* top: -86rpx; */
+  height: 372rpx;
+  width: 750rpx;
+}
+.image-to image{
+  width: 284rpx;
+  height: 284rpx;
+  margin-left: 238rpx;
+}
+.a{
+  position: absolute;
+  top: 106rpx;
+  left: 310rpx;
+  font-size: 68rpx;
+  color: #FF8326;
+}
+
+/* 下半部分 */
+
+.bottom{
+  position:relative;
+  top: 324rpx;
+  left: 40rpx;
+  width: 672rpx;
+  height: 820rpx;
+  background-color: white;
+  border-radius: 20rpx;
+}
+/* 图标 */
+.tu{
+  width: 660rpx;
+  height: 70rpx;
+  /* background-color: yellow; */
+  margin-left: 12rpx;
+  padding-top: 22rpx;
+}
+.tu-a{
+  width: 48rpx;
+  height: 48rpx;
+  float: left;
+  margin-left: 12rpx;
+}
+.tu-a:first-child{
+  margin-left: 0rpx;
+}
+.tu-a image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.tu .hengx{
+float: left;
+width: 34rpx;
+height: 4rpx;
+background-color: #ECECEC;
+margin-left: 8rpx;
+margin-top: 24rpx;
+}
+/* 日期 */
+.riqi{
+  width: 657rpx;
+  height: 100rpx;
+  margin-top: 18rpx;
+  /* background-color: pink; */
+  margin-left: 17rpx;
+}
+.riqi text{
+margin-left: 58rpx;
+  font-size: 22rpx;
+  color: #8F8F8F;
+}
+.riqi text:first-child{
+  margin-left: 0rpx;
+
+}
+.riqi text:last-child{
+  margin-left: 60rpx;
+}
+
+/* 签到部分 */
+.qiandao{
+  margin-top: 20rpx;
+  width: 652rpx;
+  height: 100rpx;
+  /* background-color: yellow; */
+}
+.pai{
+  width: 6rpx;
+  height: 73rpx;
+    float: left;
+}
+.pai image{
+  width: 62rpx;
+  height: 72rpx;
+  margin-left: 26rpx;
+}
+.zi{
+  float: left;
+  margin-left: 108rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #333333
+}
+.zi-a{
+  float: left;
+  margin-left: 10rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #FC6143;
+}
+.zi-b{
+  float: left;
+  margin-left: 82rpx;
+  margin-top: 14rpx;
+}
+.zi-b image{
+  width: 168rpx;
+  height: 60rpx;
+}
+
+.text{
+  margin-top: 66rpx;
+  margin-left: 22rpx;
+}
+.text image{
+width: 626rpx;
+height: 384rpx;
+}

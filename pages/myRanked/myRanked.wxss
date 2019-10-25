@@ -1,0 +1,84 @@
+
+.bg{
+  width: 750rpx;
+  height: 534rpx;
+  z-index: -1;
+}
+.title{
+  width: 353rpx;
+  height: 273rpx;
+  margin: 0 auto;
+  margin-top: -510rpx;
+}
+.title image{
+  width: 353rpx;
+  height: 273rpx;
+}
+.ranked{
+  position: absolute;
+  width:174rpx;
+  height:21rpx;
+  margin-left: 104rpx;
+  margin-top: -205rpx;
+  font-size:22rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:#2E3038;
+  line-height:241rpx;
+}
+.icon{
+  display: flex;
+  justify-content: space-around;
+}
+.image image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.hr{
+  margin: 0 10rpx;
+  margin-top: 10rpx;
+  width: 89rpx;
+  height: 3rpx;
+}
+.hr image{
+  margin-top: 20rpx;
+  width: 89rpx;
+  height: 3rpx;
+}
+.text{
+  position: absolute;
+  font-size:22rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  margin-bottom: 30rpx;
+}
+.text1{
+  float: left;
+  margin-left: 90rpx;
+  margin-top: 90rpx;
+}
+.text2{
+  float: left;
+  margin-left: 133rpx;
+  margin-top: 90rpx;
+}
+.text3{
+  float: left;
+  margin-left: 133rpx;
+  margin-top: 90rpx;
+}
+.text4{
+  float: left;
+  margin-left: 133rpx;
+  margin-top: 90rpx;
+}
+.bottom{
+  margin-top: 150rpx;
+  width: 750rpx;
+  height: 1038rpx
+}
+.bottom image{
+  width: 750rpx;
+  height: 1038rpx
+}

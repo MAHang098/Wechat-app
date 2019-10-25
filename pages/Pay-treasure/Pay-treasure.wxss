@@ -1,0 +1,58 @@
+.pay{
+  background-color: white;
+  width: 750rpx;
+  height: 1600rpx;
+  position: fixed;
+}
+.payto{
+  height: 2rpx;
+  width: 750rpx;
+  /* background-color: yellow; */
+}
+.pay-a{
+  float: left;
+  width: 180rpx;
+  font-size: 30rpx;
+  margin-left: 30rpx;
+  margin-bottom: 28rpx;
+  margin-top: 4rpx;
+  padding-top: 20rpx;
+  background-color: white;
+}
+.pay-b{
+  float: left;
+  width: 200rpx;
+  font-size: 30rpx;
+  margin-left: 30rpx;
+  margin-bottom: 28rpx;
+  margin-top: 4rpx;
+  padding-top: 20rpx;
+  background-color: white;
+}
+.payto input{
+  color: #333333;
+  margin-top: 24rpx;
+  font-size: 30rpx;
+  float: left;
+background-color: white;
+}
+
+.hangx{
+  height: 2rpx;
+  background-color: #DADADA;
+  margin-top: 90rpx;
+}
+
+/* 按钮 */
+.idCardMessageButtonModule {
+  width: 100%;
+  text-align: center;
+  margin-top: 60rpx;
+  background-color: #EC9300;
+  color: #fff;
+  font-size: 28rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: fixed;
+  bottom: 0;
+}

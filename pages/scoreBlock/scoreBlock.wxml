@@ -1,0 +1,161 @@
+
+<view class="big-box">
+<!-- 积分背景图 -->
+<view class="backgroundImg">
+  <image src="http://www.zhongjubang.com/api/upload/applet_resource/scoreBackground.png"></image>
+</view>
+<view class="person">
+  <image src="/images/person.png"></image>
+</view>
+
+
+
+
+
+<view class="content">
+  <view class="content-inner">
+    <view class="mission-title">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/mission-title.png"></image>
+    </view>
+    
+    <!-- 任务列表 -->
+    <view class="taskListModule">
+      <!-- 每日签到 -->
+      <view class="taskList">
+        <view class="taskImg fl">
+          <image src="http://www.zhongjubang.com/api/upload/applet_resource/task01.png"></image>
+        </view>
+        <view class="taskText fl">
+          <view class="taskText_1">
+            每日签到
+          </view>
+          <view class="taskText_2">
+            连续签到可获得更高奖励
+          </view>
+        </view>
+        <view wx:if="{{sign_status == 1}}">
+          <view class="taskButtionSuccess fr">
+            已签到
+          </view>
+        </view>
+        <view wx:else>
+          <view class="taskButtion fr" bindtap="signIn">
+            立即签到
+          </view>
+        </view>
+        <view class="clear"></view>
+      </view>
+      <!-- 邀请好友 -->
+      <view class="taskList">
+        <view class="taskImg fl">
+          <image src="http://www.zhongjubang.com/api/upload/applet_resource/task02.png"></image>
+        </view>
+        <view class="taskText fl">
+          <view class="taskText_1">
+            邀请好友
+          </view>
+          <view class="taskText_2">
+            首次邀请好友，奖励{{recommend_friend_score}}积分
+          </view>
+        </view>
+        <view wx:if="{{first_invite >= 1}}">
+          <view class="taskButtionSuccess fr">
+            已完成
+          </view>
+        </view>
+        <view wx:else>
+          <!-- <navigator url="/pages/invitation/invitation"> -->
+            <view class="taskButtion fr" bindtap="tomessage">
+              立即邀请
+            </view>
+          <!-- </navigator> -->
+        </view>
+        <view class="clear"></view>
+      </view>
+
+      <!-- 推荐客户 -->
+      <view class="taskList">
+        <view class="taskImg fl">
+          <image src="http://www.zhongjubang.com/api/upload/applet_resource/task03.png"></image>
+        </view>
+        <view class="taskText fl">
+          <view class="taskText_1">
+            推荐客户
+          </view>
+          <view class="taskText_2">
+            首次推荐客户，奖励{{recommend_customer_score}}积分
+          </view>
+        </view>
+        <view wx:if="{{first_recommend >= 1}}">
+          <view class="taskButtionSuccess fr">
+            已完成
+          </view>
+        </view>
+        <view wx:else>
+          <view class="taskButtion fr" bindtap="skipRecommend">
+            立即推荐
+          </view>
+        </view>
+        <view class="clear"></view>
+      </view>
+
+      <!-- 身份认证 -->
+      <view class="taskList">
+        <view class="taskImg fl">
+          <image src="http://www.zhongjubang.com/api/upload/applet_resource/task04.png"></image>
+        </view>
+        <view class="taskText fl">
+          <view class="taskText_1">
+            身份认证
+          </view>
+          <view class="taskText_2">
+            奖励{{identity_score}}积分
+          </view>
+        </view>
+        <view wx:if="{{business_check_status == 2}}">
+          <view class="taskButtionSuccess fr">
+            已认证
+          </view>
+        </view>
+        <view wx:else>
+          <navigator url="/pages/identity/identity">
+            <view class="taskButtion fr">
+              立即认证
+            </view>
+          </navigator>
+        </view>
+        <view class="clear"></view>
+      </view>
+
+      <!-- 实名认证 -->
+      <view class="taskList">
+        <view class="taskImg fl">
+          <image src="http://www.zhongjubang.com/api/upload/applet_resource/task05.png"></image>
+        </view>
+        <view class="taskText fl">
+          <view class="taskText_1">
+            实名认证
+          </view>
+          <view class="taskText_2">
+            奖励{{real_name_score}}积分
+          </view>
+        </view>
+        <view wx:if="{{id_card_check_status == 2}}">
+          <view class="taskButtionSuccess fr">
+            已认证
+          </view>
+        </view>
+        <view wx:else>
+          <navigator url="/pages/IDCard/IDCard">
+            <view class="taskButtion fr">
+              立即认证
+            </view>
+          </navigator>
+        </view>
+        <view class="clear"></view>
+      </view>
+    </view>
+  </view>
+
+</view>
+</view>

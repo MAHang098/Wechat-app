@@ -1,0 +1,9 @@
+<view class="earnings" wx:for="{{navimage}}" wx:key="userBalanceLogId">
+  <view class="image"><image src="/images/money.png"></image></view>
+  <view class="zi">
+     <view class="top">{{item.balanceLog}}</view>
+     <view class="zhong">收入</view>
+     <view class="xia"><view class="shi">{{item.createTime}}</view></view>
+  </view>
+  <view class="right">{{item.balanceValue}}</view>
+</view>

@@ -1,0 +1,26 @@
+<view class="loding">
+  <!-- 图片和文字 -->
+  <view class="tu">
+     <view class="{{isChecked1?'image-a':'image-as'}}" bindtap="serviceSelection1"><image src="/images/loding.png"></image></view>
+     <view class="{{isChecked2?'image-b':'image-bs'}}" bindtap="serviceSelection2"><image src="/images/loding-to.png"></image></view>
+     <view class="wenzi">
+        <view class="zi-a">我是泛家居</view>  <view class="zi-b">我是置业</view>
+     </view>
+  </view>
+
+  <!-- 表单框 -->
+  <view class="biaodan">
+   <view class="input-a"><image src="/images/lodin-to.png"></image>
+    <input placeholder="请输入手机号" value='{{phone}}' bindinput='changeInput' data-prop='phone'></input>
+   </view>
+   <view class="hengx"></view>
+   <view class="input-a"><image src="/images/lodin.png"></image><input value='{{codePd}}' bindinput='changeInput' data-prop='codePd' placeholder="请输入验证码"></input> <text bindtap="sendCode">{{btntext}} </text></view>
+   <view class="hengx"></view>
+  </view>
+
+
+<!-- 立即登陆 -->
+  <button class="denglu" open-type="getUserInfo" bindgetuserinfo="loginUser">确定</button>
+  
+
+</view>

@@ -1,0 +1,124 @@
+
+<!-- 积分背景图 -->
+<view class="backgroundImg">
+  <image src="https://www.zhongjubang.com/api/upload/applet_resource/lALPBE1XYbFkNSjNAaPNAp8_671_419.png"></image>
+<view class="cost">
+    <!-- 卡片文字 -->
+  <view class="cardText_1">
+    总资产（元）
+  </view>
+  <view class="cardText_2">
+    <text class="fll">¥{{cost}}</text>
+  </view>
+  <view class="cardText_3">
+    <view class="cardText_4">{{cost}}</view>
+    <view class="cardText_4">{{freeze}}</view>
+    <view class="cardText_5">可提现金额</view>
+    <view class="cardText_5">结算中</view>
+  </view>
+</view>
+</view>
+
+
+<!-- 间隔线 -->
+<view class="line">
+提现金额需要100的整数倍
+</view>
+
+<!-- 跳转选项 -->
+<view class="bottom-assets">
+
+  <view class="assetsSkipModule">
+      <view class="skipName">提现金额</view>
+      <view class="rightImg">
+      <input placeholder="请输入提现金额" type="number" name="money" bindinput="changeInput" data-prop='money'></input>
+      </view>
+  </view>
+
+
+  <view class="assetsSkipModule">
+    <view class="skipName">提现方式</view>
+    <!-- 单选框 -->
+    <radio-group class="radio-group">
+      <view bindtap="treasur">
+        <label class="radio" wx:for-items="{{items}}" wx:key="">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </view>
+
+      <view bindtap="Bankcard">
+        <label class="radio-b" wx:for-items="{{item}}" wx:key="">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </view>
+    </radio-group>
+
+  </view>
+
+
+<!-- 遮罩层 -->
+   <view class="mask" hidden="{{maskBlock}}"></view>
+
+    <!-- 限制弹窗 -->
+    <view class="limitModule" hidden="{{limitBlock}}">
+      <view class="delete" bindtap="delete">X</view>
+      <view class="limitText">
+        请先绑定您要提现的账户
+      </view>
+      
+      <view class="limitButton">
+        <navigator url="/pages/Pay-treasure/Pay-treasure">
+          <view class="ber">绑定支付宝</view>
+        </navigator>
+          <navigator url="/pages/Bank-card/Bank-card">
+          <view class="bert">绑定银行卡</view>
+          
+          </navigator>
+      </view>
+      
+    </view>
+
+</view>
+
+    <!-- 支付宝弹框 -->
+    <view class="Ptreasure" hidden="{{Ptreasure}}" wx:for="{{treasure}}" wx:key="">
+      
+      <view class="Ptreasure-a">
+          <view class="bao">支付宝账号</view>
+          <view class="ying">{{treasure.alipayAccount}}</view>
+      </view>
+      <view class="Ptreasure-b">
+          <view class="bao-b">支付宝户名</view>
+          <view class="ying-b">{{treasure.alipayName}}</view>
+      </view>
+    </view>
+
+        <!-- 银行卡弹框 -->
+    <view class="Ptreasure" hidden="{{Bankcard}}">
+      
+      <view class="Ptreasure-a">
+          <view class="baoto">银行卡</view>
+          <view class="ying" >
+              
+          <picker bindchange="bindPickerChange" value="{{Addcard[index].cardNumber}}" range="{{Addcard}}" range-key="cardNumber">
+              <view class="messageModule">
+              <template is="head" data="{{title: 'picker'}}" />
+
+                <view class="messageTitle weui-input">
+                <text class="gender">{{Addcard[index].cardNumber}}</text> </view>
+
+            </view>
+            <view class="clear"></view>
+          </picker>
+
+          </view>
+      </view>
+    </view>
+
+
+
+
+<!-- 提现按钮 --> 
+  <view class="bottomButton" bindtap="bun">
+    提现
+  </view>

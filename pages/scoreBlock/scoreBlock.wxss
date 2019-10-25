@@ -1,0 +1,129 @@
+.big-box{
+  position: fixed;
+  top: 0rpx;
+  height: 1600rpx;
+  width: 750rpx;
+  background-color: white;
+}
+/* 积分背景图 */
+.backgroundImg {
+  position: fix;
+  width: 100%;
+  /* height: 542rpx; */
+  height: 314rpx;
+  z-index: -1;
+}
+
+.backgroundImg image {
+  width: 100%;
+  height: 314rpx;
+}
+.person{
+  position: absolute;
+  z-index: 1;
+  width: 317rpx;
+  height: 353rpx;
+  margin-top: -317rpx;
+  margin-left: 436rpx;
+}
+.person image{
+  z-index: 10;
+  width: 317rpx;
+  height: 353rpx;
+}
+
+.content{
+  position: relative;
+  margin: 0 auto;
+  margin-top: -39rpx;
+  width:672rpx;
+  height:935rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx -3rpx 10rpx 0rpx rgba(63,63,63,0.17);
+  border-radius:26rpx 26rpx 0rpx 0rpx;
+}
+.content-inner{
+  position: absolute;
+  width:672rpx;
+  height:935rpx;
+}
+
+.mission-title{
+  margin: 52rpx auto;
+  width: 334rpx;
+  height: 90rpx;
+}
+.mission-title image{
+  width: 334rpx;
+  height: 90rpx;
+}
+
+
+
+
+
+
+
+/* 任务列表 */
+.taskListModule {
+  padding: 0 1%;
+  padding-bottom: 30rpx;
+}
+
+.taskList {
+  width: 100%;
+  height: 150rpx;
+}
+
+.taskImg image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 30rpx;
+}
+
+.taskText {
+  margin-left: 20rpx; 
+}
+
+.taskText_1 {
+  margin-top: 30rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  /* line-height:56rpx; */
+}
+
+.taskText_2 {
+  font-size: 24rpx;
+  margin-top: 13rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+}
+
+.taskButtion {
+  width: 140rpx;
+  height: 50rpx;
+  color: #fff;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 50rpx;
+  background:rgba(236,147,0,1);
+  border-radius:25rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+}
+
+.taskButtionSuccess {
+  width: 150rpx;
+  height: 50rpx;
+  background-color: #a9a9a9;
+  color: #fff;
+  line-height: 50rpx;
+  border-radius:25rpx;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 50rpx;
+}

@@ -1,0 +1,361 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+
+
+/* 积分背景图 */
+.backgroundImg {
+background-color: white;
+    width: 750rpx;
+  height: 500rpx;
+  position: fixed;
+  z-index: -99999;
+  overflow-y: hidden;
+}
+
+.backgroundImg image {
+  width: 672rpx;
+  height: 420rpx;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+}
+.cost{
+  position: fixed;
+  top: 1rpx;
+  z-index: 10rpx;
+}
+/* 卡片文字 */
+.cardText_1 {
+  color: #fff;
+  font-size: 34rpx;
+  position: relative;
+  top: 60rpx;
+  left: 90rpx;
+}
+.fll{
+  font-size: 66rpx;
+}
+.cardText_2 {
+  width: 400rpx;
+  text-align: center;
+  margin-top: 150rpx;
+  margin-left: 180rpx;
+}
+
+.cardText_2 image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+
+.cardText_2 {
+  font-size: 50rpx;
+  color: #fff;
+}
+
+.cardText_3 {
+  width: 650rpx;
+  height: 100rpx;
+  margin-top: 70rpx;
+  margin-left: 50rpx;
+}
+
+.cardText_4 {
+  width: 50%;
+  color: #333333;
+  font-size: 46rpx;
+  font-weight: bolder;
+  text-align: center;
+  float: left;
+  margin-top: 10rpx;
+}
+
+.cardText_5 {
+  width: 50%;
+  color: #666666;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+  float: left;
+  margin-top: 5rpx;
+}  
+
+/* 间隔线 */
+.line {
+  position: fixed;
+  margin-top: 500rpx;
+  width: 750rpx;
+  height: 62rpx;
+  background-color: #f9f9f9;
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 66rpx;
+  padding-left: 32rpx;
+}
+
+/* 下边大盒子 */
+.bottom-assets{
+  width: 750rpx;
+  height: 1000rpx;
+  position: fixed;
+  top: 560rpx;
+  background-color:white;
+  border-top: 1rpx #DADADA solid;
+}
+
+/* 跳转选项 */
+.assetsSkipModule {
+  background-color: white;
+  height: 100rpx;
+  line-height: 68rpx;
+  width: 100%;
+  padding: 0 4%;
+  font-size: 26rpx;
+  color: #333333;
+  border-bottom: 1rpx #DADADA solid;
+}
+
+.skipName{
+  font-size: 30rpx;
+float: left;
+line-height: 100rpx;
+color: #333333;
+}
+input{
+  margin-top: 20rpx;
+  float: left;
+  margin-left: 60rpx;
+  font-size: 30rpx;
+  color: #999999;
+}
+.rightImg {
+  height: 100rpx;
+  padding-top: 10rpx;
+}
+
+.rightImg image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+/* 单选按钮 */
+.radio-group{
+  margin-left: 60rpx;
+  /* width: 30rpx;
+  height: 30rpx; */
+  margin-top: 19rpx;
+}
+.radio{
+  position: absolute;
+  font-size: 28rpx;
+}
+.radio-b{
+  margin-left: 140rpx;
+  font-size: 28rpx;
+}
+radio .wx-radio-input{
+  border-radius: 3rpx;
+  position: relative;
+  left: -9rpx;
+  top: -1rpx;
+  width: 28rpx;
+  height: 26rpx;
+}
+
+radio .wx-radio-input .wx-radio-input-radio{
+position: absolute;
+top: 0rpx;
+left: 1000rpx;
+}
+radio .wx-radio-input.wx-radio-input-radio::before{
+position: absolute;
+top: 0rpx;
+left: 1000rpx;
+}
+
+
+/* 点击提现弹框 */
+/* 限制弹窗 */
+.limitModule {
+  height: 250rpx;
+  width: 500rpx;
+  background-color: white;
+  z-index: 9999;
+  position:fixed;
+  left: 17%;
+  top: 30%;
+  -webkit-box-shadow: #353535 0px 0px 10px; 
+  -moz-box-shadow: #353535 0px 0px 10px; 
+  box-shadow: #353535 0px 0px 10px;
+}
+
+.limitText {
+  text-align: center;
+  font-size: 28rpx;
+  color: #353535;
+  line-height: 80rpx;
+}
+
+.limitButton {
+  width: 100%;
+  border-top: 1rpx solid #E1E1E1;
+  background-color: white;
+  color: #ffffff;
+  font-size: 28rpx;
+  /* text-align: center;
+  line-height: 80rpx; */
+  height: 80rpx;
+  position: absolute;
+  bottom: 0; 
+}
+.limitButton .bert{
+  width: 500rpx;
+  height: 80rpx;
+  /* background-color: yellow; */
+  color: black;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.ber{
+  border-right: 1rpx solid #E1E1E1;
+}
+.limitButton .ber{
+  float: left;
+  display: block;
+  width: 250rpx;
+  height: 80rpx;
+  /* background-color: yellow; */
+  color: black;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.delete{
+  margin-left: 460rpx;
+  margin-top: 20rpx;
+}
+
+
+/* 点击支付宝弹框部分 */
+.Ptreasure {
+  height: 250rpx;
+  width: 750rpx;
+  /* background-color: yellow; */
+  z-index: 9999;
+  position:fixed;
+  left: 0;
+  top: 758rpx;
+}
+.Ptreasure-a {
+  height: 80rpx;
+  width: 100%;
+  /* background-color: pink; */
+  border-bottom: 1rpx solid #E1E1E1;
+}
+.Ptreasure-a .ying{
+  height: 80rpx;
+  color: #565656;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  margin-left: 50rpx;
+}
+.Ptreasure-a .bao{
+  float: left;
+  display: block;
+  margin-left: 30rpx;
+  margin-right: 40rpx;
+  margin-top:12rpx;
+  /* color: #555555; */
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #565656;
+}
+.Ptreasure-a .baoto{
+  float: left;
+  display: block;
+  margin-left: 30rpx;
+  margin-right: 40rpx;
+  margin-top: 10rpx;
+  color: black;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+
+/* 银行卡弹框 */
+.Ptreasure-b{
+  font-size: 30rpx;
+  height: 80rpx;
+  width: 100%;
+  /* background-color: pink; */
+  color: #565656;
+  border-bottom: 1rpx solid #E1E1E1;
+}
+.Ptreasure-b .ying-b{
+  height: 80rpx;
+  color: #565656;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  margin-left: 50rpx;
+}
+.Ptreasure-b .bao-b{
+    float: left;
+  display: block;
+  margin-top: 8rpx;
+  margin-left: 30rpx;
+  margin-right: 40rpx;
+  /* color: #555555; */
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+
+/* 点击银行卡弹框 */
+.Bankcard-b{
+  height: 520rpx;
+  width: 750rpx;
+  background-color: pink;
+  z-index: 9999;
+  position:fixed;
+  top: 70%;
+}
+.Bankcard-top:first-child{
+  margin-left: 34rpx;
+  margin-top: 14rpx;
+}
+.Bankcard-top .queding{
+  margin-left: 570rpx;
+  margin-top: 14rpx;
+}
+.bottom{
+  /* background-color: yellow; */
+  width: 750rpx;
+  height: 46rpx;
+  margin-top: 130rpx;
+  padding-left: 240rpx;
+    border-top: 1rpx solid #E1E1E1;
+    border-bottom: 1rpx solid #E1E1E1;
+}
+
+/* 弹框文字滑动 */
+
+.swiper_container {
+  margin-top: 130rpx;
+  height: 54rpx;
+  width: 100%;
+      border-top: 1rpx solid #E1E1E1;
+    border-bottom: 1rpx solid #E1E1E1;
+  /* background-color: yellow; */
+}
+.swiper_item {
+  line-height: 54rpx;
+  text-align: center;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bottomButton{
+  background-color: #ec9300;
+  position: fixed;
+  bottom: 0rpx;
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "onReachBottomDistance": 100,
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTitleText": "跟踪记录",
+  "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,132 @@
+<!-- 数据加载 -->
+<!-- <loading hidden="{{loading}}">正在加载</loading>  -->
+
+<view class="page">
+
+<!-- 遮罩层 -->
+<!-- <view class="mask" hidden="{{maskBlock}}"></view> -->
+
+<!-- 限制弹窗 -->
+<!-- <view class="limitModule" hidden="{{limitBlock}}">
+  <view class="limitText">
+    请先完成身份认证
+  </view>
+  <navigator url="/pages/identity/identity">
+    <view class="limitButton">
+      立即前往认证
+    </view>
+  </navigator>
+</view> -->
+
+
+<!-- 页面标题 -->
+<view class="idCradTitle">
+  请上传本人身份证照片
+</view>
+
+<!-- 图片上传区域 -->
+<view wx:if="{{idCardStatus == 1}}">
+  <view class="uploadImgModule">
+    <image src="{{idCardImgPathFront}}"></image>
+  </view>
+</view>
+<view wx:elif="{{idCardStatus == 2}}">
+  <view class="uploadImgModule">
+    <image src="{{idCardImgPathFront}}"></image>
+  </view>
+</view>
+<view wx:elif="{{idCardStatus == 3}}">
+  <view class="uploadImgModule">
+    <image src="{{idCardImgPathFront}}" bindtap="chooseImgFront"></image>
+  </view>
+</view>
+<view wx:else>
+  <view class="uploadImgModule">
+    <image src="{{idCardImgPathFront}}" bindtap="chooseImgFront"></image>
+  </view>
+</view>
+
+<view wx:if="{{idCardStatus == 1}}">
+  <view class="uploadImgModule">
+    <image src="{{idCardImgPathBack}}"></image>
+  </view>
+</view>
+<view wx:elif="{{idCardStatus == 2}}">
+  <view class="uploadImgModule">
+    <image src="{{idCardImgPathBack}}"></image>
+  </view>
+</view>
+<view wx:elif="{{idCardStatus == 3}}">
+  <view class="uploadImgModule">
+    <image src="{{idCardImgPathBack}}" bindtap="chooseImgBack"></image>
+  </view>
+</view>
+<view wx:else>
+  <view class="uploadImgModule" id="imgex">
+    <image src="{{idCardImgPathBack}}" bindtap="chooseImgBack"></image>
+  </view>
+</view>
+<view class="text1">仅供众居邦会员注册使用</view>
+<view class="text2">仅供众居邦会员注册使用</view>
+
+
+
+<!-- 信息输入区域 -->
+<view class="inputMessageModule">
+  <view class="messageName">
+    身份证号码
+  </view>
+  <view class="messageContent">
+    <view wx:if="{{idCardStatus == 1}}">
+      <input type="idcard" placeholder="{{getIdCardNumber}}" disabled="true" ></input>
+    </view>
+    <view wx:elif="{{idCardStatus == 2}}">
+      <input type="idcard" placeholder="{{getIdCardNumber}}" disabled="true"></input>
+    </view>
+    <view wx:elif="{{idCardStatus == 3}}">
+      <input type="idcard" placeholder="请输入身份证号码" value="{{getIdCardNumber}}" bindinput="getIdCardNumber" ></input>
+    </view>
+    <view wx:else>
+      <input type="idcard" placeholder="请输入身份证号码" value="" bindinput="getIdCardNumber"></input>
+    </view>
+  </view>
+  <view class="clear"></view>
+</view>
+<!-- 注释 -->
+<view class="annotation">
+
+
+  <view class="annotation-word">
+  <view class="notice">
+<image src="/images/notice.png"></image>
+</view>
+    <view class="text"> <text>因领取任务酬金必须用到您的实名资料，请确保资金的准确，希望大家可以理解并配合。</text> </view>
+  </view>                  
+</view>
+
+</view>
+
+<!-- 提交按钮 -->
+<view wx:if="{{idCardStatus == 1}}">
+  <view class="idCardMessageButtonModule2">
+    审核中
+  </view>
+</view>
+<view wx:elif="{{idCardStatus == 2}}">
+  <view class="idCardMessageButtonModule2">
+    认证成功
+  </view>
+</view> 
+<view wx:elif="{{idCardStatus == 3}}">
+  <view class="idCardMessageButtonModule" bindtap="submitMessage">
+    重新认证
+  </view>
+</view> 
+<view wx:else>
+  <view class="idCardMessageButtonModule" bindtap="submitMessage">
+    立即认证
+  </view>
+</view>   
+
+
+

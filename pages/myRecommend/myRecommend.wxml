@@ -1,0 +1,108 @@
+<!-- 数据加载 -->
+<!-- <loading hidden="{{loading}}">正在加载</loading> -->
+
+<!-- 遮罩层 -->
+<!-- <view class="mask" hidden="{{maskBlock}}" bindtap="screenHidden"></view> -->
+
+
+<!-- 筛选按钮 -->
+
+<view class="chooseButton" bindtap="screenBlock">
+  <view class="fl">筛选</view>
+  <image src="../../images/right.png" class="fr arrowr"></image>
+</view>
+
+<!-- 列表显示 -->
+<view wx:if="{{myRecommendArr == ''}}">
+  <view class="noMessage" style="margin-top:100rpx;">
+    暂无信息！
+  </view>
+</view>
+<view wx:else>
+  <view style="margin-top:105rpx;">
+    <view wx:for="{{myRecommendArr}}" wx:key="">
+      <navigator url="/pages/followMessage/followMessage?id={{item.phone}}">
+        <view class="myRecommendList">
+          <view class="listText fl">
+            <view class="listText_2">客户姓名：{{item.name}}</view>
+            <view class="listText_2">联系电话 {{item.phone}}</view>
+            <view class="listText_2">推荐品牌：{{item.intention}}</view>
+          </view>
+          <view class="iconImg fl">
+            <view wx:if="{{item.status == 1}}">
+              <image src="../../images/icon_1.png"></image>
+            </view>
+            <view wx:elif="{{item.status == 2}}">
+              <image src="../../images/icon_2.png"></image>
+            </view>
+            <view wx:elif="{{item.status == 3}}">
+              <image src="../../images/icon_3.png"></image>
+            </view>
+            <view wx:elif="{{item.status == 4}}">
+              <image src="../../images/icon_4.png"></image>
+            </view>
+            <view wx:elif="{{item.status == 5}}">
+              <image src="../../images/icon_5.png"></image>
+            </view>
+            <view wx:else>
+              <image src="../../images/icon_6.png"></image>
+            </view>
+          </view>
+          <view class="iconImg_2 fr">
+            <image src="../../images/right.png"></image>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+<!-- 筛选区域 -->
+<!-- <view class="screenContainer" hidden="{{screenBlock}}">
+  <view class="screenModule">
+    <view class="screenName">状态筛选</view>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </checkbox-group>
+    <view class="screenName">客户筛选</view>
+    <view class="inputStyle">
+      <input type="number" value="{{getMessage}}" placeholder="请输入客户姓名或手机号码" maxlength="11" bindinput="getMessage"></input>
+    </view>
+  </view>
+  <view class="buttonModule">
+    <view class="buttonStyle fl" bindtap="resetButton">重置</view>
+    <view class="buttonStyle fl" style="background-color:#EC9300;color:#fff;" bindtap="submitMessage">确定</view>
+    <view class="clear"></view>
+  </view>
+</view> -->
+
+<!-- 单选 -->
+<view class="screenContainer" hidden="{{screenBlock}}">
+  <view class="screenModule page-section page-section-gap">
+    <view class="screenName page-section-title">筛选状态</view>
+    <radio-group name="radio" bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+      </label>
+
+    </radio-group>
+    <view class="screenName">客户筛选</view>
+    <view class="inputStyle">
+      <input type="number" value="{{getMessage}}" placeholder="请输入客户姓名或手机号码" maxlength="11" bindinput="getMessage"></input>
+    </view>
+  </view>
+  <view class="buttonModule">
+    <view class="buttonStyle fl" bindtap="resetButton">重置</view>
+    <view class="buttonStyle fl" style="background-color:#EC9300;color:#fff;" bindtap="submitMessage">确定</view>
+    <view class="clear"></view>
+  </view>
+</view>

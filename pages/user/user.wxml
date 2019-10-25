@@ -1,0 +1,102 @@
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+<!--index.wxml-->
+<image class="bg" src="http://www.zhongjubang.com/api/upload/applet_resource/user/banner.png"></image>
+
+<!-- 实体内容 -->
+<view class="container">
+  <view class="userinfo">
+    <view class="qiandao_box">
+      <image class="qiandao" src="http://www.zhongjubang.com/api/upload/applet_resource/user/qiandao.png"></image>
+      <view bindtap="usersignin">
+        <text class="text5">{{signin}}</text>
+      </view>
+    </view>
+    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
+    <!-- <block wx:else> -->
+      <image class="userinfo-avatar" src="{{head}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{tools.sub(nickName)}}</text>
+      <navigator url="/pages/updateMessage/updateMessage" class="info-per-content">
+        <view class="info-person"><text>个人资料</text></view>
+        <image class="note" src="http://www.zhongjubang.com/api/upload/applet_resource/user/my_icon_bianji.png"></image>
+      </navigator>
+
+
+    <!-- </block> -->
+  </view>
+  <!-- 导航栏 -->
+  <view class="home-content">
+    <view class="balance" bindtap="asset">
+      <view class="money">余额</view>
+      <view class="number">{{cost}}</view>
+      <text class="more-text">查看更多</text>
+      
+      <image class="note1" src="http://www.zhongjubang.com/api/upload/applet_resource/user/more.png"></image>
+    </view>
+    <view class="integral" bindtap="integral">
+      <view class="money">积分</view>
+      <view class="number">{{score}}</view>
+        <text class="more-text">查看更多</text>
+        <image class="note1" src="http://www.zhongjubang.com/api/upload/applet_resource/user/more.png"></image>
+      
+      
+    </view>
+  </view>
+  <view class="agent-server">
+    <view>经纪人服务</view>
+    <view class="divLine"></view>
+    <view class="images">
+        <image class="images1" bindtap="identity" src="http://www.zhongjubang.com/api/upload/applet_resource/user/certificate.png"></image>
+
+        <image class="images2" bindtap="myRecommend" src="http://www.zhongjubang.com/api/upload/applet_resource/user/my-command.png"></image>
+
+
+        <image class="images3" bindtap="interests" src="http://www.zhongjubang.com/api/upload/applet_resource/user/mission.png"></image>
+
+        <image class="images4" bindtap="Aboutus" src="http://www.zhongjubang.com/api/upload/applet_resource/user/about.png"></image>
+
+    </view>
+  </view>
+  <view class="online-consulting">
+    <view>
+      <text decode="{{true}}">在线咨询 &nbsp;&nbsp; </text>
+      <text class="text2">你的专属客服，给经纪人解答所有疑惑。</text>
+    </view>
+    <view class="divLine"></view>
+    <view class="consulting-text">
+
+      <image class="userinfo-avatar1" src="http://www.zhongjubang.com/api/upload/applet_resource/user/ruanmei.png" mode="cover"></image>
+      <view class="text-box">
+        <text class="text3">软妹\n</text>
+        <text class="text4">类别：泛家居</text>
+      </view>
+      <button open-type='contact' class="welcome-consult1">
+        欢迎咨询
+      </button>
+      <!-- <view class="welcome-consult1">欢迎咨询</view> -->
+    </view>
+    <view class="consulting-text">
+
+      <image class="userinfo-avatar1" src="http://www.zhongjubang.com/api/upload/applet_resource/user/yuting.png" mode="cover"></image>
+      <view class="text-box">
+        <text class="text3">玉婷\n</text>
+        <text class="text4">类别：置业</text>
+      </view>
+      <button open-type='contact' class="welcome-consult2">
+        欢迎咨询
+      </button>
+    </view>
+    <view class="consulting-text">
+
+      <image class="userinfo-avatar1" src="http://www.zhongjubang.com/api/upload/applet_resource/user/danru.png" mode="cover"></image>
+      <view class="text-box">
+        <text class="text3">丹如\n</text>
+        <text class="text4">类别：VIP客服</text>
+      </view>
+      <button bindtap="vipPays" class="welcome-consult3">
+        欢迎咨询
+      </button>
+
+    </view>
+  </view>
+</view>
+  <view class="bottom">由众居邦信息科技提供技术支持</view>

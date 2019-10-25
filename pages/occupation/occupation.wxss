@@ -1,0 +1,146 @@
+.loding{
+  width: 750rpx;
+  height: 1200rpx;
+  background-color: white;
+}
+
+/* 图片 */
+.tu{
+  position: absolute;
+  top: 196rpx;
+  height: 160rpx;
+  width: 750rpx;
+  /* background-color: yellow; */
+}
+.image-a image{
+  float: left;
+  width: 156rpx;
+  height: 156rpx;
+  margin-left: 150rpx;
+  border-radius: 58%;
+}
+.image-b image{
+  width: 154rpx;
+  height: 156rpx;
+  margin-left: 130rpx;
+    border-radius: 58%;
+}
+.image-a image:hover{
+ background-color: #f7d95c;
+}
+.image-b image:hover{
+ background-color: #f7d95c;
+}
+
+.image-as image{
+  float: left;
+  width: 156rpx;
+  height: 156rpx;
+  margin-left: 150rpx;
+    border-radius: 58%;
+    background-color: #f7d95c;
+}
+
+.image-bs image{
+  width: 154rpx;
+  height: 156rpx;
+  margin-left: 130rpx;
+    border-radius: 58%;
+    background-color: #f7d95c;
+}
+
+/* 文字 */
+.wenzi{
+  width: 750rpx;
+  height: 130rpx;
+  /* background-color: green; */
+  margin-top: 20rpx;
+}
+.zi-a{
+  float: left;
+  font-size: 28rpx;
+  color: #333333;
+  margin-left: 160rpx;
+}
+.zi-b{
+  float: left;
+  margin-left: 158rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+/* 表单部分 */
+.biaodan{
+  position: absolute;
+  top: 510rpx;
+  height: 186rpx;
+  width: 750rpx;
+  /* background-color: pink; */
+}
+.input-a{
+  margin-left: 100rpx;
+}
+.input-a image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+input{
+  display: inline-block;
+  margin-left: 26rpx;
+  font-size: 30rpx;
+  color: #666666;
+}
+.hengx{
+  margin-top: 20rpx;
+  margin-left: 104rpx;
+  margin-bottom: 40rpx;
+  width: 552rpx;
+  height: 1rpx;
+  background-color: #E2E2E2;
+}
+text{
+  font-size: 28rpx;
+  color: #EC9300;
+  margin-bottom: 50rpx;
+}
+
+/* 职业提示 */
+.zhiye{
+  position: absolute;
+  top: 706rpx;
+  left: 264rpx;
+}
+.zhiye image{
+width: 222rpx;
+height: 46rpx;
+}
+
+/* 立即登陆 */
+.denglu{
+  position: absolute;
+  top: 760rpx;
+  left: 38rpx;
+  width: 672rpx;
+  height: 90rpx;
+  background-color: #EC9300;
+  border-radius: 50rpx;
+  font-size: 36rpx;
+  color: #FFFFFF;
+}
+
+
+/* checkox点击按钮
+checkbox .wx-checkbox-input {
+width: 42rpx;
+height: 42rpx;
+}
+.checkbox{
+  width: 36rpx;
+height: 36rpx;
+  position: absolute;
+  top: 426rpx;
+  left: 212rpx;
+<<<<<<< .mine
+} */

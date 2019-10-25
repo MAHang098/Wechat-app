@@ -1,0 +1,45 @@
+
+
+
+<!--pages/myRanked/myRanked.wxml-->
+
+<image class="bg" src="http://www.zhongjubang.com/api/upload/applet_resource/myRanked/bg.png"></image>
+<view class="title">
+  <image src="http://www.zhongjubang.com/api/upload/applet_resource/myRanked/title.png"></image>
+  <view class="ranked">
+    您当前级别：{{level}}
+  </view>
+  <view class="icon">
+    <view class="image">
+      <image src="{{image}}"></image>
+    </view>
+    <view class="hr">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/myRanked/hr.png"></image>
+    </view>
+    <view class="image">
+      <image src="{{image2}}"></image>
+    </view>
+    <view class="hr">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/myRanked/hr.png"></image>
+    </view>
+    <view class="image">
+      <image src="{{image3}}"></image>
+    </view>
+    <view class="hr">
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/myRanked/hr.png"></image>
+    </view>
+    <view class="image">
+      <image src="{{image4}}"></image>
+    </view>
+  </view>
+  
+</view>
+<view class="text">
+    <view class="text1">青铜</view>
+    <view class="text2">白银</view>
+    <view class="text3">黄金</view>
+    <view class="text4">白金</view>
+</view>
+<view class="bottom">
+  <image src="http://www.zhongjubang.com/api/upload/applet_resource/bottom.png"></image>
+</view>

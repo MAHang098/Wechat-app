@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "onReachBottomDistance": 100,
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTitleText": "筛选",
+  "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,98 @@
+.big-box{
+  position: fixed;
+  top: 0rpx;
+  height: 1600rpx;
+  width: 750rpx;
+  /* background-color: white; */
+}
+/* 图片 */
+.exchange-integrad{
+  
+  width: 750rpx;
+  height: 401rpx;
+  background-color: #FFFFFF;
+}
+.exchange-integrad-inner{
+  margin: 0 auto;
+  /* padding-top: 70rpx; */
+  width: 302rpx;
+  height: 277rpx;
+}
+.exchange-integrad image{
+  margin-top: 120rpx;
+  width: 302rpx;
+  height: 277rpx;
+}
+/* 剩余积分 */
+page {
+  background-color: #f4f5f7;
+}
+.number {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  font-size:40rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(236,147,0,1);
+}
+.surplusScore {
+  margin-top: -30rpx;
+  height: 100rpx;
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #fff;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+
+/* 兑换规则 */
+.orderScore {
+  width: 100%;
+  padding: 0 4%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 22rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+
+/* 兑换输入框 */
+.exchangeInputModule {
+
+  padding: 0 4%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #353535;
+  background-color: #fff;
+  border-bottom: 1px #f2f2f2 solid;  
+}
+
+.exchangeInputModule label {
+  width: 160rpx;
+}
+
+.exchangeInputModule input {
+  height: 100rpx;
+  width: 500rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.bottom{
+  text-align: center;
+  width:673rpx;
+  height:86rpx;
+  line-height: 86rpx;
+  background:rgba(236,147,0,1);
+  border-radius:10rpx;
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  margin: 100rpx auto;
+}

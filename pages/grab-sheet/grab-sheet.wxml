@@ -1,0 +1,153 @@
+<!--pages/grab-sheet/grab-sheet.wxml-->
+<!-- <text>pages/grab-sheet/grab-sheet.wxml</text> -->
+<!-- 抢单服务页面 -->
+<view class="grab-sheets" >
+    <!-- 今日抢单/个人中心 start -->
+    <view class="grab-sheets_header">
+        <view>
+            <text class="in">今日抢单</text>
+        </view>
+        <view><text>个人中心</text></view>
+    </view>
+    <!-- 今日抢单/个人中心 end -->
+
+    <!-- 抢单列表 start -->
+    <view class="userList">
+        <view class="grab-sheets_list" >
+            <!-- 用户信息 start -->
+            <view class="list_message">
+                <view class="user-image">
+                    <image class="" src="/images/grab-sheet/user-image.png"></image>
+                </view>
+                <view class="user-message">
+                    <text>王***</text>
+                    <text>184*****7941</text>
+                </view>
+                <view class="user-address">
+                    <text>地区</text>
+                    <text>佛山</text>
+                </view>
+            </view>
+            <!-- 用户信息 end -->
+
+            <!-- 用户置办时间/产品 start -->
+            <view class="details">
+                <view class="purchase-time" >
+                    <text>预计置办时间</text>
+                    <text>2019年10月</text>
+                </view>
+                <view class="purchase-product" >
+                    <text>预购产品</text>
+                    <text>沙发、衣柜</text>
+                </view>
+                <view class="immediately-grab" >
+                    <view>立即抢单</view>
+                </view>
+            </view>
+            <!-- 用户置办时间/产品 end -->
+        </view>
+
+         <view class="grab-sheets_list" >
+            <!-- 用户信息 start -->
+            <view class="list_message">
+                <view class="user-image">
+                    <image class="" src="/images/grab-sheet/user-image.png"></image>
+                </view>
+                <view class="user-message">
+                    <text>王***</text>
+                    <text>184*****7941</text>
+                </view>
+                <view class="user-address">
+                    <text>地区</text>
+                    <text>佛山</text>
+                </view>
+            </view>
+            <!-- 用户信息 end -->
+
+            <!-- 用户置办时间/产品 start -->
+            <view class="details">
+                <view class="purchase-time" >
+                    <text>预计置办时间</text>
+                    <text>2019年10月</text>
+                </view>
+                <view class="purchase-product" >
+                    <text>预购产品</text>
+                    <text>沙发、衣柜</text>
+                </view>
+                <view class="immediately-grab" >
+                    <view>立即抢单</view>
+                </view>
+            </view>
+            <!-- 用户置办时间/产品 end -->
+        </view>
+
+         <view class="grab-sheets_list" >
+            <!-- 用户信息 start -->
+            <view class="list_message">
+                <view class="user-image">
+                    <image class="" src="/images/grab-sheet/user-image.png"></image>
+                </view>
+                <view class="user-message">
+                    <text>王***</text>
+                    <text>184*****7941</text>
+                </view>
+                <view class="user-address">
+                    <text>地区</text>
+                    <text>佛山</text>
+                </view>
+            </view>
+            <!-- 用户信息 end -->
+
+            <!-- 用户置办时间/产品 start -->
+            <view class="details">
+                <view class="purchase-time" >
+                    <text>预计置办时间</text>
+                    <text>2019年10月</text>
+                </view>
+                <view class="purchase-product" >
+                    <text>预购产品</text>
+                    <text>沙发、衣柜</text>
+                </view>
+                <view class="immediately-grab" >
+                    <view>立即抢单</view>
+                </view>
+            </view>
+            <!-- 用户置办时间/产品 end -->
+        </view>
+
+         <view class="grab-sheets_list" >
+            <!-- 用户信息 start -->
+            <view class="list_message">
+                <view class="user-image">
+                    <image class="" src="/images/grab-sheet/user-image.png"></image>
+                </view>
+                <view class="user-message">
+                    <text>王***</text>
+                    <text>184*****7941</text>
+                </view>
+                <view class="user-address">
+                    <text>地区</text>
+                    <text>佛山</text>
+                </view>
+            </view>
+            <!-- 用户信息 end -->
+
+            <!-- 用户置办时间/产品 start -->
+            <view class="details">
+                <view class="purchase-time" >
+                    <text>预计置办时间</text>
+                    <text>2019年10月</text>
+                </view>
+                <view class="purchase-product" >
+                    <text>预购产品</text>
+                    <text>沙发、衣柜</text>
+                </view>
+                <view class="immediately-grab" >
+                    <view>立即抢单</view>
+                </view>
+            </view>
+            <!-- 用户置办时间/产品 end -->
+        </view>
+    </view>
+    
+</view>

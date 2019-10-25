@@ -1,0 +1,191 @@
+.container{
+  padding: 0;
+  margin: 0;
+  padding-bottom: -180rpx;
+}
+.bg{
+  height: 315rpx;
+  background-color: black;
+  border-radius: 0 0 1% 1%;
+  z-index: -1;
+}
+.bg-inner{
+  width: 750rpx;
+  height: 100rpx;
+  justify-content: space-between;
+}
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -210px;
+} */
+
+.userinfo-avatar {
+  float: left;
+  width: 92rpx;
+  height: 92rpx;
+  margin-top: 12rpx;
+  margin-left: 31rpx;
+  border-radius: 50%;
+}
+.nickname{
+  float: left;
+  margin-top: -30rpx;
+  margin-left: 20rpx;
+}
+.userinfo-nickname{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  line-height: 180rpx;
+}
+
+.no-get{
+  float: left;
+  width: 92rpx;
+  height: 34rpx;
+  margin-top: 42rpx;
+  margin-left: 20rpx;
+}
+
+.getVip{
+  width:690rpx;
+  height:434rpx;
+  margin: 0 auto;
+  margin-top: -180rpx;
+  background:rgba(253,253,253,1);
+  box-shadow:-1rpx 2rpx 20rpx 0rpx rgba(197,197,197,0.3);
+  border-radius:27rpx;
+}
+.title-getVip{
+  width: 526rpx;
+  height: 45rpx;
+  margin: 0 auto;
+  padding-top: 30rpx;
+  /* padding-bottom: 30rpx; */
+}
+.getVip image{
+  width: 526rpx;
+  height: 45rpx;
+}
+.icon_content{
+  display: flex;
+  margin-top: 50rpx;
+  justify-content: space-around;
+}
+.icon_content image{
+  width: 85rpx;
+  height: 84rpx;
+  margin: 0 auto;
+}
+.text{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.text1{
+  float: left;
+  margin-top:10rpx; 
+  margin-left: 40rpx;
+}
+.text2{
+  float: left;
+  margin-top:10rpx; 
+  margin-left: 70rpx;
+}
+.text3{
+  float: right;
+  margin-top:10rpx; 
+  margin-right: 22rpx;
+}
+.icon_content2{
+  display: flex;
+  margin-top: 80rpx;
+  justify-content: space-around;
+}
+.icon_content2 image{
+  width: 85rpx;
+  height: 84rpx;
+  margin: 0 auto;
+}
+.text4{
+  float: left;
+  margin-top:10rpx; 
+  margin-left: 40rpx;
+}
+.text5{
+  float: left;
+  margin-top:10rpx; 
+  margin-left: 70rpx;
+}
+.text6{
+  float: right;
+  margin-top:10rpx; 
+  margin-right: 42rpx;
+}
+.get-inmmedial{
+  width:690rpx;
+  height:167rpx;
+  margin: 20rpx auto;
+  background:rgba(255,255,255,1);
+  box-shadow:-1rpx 2rpx 20rpx 0rpx rgba(197,197,197,0.3);
+  border-radius:27rpx;
+}
+.get-inmmedial-inner{
+  width: 630rpx;
+  height: 121rpx;
+  margin-left: 30rpx;
+  padding-top: 21rpx;
+}
+.get-inmmedial image{
+  width: 630rpx;
+  height: 121rpx;
+}
+.condition{
+  width:690rpx;
+  height:395rpx;
+  margin: 0 auto;
+  background:rgba(255,255,255,1);
+  box-shadow:-1rpx 2rpx 20rpx 0rpx rgba(197,197,197,0.3);
+  border-radius:27rpx;
+}
+.condition-title{
+  display: inline-block;
+  padding-top: 29rpx;
+  margin-left: 30rpx;
+  width: 88rpx;
+  height: 31rpx;
+}
+.condition-title image{
+  width: 88rpx;
+  height: 31rpx;
+}
+.certification{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+  /* width: 631rpx;
+  height: 280rpx;
+  margin: 0 auto; */
+
+
+}
+.certification image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.center-text{
+  padding-top: 20rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(88,55,18,1);
+}
+.go-pay image{
+  margin-top: 17rpx;
+  width: 120rpx;
+  height: 44rpx;
+}

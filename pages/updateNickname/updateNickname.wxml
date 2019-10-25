@@ -1,0 +1,24 @@
+<!-- 头部标题 -->
+<view class="topTitle">
+  昵称设置为2-24个字符，不允许有空格
+</view>
+
+<!-- 昵称输入框 -->
+<view class="inputModule">
+  <input type="text" bindinput="getNickname" value="{{nickName}}"></input>
+</view>
+
+<!-- 提交按钮 -->
+
+<view class='container'>
+  <view class="logo">
+    <view class="logo_ground" bindtap="updateNickname">确认修改</view>
+  </view>
+</view>
+
+
+ 
+     
+
+ 
+

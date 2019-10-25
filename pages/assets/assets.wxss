@@ -1,0 +1,184 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+
+.big-box{
+  position: fixed;
+}
+/* 积分背景图 */
+.backgroundImg {
+background-color: white;
+    width: 750rpx;
+  height: 500rpx;
+  position: absolute;
+  z-index: -99999;
+  overflow-y: hidden;
+}
+
+.backgroundImg image {
+  width: 672rpx;
+  height: 420rpx;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+}
+
+/* 卡片文字 */
+.cardText_1 {
+  color: #fff;
+  font-size: 34rpx;
+  position: relative;
+  top: 60rpx;
+  left: 90rpx;
+}
+.fll{
+  font-size: 90rpx;
+}
+.cardText_2 {
+  width: 400rpx;
+  text-align: center;
+  margin-top: 110rpx;
+  margin-left: 180rpx;
+}
+
+.cardText_2 image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+
+.cardText_2 {
+  font-size: 50rpx;
+  color: #fff;
+}
+
+.cardText_3 {
+  position: relative;
+  top: 4rpx;
+  width: 650rpx;
+  height: 100rpx;
+  margin-top: 76rpx;
+  margin-left: 50rpx;
+}
+
+.cardText_4 {
+  width: 50%;
+  color: #333333;
+  font-size: 46rpx;
+  font-weight: bolder;
+  text-align: center;
+  float: left;
+  margin-top: 10rpx;
+}
+
+.cardText_5 {
+  width: 50%;
+  color: #666666;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+  float: left;
+  margin-top: 5rpx;
+}  
+
+/* 间隔线 */
+.line {
+  width: 750rpx;
+  border-bottom: 22rpx #f9f9f9 solid;
+  margin-top: 60rpx;
+}
+
+/* 下边大盒子 */
+.bottom-assets{
+  position: fixed;
+  top: 520rpx;
+  width: 750rpx;
+  height: 1000rpx;
+  background-color:white;
+  border-top: 1rpx #DADADA solid;
+}
+
+/* 跳转选项 */
+.assetsSkipModule {
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  padding: 0 4%;
+  font-size: 30rpx;
+  color: #353535;
+  border-bottom: 1rpx #DADADA solid;
+}
+
+.rightImg {
+  height: 60rpx;
+  padding-top: 10rpx;
+}
+
+.rightImg image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 点击提现弹框 */
+/* 限制弹窗 */
+.limitModule {
+  height: 250rpx;
+  width: 500rpx;
+  background-color: white;
+  z-index: 9999;
+  position:fixed;
+  left: 17%;
+  top: 30%;
+  -webkit-box-shadow: #353535 0px 0px 10px; 
+  -moz-box-shadow: #353535 0px 0px 10px; 
+  box-shadow: #353535 0px 0px 10px;
+}
+
+.limitText {
+  text-align: center;
+  font-size: 28rpx;
+  color: #353535;
+  line-height: 80rpx;
+}
+
+.limitButton {
+  width: 100%;
+  border-top: 1rpx solid #E1E1E1;
+  background-color: white;
+  color: #ffffff;
+  font-size: 28rpx;
+  /* text-align: center;
+  line-height: 80rpx; */
+  height: 80rpx;
+  position: absolute;
+  bottom: 0; 
+}
+.limitButton .bert{
+  width: 500rpx;
+  height: 80rpx;
+  /* background-color: yellow; */
+  color: black;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.ber{
+  border-right: 1rpx solid #E1E1E1;
+}
+.limitButton .ber{
+  float: left;
+  display: block;
+  width: 250rpx;
+  height: 80rpx;
+  /* background-color: yellow; */
+  color: black;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.delete{
+  margin-left: 460rpx;
+  margin-top: 20rpx;
+}
+.bottomButton{
+  position: fixed;
+  background-color: #ec9300;
+}

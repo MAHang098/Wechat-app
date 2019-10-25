@@ -1,0 +1,24 @@
+<view class="Addcard">
+
+<navigator url="/pages/Bank-card/Bank-card">
+  <view class="wenzi">添加银行卡</view>
+
+  <view class="jiant"><image src="/images/right.png"></image></view>
+</navigator>
+</view>
+
+<view class="hang"></view>
+
+<view class="z">
+  <view wx:for="{{Addcard}}" wx:key="id">
+    <view class="tu"><image src="/images/add-card.png"></image></view>
+    <view class="zi">
+      <view class="top">开户人：{{item.openPerson}}</view>
+      <view class="zhong">银行卡：{{item.cardNumber}}</view>
+      <view class="xia">开户行：{{item.openBank}}</view>
+    </view>
+
+    <!-- 横向 -->
+    <view class="hangto"></view>
+  </view>
+</view>

@@ -1,0 +1,89 @@
+<!-- 数据加载 -->
+<!-- <loading hidden="{{loading}}">正在加载</loading> -->
+
+<!-- 信息展示 -->
+<scroll-view scroll-x class="bg-white nav text-center fixed">
+  <view class="cu-item {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabNav}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+    {{tabNav[index]}}
+  </view>
+</scroll-view>
+<!-- 基本信息 -->
+<block wx:if="{{TabCur==0}}">
+  <view class="followMessageInput1">
+    <view class="followMessageInput_1">
+      <view class="fl msgName">客户姓名</view>
+      <view class="fl msgContent">{{name}}</view>
+    </view>
+    <view class="followMessageInput_1">
+      <view class="fl msgName">手机号码</view>
+      <view class="fl msgContent">{{phone}}</view>
+    </view>
+  </view>
+  <view class="followMessageInput">
+    <view class="followMessageInput_1">
+      <view class="fl msgName">意向产品</view>
+      <view class="fl msgContent">{{product}}</view>
+    </view>
+    <view class="followMessageInput_1">
+      <view class="fl msgName">预算</view>
+      <view class="fl msgContent">{{budget}}</view>
+    </view>
+  </view>
+
+  <view class="followMessageInput">
+    <view class="followMessageInput_2">
+      <label class="fl">备注信息</label>
+      <text class="fl">{{remark}}</text>
+    </view>
+  </view>
+  <view class="followMessageInput">
+    <view class="followMessageInput_2">
+      <label class="fl">推荐时间</label>
+      <text class="fl">{{create_time}}</text>
+    </view>
+  </view>
+
+  <view class="info-followMessage">
+    <view wx:for="{{feedBackArr}}" wx:key="">
+      <view wx:if="{{index == 0}}">
+        <view class="message1">
+          <view class="icon-vertify"></view>
+          <view class="fellback">平台反馈</view>
+          <view class="date">{{item.createTime}}</view>
+
+        </view>
+        <view class="message1">
+          <view class="text">{{item.feedback}}</view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class="message20">
+          <view class="message2">
+            <view class="icon-vertify"></view>
+            <view class="fellback">平台反馈</view>
+            <view class="date">{{item.createTime}}</view>
+          </view>
+          <view class="message1">
+            <view class="text20">{{item.feedback}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="message2">
+      <view class="icon-vertify2"></view>
+      <view class="fellback">平台反馈</view>
+      <view class="date">{{create_time}}</view>
+      <view class="text">经平台初步审核，该客户有需企求，请耐心等待</view>
+    </view> -->
+
+
+
+  </view>
+</block>
+<block wx:if="{{TabCur==1}}">
+  <textarea value="{{llbcontent}}" placeholder="请填写描述您的问题以便我们提供更好的帮助" bindinput="llbInput" class="text1"></textarea>
+  <view class="bottom">
+    <button bindtap="sendMessage">提交</button>
+  </view>
+</block>

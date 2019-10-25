@@ -1,0 +1,108 @@
+/* 页面标题 */
+.identityTitle {
+  width: 100%;
+  height: 120rpx;
+  text-align: center;
+  line-height: 120rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+}
+/* .top{
+  position: fixed;
+  width: 750rpx;
+} */
+/* 图片上传区域 */
+.uploadImgModule {
+  width: 750rpx;
+  height: 500rpx;
+  background-color: white;
+  text-align: center;
+  margin-bottom: 50rpx;
+  position: fixed;
+}
+
+.uploadImgModule image {
+  width:493rpx;
+  height:304rpx;
+}
+
+/* 信息标题 */
+.messageTitle {
+  position: fixed;
+  top: 500rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #f4f5f7;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color: #333333;
+
+}
+
+/* 信息输入区域 */
+.bottom{
+  width: 750rpx;
+  height: 1200rpx;
+  position: fixed;
+  top: 580rpx;
+  background-color: white;
+}
+.inputMessageModule {
+  width: 92%;
+  padding: 0 4%;
+  border-bottom: 1px #f3f3f3 solid;
+  height: 100rpx;
+}
+
+.messageName {
+  background-color: white;
+  width: 30%;
+  text-align: left;
+  float: left;
+  color: #353535;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+.messageContent input{
+  background-color: white;
+  width: 70%;
+  text-align: left;
+  float: left;
+  color: #666666;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+
+/* 提交按钮 */
+.identityMessageButtonModule {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #EC9300;
+  font-size: 36rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  }
+
+.identityMessageButtonModule2 {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #b4b4b3;
+  color: #fff;
+  font-size: 28rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}

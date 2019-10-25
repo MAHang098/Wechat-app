@@ -1,0 +1,76 @@
+<!-- 大盒子背景颜色 -->
+<view class="container-to">
+<!-- 导航栏部分 -->
+<view class="nav">
+  
+  <scroll-view scroll-x  scroll-left="{{menuIndex}}" >
+    <view id='#haha' class='all' style='width:{{menuWidth}}px;'>
+      <block wx:key="index" wx:for="{{lists}}"  wx:for-index="index">
+        <view id="my" class="{{index==aid?'menu':''}}" data-menuindex='{{index}}' data-id="{{item.brandTypeId}}" bindtap="jumpIndex">{{item.typeName}}</view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view class='top'>
+
+    <!-- 下拉点击箭头向上按钮弹框 -->
+    <view class="arrow" hidden="{{arrow}}" bindtap='bindarrow'>
+        <view  class="suu">丨</view> 
+        <image src="/images/arrow-top.png"></image>
+    </view>
+
+    <!-- 下拉框点击箭头向下 -->
+    <view class='top-selected' bindtap='bindShowMsg' hidden="{{arrowto}}">
+      <view  class="su">丨</view> 
+      <view class="xiala"><image src="/images/arrow.png"></image></view>
+    </view>
+
+     <!-- 下拉内容 -->
+    <view class="select_box" wx:if="{{select}}">
+     <view>
+      <view class="select_one" bindtap="mySelect" data-name="{{item}}">
+       <view class="nr-one">
+          <!-- <view class="one-a">全部</view>  -->
+          <view  wx:for="{{lists}}" wx:key="index" wx:for-index="index" bindtap="hidearrow">
+            <view class="one-a" data-menuindex='{{index}}' data-id="{{item.brandTypeId}}" bindtap="jumpIndex">{{ item.typeName }}</view>
+          </view>
+        </view>
+       </view>
+      </view>
+    </view>
+  
+  </view>
+
+</view>
+
+
+
+<!-- all-category图文部分 -->
+<!-- 大盒子全部 -->
+<view class="tuwen">
+
+  <view class="tuwen-l" wx:for="{{shopImgs}}" wx:key="brandId">
+    
+    <view class="images">
+    <image src="{{item.brandIcon}}"></image>
+    </view>
+    
+    <view class="wenzi-r">
+      <view class="wenzi-a">{{item.brandName}}</view>
+      <view class="wenzi-b">{{item.typeName}} 每个订单让利 {{item.brandRoyalty}} 个点。</view>
+      <view class="wenzi-c"><view class="love"><image src="/images/love.png"></image></view>
+      <text>{{item.brandLike}}</text>
+      <view class="r"  bindtap="torecommends" data-used_name="{{item.brandName}}">我要推荐 </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+
+</view>
+
+<!-- 底部提示 -->
+<!-- <view class='loading' hidden='{{!loadingMore}}'>正在加载更多</view>
+<view class='loading' hidden='{{!loadingOver}}'><text>一一一一一一</text>亲,已经到底了~<text>一一一一一一</text></view> -->

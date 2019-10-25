@@ -1,0 +1,63 @@
+<view class="big-box">
+<image class="image1" src="http://www.zhongjubang.com/api/upload/applet_resource/integral.png">
+</image>
+<view class="mission" bindtap="scoreBlock">
+
+    <image src="http://www.zhongjubang.com/api/upload/applet_resource/mission.png"></image>
+
+</view>
+<view class="center">
+  <view class="text">积分:</view>
+  <view class="text2">{{score}}</view>
+  <view class="detail" bindtap="integralDetail">
+  
+      <image src="http://www.zhongjubang.com/api/upload/applet_resource/detail.png"></image>
+
+  </view>
+</view>
+
+<view class="exchange" bindtap="scoreExchange">
+    <image src="/images/integral.png"></image>
+</view>
+
+<view class="intro">
+  <view class="title">规则说明</view>
+  <view class="text1">如何获得积分：</view>
+  <view class="text20">
+    <text decode="{{true}}" space="{{true}}">
+1、会员初次完成身份认证获得1000积分;
+2、会员初次完成实名认证获得1000积分；
+3、会员首次推荐成功邀请一名好友注册成功，获得1000
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积分;
+4、会员首次推荐一次意向客户获得1000积分；
+5、每日完成签到可获得更多积分；
+    </text>
+  </view>
+  <view class="text1">如何查询积分：</view>
+  <view class="text30">
+    <text decode="{{true}}" space="{{true}}">
+
+                            1、积分可以兑换现金，100积分兑换1元；
+2、在积分板块可进行积分兑换；
+3、时刻关注众居邦经纪人活动页面参与更多积分获得；
+                        
+    </text>
+  </view>
+  <view class="text1">注意事项：</view>
+  <view class="text40">
+    <text decode="{{true}}" space="{{true}}">
+
+      
+                            1、参与积分活动需遵守活动细节，众居邦可以根据积分
+     实际情况在法律允许的范围内，对本积分活动进行变动或
+     调整，相应变动或调整请及时查看活动页面；
+                  
+                            2、凡以上不正当手段（包括但不限于作弊、扰乱系统、
+     实施网络攻击）参与本次活动用户，众居邦有权终止其
+     参与活动，冻结其账户奖励资金。
+                        
+                        
+    </text>
+  </view>
+</view>
+</view>

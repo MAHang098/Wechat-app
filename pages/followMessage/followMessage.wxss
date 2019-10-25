@@ -1,0 +1,250 @@
+/* tabBar样式 */
+
+
+.lines-orange{
+  color: #EC9300;
+}
+/* 信息展示 */
+.followMessageInput1 {
+  margin-top: 96rpx;
+  height: 100rpx;
+  width: 100%;
+  padding: 0 4%;
+  border-bottom: 1rpx #e6e6e6 solid;
+  background-color: #FFF;
+}
+.followMessageInput {
+  
+  height: 100rpx;
+  width: 100%;
+  padding: 0 4%;
+  border-bottom: 1rpx #e6e6e6 solid;
+  background-color: #FFF;
+}
+
+
+.followMessageInput_1 {
+  font-size: 26rpx;
+  line-height: 100rpx;
+  height: 100rpx;
+  width: 50%;
+  float: left;
+}
+
+.msgName {
+  color: #353535;
+}
+
+.msgContent {
+  color: #b6b6b6;
+  margin-left: 20rpx;
+}
+
+.followMessageInput_2 {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+}
+
+.followMessageInput_2 label {
+  color: #353535;
+}
+
+.followMessageInput_2 text {
+  color: #b6b6b6;
+  margin-left: 20rpx;
+}
+/* 底部信息 */
+.info-followMessage{
+  padding-top: 40rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-top: 20rpx;
+  height: 793rpx;
+  background-color: #FFF;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(236,147,0,1);
+}
+.info-followMessage .icon-vertify{
+  float: left;
+  margin-right: 15rpx;
+  width:6rpx;
+  height:30rpx;
+  background:rgba(236,147,0,1);
+}
+.fellback{
+  float: left;
+}
+.date{
+  float: right;
+}
+.text{
+  float: left;
+  margin-left: 23rpx;
+  /* padding-top: 10rpx;
+  padding-left: 20rpx; */
+}
+.message1{
+  width: 700rpx;
+  height: 40rpx;
+} 
+.message20{
+  margin-top: 30rpx;
+}
+.message2{
+  width: 700rpx;
+  height: 40rpx;
+  color: #999999;
+}
+.text20{
+  float: left;
+  margin-left: 23rpx;
+  color: #999999;
+
+}
+.icon-vertify2{
+  background-color: #999999;
+  float: left;
+  margin-right: 15rpx;
+  width:6rpx;
+  height:30rpx;
+}
+/* 我要留言 */
+.text1{
+  margin-top: 96rpx;
+  padding: 20rpx;
+  width: 750rpx;
+  height:298rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  background-color: rgba(255,255,255,1);
+}
+.bottom{
+  width:750rpx;
+  height:793rpx;
+  margin-top: 20rpx;
+  padding-top: 30rpx;
+  background:rgba(255,255,255,1);
+}
+button{
+  width:690rpx;
+  height:88rpx;
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  background-color:rgba(236,147,0,1);
+  border: none;
+}
+
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+
+.scrollPage {
+  height: 100vh;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 40rpx 0px;
+  justify-content: space-between;
+}
+
+.nav-li {
+  padding: 30rpx;
+  border-radius: 12rpx;
+  width: 45%;
+  margin: 0 2.5% 40rpx;
+  background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-li::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: -10%;
+  border-radius: 10rpx;
+  opacity: 0.2;
+  transform: scale(0.9, 0.9);
+}
+
+.nav-li.cur {
+  color: #fff;
+  background: rgb(94, 185, 94);
+  box-shadow: 4rpx 4rpx 6rpx rgba(94, 185, 94, 0.4);
+}
+
+.nav-title {
+  font-size: 32rpx;
+  font-weight: 300;
+}
+
+.nav-title::first-letter {
+  font-size: 40rpx;
+  margin-right: 4rpx;
+}
+
+.nav-name {
+  font-size: 28rpx;
+  text-transform: Capitalize;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.nav-name::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40rpx;
+  height: 6rpx;
+  background: #fff;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+}
+
+.nav-name::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100rpx;
+  height: 1px;
+  background: #fff;
+  bottom: 0;
+  right: 40rpx;
+  opacity: 0.3;
+}
+
+.nav-name::first-letter {
+  font-weight: bold;
+  font-size: 36rpx;
+  margin-right: 1px;
+}
+
+.nav-li text {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  font-size: 52rpx;
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.text-light {
+  font-weight: 300;
+}

@@ -1,0 +1,82 @@
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+<!--index.wxml-->
+<!-- <image class="bg" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/banner.png"></image> -->
+<!-- 顶部信息 -->
+<view class="container">
+  <view class="userinfo">
+    <navigator url="/pages/interests/interests">
+      <image class="vip" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/vip.png"></image>
+    </navigator>
+      <image class="huanguan" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/huanguan.png"></image>
+      <image class="userinfo-avatar" src="{{head}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{tools.sub(nickName)}}</text>
+      <view class="level">
+        <view class="center-level">
+        <navigator class="text1" url="/pages/myRanked/myRanked">
+          {{level}}
+        </navigator>
+        
+        <image class="more" src="/images/manager/more.png"></image>
+        </view>
+        
+        <!-- <image class="more" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/more.png"></image> -->
+      </view>
+
+    
+
+  </view>
+  <!-- 菜单内容 -->
+  <view class="home-content">
+    <image 
+      class="image" bindtap="managertowebview"
+      src="http://www.zhongjubang.com/api/upload/applet_resource/manager/guide.png"
+      data-srcs="https://www.zhongjubang.com/resource.html?name=http://www.zhongjubang.com/api/upload/d15ce97f-58d2-46e5-ac86-c762ca104af5-1481.png">
+    </image>
+    <image 
+      bindtap="managertowebview" 
+      class="image" 
+      src="http://www.zhongjubang.com/api/upload/applet_resource/manager/make_money.png"    
+      data-srcs="https://www.zhongjubang.com/resource.html?name=http://www.zhongjubang.com/api/upload/9f5cda24-2333-44c8-b344-379748582f3d-1724.png">
+    </image>
+
+    <image bindtap="skipRecommend" class="image" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/command.png"></image>
+
+    <image class="image" bindtap="toInvitefriends" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/invite.png"></image>
+  </view>
+  <!-- banner图片 -->
+  <view class="agent_banner">
+    <image class="image1"  bindtap="toassets"    
+      src="http://www.zhongjubang.com/api/upload/applet_resource/manager/commission.png">
+    </image>
+    <image class="image1" bindtap="toranking" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/list.png"></image>
+    <image class="image1" bindtap="toscoreBlock" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/mission.png"></image>
+  </view>
+
+  <!-- 抢单 start -->
+  <view class="grab-sheet">
+    <image class="grab-sheet_img" src="/images/manager/grab-sheet.png"></image>
+    <view class="page-section page-section-spacing swiper">
+      <swiper autoplay="{{autoplay}}" interval="3000" duration="500" vertical="true" circular="true" class="swiper-grab">
+        <block wx:for="{{grabList}}" wx:key="index">
+          <swiper-item  >
+            <text class="swiper-item">{{item.name}}</text>
+            <text class="swiper-item">{{item.phone}}</text>
+            <text class="swiper-item">{{item.type}}</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  
+  <!-- 最新活动 -->
+  <view class="action">
+    <image class="image2" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/action.png"></image>
+
+  </view>
+  <view class="action_image">
+    <image bindtap="managertowebview" class="image3" src="http://www.zhongjubang.com/api/upload/活动1.png"
+      data-srcs="https://www.zhongjubang.com/resource.html?name=http://www.zhongjubang.com/api/upload/lALPBE1XYa8lbI3NBkDNAu4_750_1600.png"></image>
+    <image bindtap="managertowebview" class="image4" src="http://www.zhongjubang.com/api/upload/活动2.png"
+      data-srcs="https://www.zhongjubang.com/resource.html?name=http://www.zhongjubang.com/api/upload/lALPBE1XYa9pAk_NBkDNAu4_750_1600.png"></image>
+  </view>
+</view>

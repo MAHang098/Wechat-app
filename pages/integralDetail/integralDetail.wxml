@@ -1,0 +1,11 @@
+<view class="big-box">
+<view wx:for="{{arrayLog}}">
+  <view class="note">
+    <view>
+      <view class="signe">{{item.integralLog}}</view>
+      <view class="date">{{item.createTime}}</view>
+    </view>
+    <view class="integral">{{item.integralValue}}积分</view>
+  </view>
+</view>
+</view>

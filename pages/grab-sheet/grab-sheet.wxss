@@ -1,0 +1,131 @@
+/* pages/grab-sheet/grab-sheet.wxss */
+.grab-sheets {
+    background: #F9F9F9;
+    height: 100%;
+    font-family:PingFang SC;
+    font-weight:500;
+}
+.grab-sheets_header {
+    width: 100%;
+    height: 94rpx;
+    line-height: 94rpx;
+    background: #fff;
+    color: #333333;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #DADADA;
+    position: fixed;
+    z-index: 10;
+}
+.grab-sheets_header view {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-size: 32rpx;
+}
+.grab-sheets_header view:first-child {
+    border-right: 1px solid  #DADADA;
+}
+.grab-sheets_header view text {
+    width: 130rpx;
+    display: inline-block;
+}
+.in {
+    color: #EC9300;
+    border-bottom: 2px solid #EC9300;
+}
+.userList {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    box-shadow:0px 0px 4px 0px rgba(228,228,228,0.73);
+    padding-top: 94rpx;
+}
+.grab-sheets_list {
+    width: 690rpx;
+    height: auto;
+    background: #fff;
+    margin-top: 20rpx;
+}
+.list_message {
+    width: 100%;
+    height: 138rpx;
+    border-bottom: 1px solid #DADADA;
+    box-sizing: border-box;
+    padding: 17rpx 37rpx 16rpx 19rpx;
+}
+.list_message view, .details view {
+    float: left;
+}
+.grab-sheets_list view text {
+    display: block;
+}
+.list_message view:last-child {
+    float: right;
+}
+.user-image image {
+    width: 106rpx;
+    height: 106rpx;
+    margin-right: 45rpx;
+}
+.user-message, .user-address, .purchase-time, .purchase-product {
+    color: #333333;
+    font-size: 28rpx;
+
+}
+.user-message text:first-child, .user-address text:first-child {
+    height: 65rpx;
+    line-height: 45rpx;
+}
+.user-address text:first-child {
+    color: #666666
+}
+
+.details {
+    height: 123rpx;
+}
+.details view {
+    height: 100%;
+}
+.purchase-time, .purchase-product {
+    height: 50%;
+    border-right: 1px solid #DADADA;
+    text-align: center;
+}
+.purchase-time, .immediately-grab {
+    width: 210rpx;
+}
+.purchase-time text:first-child {
+    width: 168rpx;
+    border-bottom: 1px solid #DADADA;
+    margin: 0 auto
+}
+.purchase-product text:first-child {
+    width: 167rpx;
+    border-bottom: 1px solid #DADADA;
+    margin: 0 auto
+}
+.purchase-product {
+    width: 265rpx;
+}
+.details text:first-child {
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.details text:last-child {
+    color: #333333;
+    height: 63rpx;
+    margin-top: 5rpx;
+}
+.immediately-grab view {
+    width: 152rpx;
+    height: 58rpx;
+    line-height: 58rpx;
+    background: #EC9300;
+    border-radius: 29rpx;
+    color: #fff;
+    font-size: 30rpx;
+    margin: 15%;
+    text-align: center;
+}

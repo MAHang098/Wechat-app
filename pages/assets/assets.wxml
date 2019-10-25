@@ -1,0 +1,78 @@
+<view class="big-box">
+<!-- 积分背景图 -->
+<view class="backgroundImg">
+  <image src="https://www.zhongjubang.com/api/upload/applet_resource/lALPBE1XYbFkNSjNAaPNAp8_671_419.png"></image>
+</view>
+
+<!-- 卡片文字 -->
+<view class="cardText_1">
+  总资产（元）
+</view>
+<view class="cardText_2">
+  <text class="fll">¥{{cost}}</text>
+</view>
+<view class="cardText_3">
+  <view class="cardText_4">{{cost}}</view>
+  <view class="cardText_4">{{freeze}}</view>
+  <view class="cardText_5">可提现金额</view>
+  <view class="cardText_5">结算中</view>
+</view>
+
+<!-- 间隔线 -->
+<!-- <view class="line"></view> -->
+</view>
+
+<!-- 跳转选项 -->
+<view class="bottom-assets">
+
+  <view class="assetsSkipModule" bindtap="earnings">
+      <view class="skipName fl">收益明细</view>
+      <view class="rightImg fr">
+        <image src="/images/right.png"></image>
+      </view>
+  </view>
+
+
+<view bindtap="toAddCard">
+<!-- <navigator url="/pages/Add-card/Add-card"> -->
+  <view class="assetsSkipModule">
+    <view class="skipName fl">银行卡绑定</view>
+    <view class="rightImg fr">
+      <image src="/images/right.png"></image>
+    </view>
+  </view>
+</view>
+  <view class="assetsSkipModule" bindtap="Paytreasure">
+    <view class="skipName fl">支付宝绑定</view>
+    <view class="rightImg fr">
+      <image src="/images/right.png"></image>
+    </view>
+  </view>
+
+</view>
+<!-- 遮罩层 -->
+   <!-- <view class="mask" hidden="{{maskBlock}}"></view> -->
+
+    <!-- 限制弹窗 -->
+    <view class="limitModule" hidden="{{limitBlock}}">
+      <view class="delete" bindtap="delete">X</view>
+      <view class="limitText">
+        请先绑定您要提现的账户
+      </view>
+      
+      <view class="limitButton">
+        <navigator url="/pages/Pay-treasure/Pay-treasure">
+          <view class="ber">绑定支付宝</view>
+        </navigator>
+          <navigator url="/pages/Bank-card/Bank-card">
+          <view class="bert">绑定银行卡</view>
+          
+          </navigator>
+      </view>
+      
+    </view>
+<!-- 提现按钮 --> 
+
+  <view class="bottomButton" bindtap="bun">
+    提现
+  </view>

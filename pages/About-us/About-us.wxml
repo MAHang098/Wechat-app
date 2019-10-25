@@ -1,0 +1,26 @@
+<view class="quanbu">
+
+<view class="logo">
+  <image src="/images/logo.png"></image>
+</view>
+
+<!-- 横线 -->
+<view class="hengx"></view>
+
+<view class="wenzi"><view class="l">当前版本</view> <view class="r">V2.0</view> </view>
+
+<!-- 横线 -->
+<view class="hengx"></view>
+
+<view class="wenzi-to" bindtap="managertowebview" data-srcs="https://www.zhongjubang.com/resource.html?name=https://www.zhongjubang.com/api/upload/lALPBE1XYa-CXdPNBkDNAu4_750_1600.png">
+  <view class="l">关于众居邦</view> 
+
+  <view class="r-to">
+    <image src="/images/right.png"></image>
+  </view> 
+</view>
+
+
+<view class="hengx"></view>
+
+</view>

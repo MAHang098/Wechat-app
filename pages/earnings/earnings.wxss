@@ -1,0 +1,67 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+
+
+.earnings{
+height: 156rpx;
+width: 750rpx;
+background-color: white;
+margin-bottom: 20rpx;
+}
+.image{
+  float: left;
+  width: 90rpx;
+  height: 160rpx;
+  /* background-color: yellow; */
+  padding-top: 34rpx;
+  margin-left: 40rpx;
+}
+image{
+  width: 88rpx;
+  height: 88rpx;
+}
+
+
+.zi{
+  float: left;
+  width: 400rpx;
+  height: 160rpx;
+  margin-left: 26rpx;
+  /* background-color: green; */
+}
+.top{
+  width: 200rpx;
+  padding-top: 22rpx;
+  font-size: 28rpx;
+  color: #333333;
+  /* background-color: white; */
+}
+.zhong{
+  width: 100rpx;
+  padding-top: 4rpx;
+   font-size: 24rpx;
+   color: #333333;
+   /* background-color: white; */
+}
+.xia{
+  padding-top: 8rpx;
+    font-size: 22rpx;
+    color: #999999;
+}
+.nian{
+  float: left;
+}
+.shi{
+  width: 350rpx;
+  float: left;
+}
+.right{
+  float: left;
+  width: 100rpx;
+  height: 100rpx;
+  /* background-color: pink; */
+  font-size: 52rpx;
+  color: #EC9300;
+  margin-top: 46rpx;
+  margin-left: 64rpx;
+}

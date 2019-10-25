@@ -1,0 +1,137 @@
+/* 筛选按钮 */
+.chooseButton {
+  height: 100rpx;
+  width: 96%;
+  padding-left: 4%;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #353535;
+  border-bottom: 5px #e6e6e6 solid;
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  background-color: #ffffff;
+}
+
+.chooseButton image {
+  height: 40rpx;
+  width: 40rpx;
+  margin-top: 30rpx;
+  margin-right: 20rpx;
+}
+
+/* 列表显示 */
+.myRecommendList {
+  height: 146rpx;
+  width: 96%;
+  border-bottom: 1rpx #e6e6e6 solid;
+  padding-left: 4%;
+}
+
+.listText {
+  font-size: 26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  width: 480rpx;
+  margin-top: 18rpx;
+}
+
+
+.listText_2 {
+  margin-top: 4rpx;
+}
+
+/* .iconImg {
+  margin-top: 
+} */
+
+.iconImg image {
+  width: 122rpx;
+  height: 104rpx;
+  margin-top: 25rpx;
+  margin-left: 50rpx;
+}
+
+.iconImg_2 image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 55rpx;
+  margin-right: 20rpx;
+}
+
+/* 筛选区域 */
+.screenContainer {
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 9999;
+  top: 0
+}
+.screenModule {
+  width: 92%;
+  padding: 0 4%;
+  font-size: 26rpx;
+  color: #353535;
+}
+
+.screenName {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+}
+
+.screenModule label {
+  margin-right: 50rpx;
+  line-height: 80rpx;
+}
+
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.inputStyle {
+  margin-top: 20rpx;
+  padding-left: 4%;
+  height: 70rpx;
+  border: 1px #cdcdcd solid;
+  width: 96%;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}
+
+.inputStyle input {
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.buttonModule {
+  margin-top: 40rpx;
+  width: 100%;
+}
+
+.buttonStyle {
+  width: 50%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #353535;
+} 
+
+ 
+
+
+
+/* 微信小程序源码 */
+label {
+  display: inline-block;
+  min-width: 270rpx;
+  margin-right: 20rpx;
+}
+form{
+  width: 100%;
+}
+.picker-text {
+  margin-left: 20rpx;
+  position: relative;
+}

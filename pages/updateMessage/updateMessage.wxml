@@ -1,0 +1,108 @@
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+<!-- 数据加载 -->
+<!-- <loading hidden="{{loading}}">正在加载</loading> -->
+
+<view class="big">
+
+<!-- 个人信息 —— 头像 -->
+<view class="messageIcon">
+  <view class="messageName">
+    修改头像
+  </view>
+  <!-- <view wx:if="{{business_card_check_status == 3}}">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{head}}" mode="cover"></image>
+  </view>
+  <view wx:else>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{head}}" mode="cover"></image>
+  </view> -->
+  <image bindtap="chooseImg" class="userinfo-avatar" src="{{head}}" mode="cover"></image>
+  <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
+  <!-- <block wx:else> -->
+    <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{head}}" mode="cover"></image> -->
+    <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+  <!-- </block> -->
+  <view class="headPortrait">
+
+  </view>
+  <view class="rightImg">
+    <image class="image_right" src="/images/right.png"></image>
+  </view>
+  <view class="clear"></view>
+</view>
+
+<!-- 个人信息 —— 内容 -->
+<navigator url="/pages/updateNickname/updateNickname">
+  <view class="messageModule">
+    <view class="messageTitle">
+      昵称
+    </view>
+    <view class="messageContent">
+      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
+      <!-- <block wx:else> -->
+        <view class="text10">
+          <text class="userinfo-nickname">{{tools.sub(nickName)}}</text>
+        </view>
+
+      <!-- </block> -->
+    </view>
+    <view class="messageRight">
+      <image src="../../images/right.png"></image>
+    </view>
+    <view class="clear"></view>
+  </view>
+</navigator>
+<!-- 性别 -->
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <view class="messageModule">
+    <template is="head" data="{{title: 'picker'}}" />
+
+    <view class="messageTitle weui-input">性别
+      <text class="gender">{{array[index]}}</text> </view>
+
+    <view class="messageRight">
+      <image src="../../images/right.png"></image>
+    </view>
+
+  </view>
+  <view class="clear"></view>
+</picker>
+
+<!-- 职业 -->
+<picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+  <view class="messageModule">
+
+    <template is="head" data="{{title: 'picker'}}" />
+
+    <view class="messageTitle weui-input">职业
+      <text class="gender">{{array2[index2]}}</text> </view>
+
+    <view class="messageRight">
+      <image src="../../images/right.png"></image>
+    </view>
+
+  </view>
+  <view class="clear"></view>
+</picker>
+
+
+
+<!-- 实名认证 -->
+<navigator url="/pages/IDCard/IDCard">
+  <view class="messageModule">
+    <view class="messageTitle">
+      实名认证
+    </view>
+    <view wx:if="{{id_card_check_status == 2}}">
+      <view class="messageContent">
+        <text class="messageTextColor">已认证</text>
+      </view>
+    </view>
+
+    <view class="messageRight">
+      <image src="../../images/right.png"></image>
+    </view>
+    <view class="clear"></view>
+  </view>
+</navigator>
+
+</view>
