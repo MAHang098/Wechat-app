@@ -1,6 +1,6 @@
 page{
  color: #F9F9F9;
- height: 796rpx;
+ height: 996rpx;
 }
 .bg{
   position: fix;

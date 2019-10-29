@@ -10,8 +10,11 @@
 <!-- <image  bindtap="screenBlock" class="button2" src="/images/invite/button-facetoface.png"></image> -->
 
 <view class="myInvite">
-  <view class="number-person">0</view>
-  <view class="person">人</view>
+  <view class="myInvite-content">
+    <view class="number-person">1000</view>
+    <view class="person">人</view>
+  </view>
+  
   <view class="text-person">成功邀请人数</view>
 
   <view class="vertical"></view>
@@ -53,4 +56,10 @@
 <!-- 面对面邀请 -->
 <view hidden="{{screenBlock}}">
 lqllqll
+</view>
+<!-- 二维码 -->
+<view>
+   <view class='img'>
+    <image src='data:image/png;base64,{{src2}}'></image>
+   </view>
 </view>
