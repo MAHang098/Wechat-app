@@ -27,7 +27,6 @@ Page({
     sex: "",
     occupation: "",
     mask: true,
-    pid: ""
   },
   changeInput(e) {
     let changed = {};
@@ -69,7 +68,7 @@ Page({
       var that = this;
       //发送短信的时候直接校验手机号码是否注册，没办法家里没条件
       wx.request({
-        url: app.globalData.domain+'/applet/applet/getuserphonepdbind',
+        url: 'https://www.zhongjubang.com/api/applet/applet/getuserphonepdbind',
         method: "Post",
         data: {
           phone: that.data.phone
@@ -82,7 +81,7 @@ Page({
 
             if (that.data.btntext === "获取验证码") {
               wx.request({
-                url: app.globalData.domain+"/public/public/sendverificationcode",
+                url: "https://www.zhongjubang.com/api/public/public/sendverificationcode",
                 method: "Post",
                 data: {
                   type: "1",
@@ -156,14 +155,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
-    var th = this;
-    console.log(options);
-    console.log('options', options)
-    console.log(options.pid)
-    th.setData({
-      pid: options.pid
-    })
 
   },
 
@@ -199,7 +190,7 @@ Page({
         })
       } else {
         /**需要修改的代码 */
-        console.log(that.data.pid)
+
         //判断验证码是否正确
         wx.request({
           url: app.globalData.domain + "public/public/checkverificationcode",
@@ -236,9 +227,7 @@ Page({
                       occupation: that.data.occupation,
                       sex: that.data.userInfo.gender,
                       nickName: that.data.userInfo.nickName,
-                      head: that.data.userInfo.avatarUrl,
-                      //需要添加
-                      pid: that.data.pid
+                      head: that.data.userInfo.avatarUrl
                     },
                     header: {
                       "Content-Type": "application/x-www-form-urlencoded"

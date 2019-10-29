@@ -10,6 +10,7 @@ Page({
     maskBlock: true, //遮罩层显示
     limitBlock: true, //限制弹窗显示
 
+    domain: '',  // 域名
     loading: false,  // 数据加载
 
     // 1.0余额
@@ -21,7 +22,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    // 全局
+    this.setData({
+      domain: app.globalData.domain
+    })
 
   },
 
@@ -39,7 +43,7 @@ Page({
         })
 
         wx.request({
-          url: app.globalData.domain + '/applet/applet/getappletuserscore',
+          url: that.data.domain + '/applet/applet/getappletuserscore',
           method: 'POST',
           data: {
             userId: res.data,
@@ -126,7 +130,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: app.globalData.domain + '/applet/applet/getbindbankcardalipaypd',
+          url: that.data.domain + '/applet/applet/getbindbankcardalipaypd',
           method: 'POST',
           data: {
             userId: res.data,
@@ -186,7 +190,7 @@ Page({
         })
 
         wx.request({
-          url: app.globalData.domain+'/applet/applet//getbindbankcardalipaypd',
+          url: 'https://www.zhongjubang.com/api/applet/applet//getbindbankcardalipaypd',
           method: 'POST',
           data: {
             userId: res.data,

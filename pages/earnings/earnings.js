@@ -14,7 +14,11 @@ Page({
    */
   onLoad: function (options) {
     console.log(1)
-    
+    // 全局接口
+    this.setData({
+      domain: app.globalData.domain
+    })
+    var domain = this.data.domain;
 
 // 封装收益明细填充
     this.addCar()
@@ -33,7 +37,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: app.globalData.domain + '/applet/applet/getuserbalancelogbyuserid',
+          url: that.data.domain + '/applet/applet/getuserbalancelogbyuserid',
           method: 'POST',
           data: {
             userId: res.data,

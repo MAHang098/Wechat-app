@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    domain: '',  // 域名
     loading: false,  // 数据加载
     idCardImgPathFront: "https://www.zhongjubang.com/api/upload/applet_resource/idCardFront.png",  //身份证图片正面
     idCardImgPathBack: "https://www.zhongjubang.com/api/upload/applet_resource/idCardBack.png",  //身份证图片反面
@@ -25,8 +26,10 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      loading: true
+      loading: true,
+      domain: app.globalData.domain
     })
+    var domain = this.data.domain;
     var that = this;
     // 数据加载,判断是否已经名片认证
     wx.getStorage({
@@ -38,7 +41,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: app.globalData.domain + + '/applet/applet/getappletuserbusiness',
+          url: domain + '/applet/applet/getappletuserbusiness',
           method: "POST",
           data: {
             userId: userId
@@ -82,7 +85,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: app.globalData.domain + '/applet/applet/getappletuseridentity',
+          url: domain + '/applet/applet/getappletuseridentity',
           method: "POST",
           data: {
             userId: userId,
@@ -259,7 +262,7 @@ Page({
             userId: userId
           })
           wx.request({
-            url: app.globalData.domain + '/applet/applet/updateuserdetails',
+            url: domain + '/applet/applet/updateuserdetails',
             method: "POST",
             data: {
               userId: userId,
@@ -288,9 +291,10 @@ Page({
    * 图片上传（正面）
    */
   uploadImgFront: function (uploadIdCardImgPathFront, uploadIdCardImgPathBack, openId) {
+    var domain = this.data.domain;
     var that = this;
     wx.uploadFile({
-      url: app.globalData.domain + '/Home/Index/idCardUpload',
+      url: domain + '/Home/Index/idCardUpload',
       filePath: uploadIdCardImgPathFront,
       name: 'file',
       formData: {
@@ -312,7 +316,7 @@ Page({
     var domain = this.data.domain;
     var that = this;
     wx.uploadFile({
-      url: app.globalData.domain + '/Home/Index/idCardUpload',
+      url: domain + '/Home/Index/idCardUpload',
       filePath: uploadIdCardImgPathBack,
       name: 'file',
       formData: {
