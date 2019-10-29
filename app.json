@@ -1,10 +1,12 @@
 {
   "pages": [
     "pages/manager/manager",
+    "pages/invite/invite",
+    "pages/integral/integral",
+    "pages/grab-order/grab-order",
     "pages/index/index",
     "pages/grab-order/grab-order",
     "pages/orderDetails/orderDetails",
-    "pages/invite/invite",
     "pages/grab-sheet/grab-sheet",
     "pages/history-order/history-order",
     "pages/login/login",
@@ -24,7 +26,7 @@
     "pages/interests/interests",
     "pages/recommend/recommend",
     "pages/web-view/web-view",
-    "pages/integral/integral",
+    
     "pages/Sign-in/Sign-in",
     "pages/myRanked/myRanked",
     "pages/scoreExchange/scoreExchange",

@@ -9,13 +9,15 @@ Page({
     screenBlock: true,
     userId: '',
     inviteList: [
-      {name: '张三', state: '未认证', reward: '+20'},
-      {name: '李四', state: '已认证', reward: '+80'},
-      {name: '王五', state: '未认证', reward: '+60'},
-      {name: '大壮', state: '已认证', reward: '+30'},
-      {name: '小明', state: '未认证', reward: '+50'},
-      {name: '小红', state: '已认证', reward: '+40'}
-    ]
+      // {name: '张三', state: '未认证', reward: '+20'},
+      // {name: '李四', state: '已认证', reward: '+80'},
+      // {name: '王五', state: '未认证', reward: '+60'},
+      // {name: '大壮', state: '已认证', reward: '+30'},
+      // {name: '小明', state: '未认证', reward: '+50'},
+      // {name: '小红', state: '已认证', reward: '+40'}
+    ],
+    inviteCount: '',
+    inviteMoney: ''
   },
 
   /**
@@ -81,7 +83,56 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this
+    wx.getStorage({
+      key: 'userId',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          userId: res.data
+        })
+        // 获取邀请人数和累计奖励
+        wx.request({
+          //注意：下面的access_token值可以不可以直接复制使用，需要自己请求获取
+          url: app.globalData.domain +'/applet/applet/getuserinvitelistcost',
+          data: {
+            userId: res.data
+          },
+          method: "POST",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          success(res) {
+            console.log(res.data.data.inviteCount)
+            that.setData({
+              inviteCount: res.data.data.inviteCount,
+              inviteMoney: res.data.data.inviteMoney
+            })
+          }
+          
+        })
+        // 获取奖励明细
+        wx.request({
+          //注意：下面的access_token值可以不可以直接复制使用，需要自己请求获取
+          url: app.globalData.domain + '/applet/applet/getuserinvitelist',
+          data: {
+            userId: res.data
+          },
+          method: "POST",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          success(res) {
+            console.log(res)
+            console.log(res.data.data.dataList)
+            that.setData({
+              inviteList: res.data.data.dataList
+            })
+          }
 
+        })
+      }
+    })
   },
 
   /**
