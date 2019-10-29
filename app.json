@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/integral/integral",
     "pages/invite/invite",
     "pages/grab-order/grab-order",
     "pages/grab-sheet/grab-sheet",
@@ -22,7 +23,7 @@
     "pages/interests/interests",
     "pages/recommend/recommend",
     "pages/web-view/web-view",
-    "pages/integral/integral",
+    
     "pages/Sign-in/Sign-in",
     "pages/myRanked/myRanked",
     "pages/scoreExchange/scoreExchange",
