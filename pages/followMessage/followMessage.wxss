@@ -248,8 +248,3 @@ button{
 .text-light {
   font-weight: 300;
 }
-
-.nav .cu-item{
-  width: 50%;
-  text-align: center;
-}

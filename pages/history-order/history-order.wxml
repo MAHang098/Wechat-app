@@ -1,0 +1,17 @@
+<!--pages/grab-sheet/grab-sheet.wxml-->
+
+<!-- 历史订单 -->
+<view class="history-order" >
+    <!-- 历史订单 start  -->
+    <view class="order-list" >
+      <view class="order" wx:for="{{historyList}}" wx:for-index="index"  wx:key="key" wx:for-item="item">
+          <view class="order-left">
+              <text class="order-name">客户姓名：{{item.contacts}}</text>
+              <text class="order-tel">联系电话：{{item.phone}}</text>
+          </view>
+          <view class="order-right">{{item.COUNT < 6 ? "抢单成功" : "以保护"}}</view>
+      </view>
+        
+    </view>
+    <!-- 历史订单 end  -->
+</view>

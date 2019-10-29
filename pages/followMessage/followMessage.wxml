@@ -81,6 +81,8 @@
 
   </view>
 </block>
+
+<!-- 我要留言 start -->
 <block wx:if="{{TabCur==1}}">
   <textarea value="{{llbcontent}}" placeholder="请填写描述您的问题以便我们提供更好的帮助" bindinput="llbInput" class="text1"></textarea>
   <view class="bottom">

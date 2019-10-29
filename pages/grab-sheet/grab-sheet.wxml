@@ -4,28 +4,26 @@
 <view class="grab-sheets" >
     <!-- 今日抢单/个人中心 start -->
     <view class="grab-sheets_header">
-        <view>
-            <text class="in">今日抢单</text>
-        </view>
-        <view><text>个人中心</text></view>
+        <view bindtap='checkCurrent'><text class="{{currentData == 0 ? 'in' : ''}}" data-current = "0" >今日抢单</text></view>
+        <view bindtap='checkCurrent'><text class="{{currentData == 1 ? 'in' : ''}}" data-current = "1">个人中心</text></view>
     </view>
     <!-- 今日抢单/个人中心 end -->
 
     <!-- 抢单列表 start -->
-    <view class="userList">
-        <view class="grab-sheets_list" >
+    <view class="userList" hidden="{{currentData != 0}}">
+        <view class="grab-sheets_list" wx:for="{{grabList}}" wx:for-index="index"  wx:key="key" wx:for-item="item">
             <!-- 用户信息 start -->
             <view class="list_message">
                 <view class="user-image">
                     <image class="" src="/images/grab-sheet/user-image.png"></image>
                 </view>
                 <view class="user-message">
-                    <text>王***</text>
-                    <text>184*****7941</text>
+                    <text>{{item.contacts}}</text>
+                    <text>{{item.phone}}</text>
                 </view>
                 <view class="user-address">
                     <text>地区</text>
-                    <text>佛山</text>
+                    <text>{{item.region}}</text>
                 </view>
             </view>
             <!-- 用户信息 end -->
@@ -34,120 +32,54 @@
             <view class="details">
                 <view class="purchase-time" >
                     <text>预计置办时间</text>
-                    <text>2019年10月</text>
+                    <text>{{item.preorderTime}}</text>
                 </view>
                 <view class="purchase-product" >
                     <text>预购产品</text>
-                    <text>沙发、衣柜</text>
+                    <text>{{item.preOrderedProducts}}</text>
                 </view>
                 <view class="immediately-grab" >
-                    <view>立即抢单</view>
-                </view>
-            </view>
-            <!-- 用户置办时间/产品 end -->
-        </view>
-
-         <view class="grab-sheets_list" >
-            <!-- 用户信息 start -->
-            <view class="list_message">
-                <view class="user-image">
-                    <image class="" src="/images/grab-sheet/user-image.png"></image>
-                </view>
-                <view class="user-message">
-                    <text>王***</text>
-                    <text>184*****7941</text>
-                </view>
-                <view class="user-address">
-                    <text>地区</text>
-                    <text>佛山</text>
-                </view>
-            </view>
-            <!-- 用户信息 end -->
-
-            <!-- 用户置办时间/产品 start -->
-            <view class="details">
-                <view class="purchase-time" >
-                    <text>预计置办时间</text>
-                    <text>2019年10月</text>
-                </view>
-                <view class="purchase-product" >
-                    <text>预购产品</text>
-                    <text>沙发、衣柜</text>
-                </view>
-                <view class="immediately-grab" >
-                    <view>立即抢单</view>
-                </view>
-            </view>
-            <!-- 用户置办时间/产品 end -->
-        </view>
-
-         <view class="grab-sheets_list" >
-            <!-- 用户信息 start -->
-            <view class="list_message">
-                <view class="user-image">
-                    <image class="" src="/images/grab-sheet/user-image.png"></image>
-                </view>
-                <view class="user-message">
-                    <text>王***</text>
-                    <text>184*****7941</text>
-                </view>
-                <view class="user-address">
-                    <text>地区</text>
-                    <text>佛山</text>
-                </view>
-            </view>
-            <!-- 用户信息 end -->
-
-            <!-- 用户置办时间/产品 start -->
-            <view class="details">
-                <view class="purchase-time" >
-                    <text>预计置办时间</text>
-                    <text>2019年10月</text>
-                </view>
-                <view class="purchase-product" >
-                    <text>预购产品</text>
-                    <text>沙发、衣柜</text>
-                </view>
-                <view class="immediately-grab" >
-                    <view>立即抢单</view>
-                </view>
-            </view>
-            <!-- 用户置办时间/产品 end -->
-        </view>
-
-         <view class="grab-sheets_list" >
-            <!-- 用户信息 start -->
-            <view class="list_message">
-                <view class="user-image">
-                    <image class="" src="/images/grab-sheet/user-image.png"></image>
-                </view>
-                <view class="user-message">
-                    <text>王***</text>
-                    <text>184*****7941</text>
-                </view>
-                <view class="user-address">
-                    <text>地区</text>
-                    <text>佛山</text>
-                </view>
-            </view>
-            <!-- 用户信息 end -->
-
-            <!-- 用户置办时间/产品 start -->
-            <view class="details">
-                <view class="purchase-time" >
-                    <text>预计置办时间</text>
-                    <text>2019年10月</text>
-                </view>
-                <view class="purchase-product" >
-                    <text>预购产品</text>
-                    <text>沙发、衣柜</text>
-                </view>
-                <view class="immediately-grab" >
-                    <view>立即抢单</view>
+                    <view bindtap="sheetGrab" data-id="{{item.grabSheetId}}" wx:if="{{visible}}">立即抢单</view>
+                    <view class="grabOk" wx:else >抢单成功</view>
                 </view>
             </view>
             <!-- 用户置办时间/产品 end -->
         </view>
     </view>
+    <!-- 抢单列表 end -->
     
+    <!-- 抢单列表 模态窗 start -->
+    <view class="modal-mask" bindtap="hideModal"  wx:if="{{isShowModal}}"></view>
+    <view class="modal-dialog" wx:if="{{isShowModal}}">
+            <text> 您是否要抢购此订单？</text>
+            <button class="btn isOK" bindtap="isOKOrder">是</button>
+            <button class="btn" bindtap="hideModal">否</button>
+    </view>
+    <!-- 抢单列表 模态窗 end -->
+
+    <!-- 个人中心 start  -->
+    <view class="personal" hidden="{{currentData != 1}}">
+        <view class="personal-list order" ontap="goSheetOrder">
+            <view class="order-left left">已抢订单（6位）</view>
+            <view class="order-right right"><image src="/images/grab-sheet/personal-arrow.png"></image></view>
+        </view>
+        <view class="personal-list history-order" ontap="goHistoryOrder">
+            <view class="order-left left">历史订单</view>
+            <view class="order-right right"><image src="/images/grab-sheet/personal-arrow.png"></image></view>
+        </view>
+        <view class="personal-list member-time">
+            <view class="order-left left">会员时间</view>
+            <view class="order-right right">有效期至2020.10.25</view>
+        </view>
+        <view class="personal-list explain" bindtap="clickExplain">
+            <view class="order-left left">抢单说明</view>
+            <view class="order-right right"><image src="/images/grab-sheet/personal-arrow.png"></image></view>
+        </view>
+    </view>
+    <!-- 个人中心 end  -->
+
+    <view class="modal-mask" bindtap="hideModal"  wx:if="{{isShowImg}}"></view>
+    <view class="modal-image" wx:if="{{isShowImg}}">
+            <image class="" src="/images/grab-sheet/explain.png" bindtap="hideModal"></image>
+    </view>
 </view>

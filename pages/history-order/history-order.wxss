@@ -1,0 +1,41 @@
+/* pages/history-order/history-order.wxss */
+/* pages/grab-sheet/grab-sheet.wxss */
+.history-order {
+    background: #F9F9F9;
+    min-height: 1200rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+}
+
+
+.order-list {
+    width: 100%;
+    overflow: hidden;
+}
+.order {
+    width: 100%;
+    height: 148rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 0px 4px 0px rgba(228,228,228,0.73);
+    box-sizing: border-box;
+    padding: 0 40rpx;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.order-right {
+    line-height: 148rpx;
+    color: #EC9300;
+}
+.order-left {
+    box-sizing: border-box;
+    padding: 15rpx 0;
+    color: #333333;
+    font-size: 30rpx;
+    line-height: 60rpx;
+}
+.order-left text {
+    display: block;
+}

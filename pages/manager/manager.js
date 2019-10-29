@@ -22,6 +22,11 @@ Page({
       url: '../logs/logs'
     })
   },
+  goGrabSheet: function() {
+    wx.navigateTo({
+      url: '../grab-sheet/grab-sheet'
+    })
+  },
   onLoad: function () {
     this.setData({
       domain: app.globalData.domain
@@ -128,6 +133,10 @@ Page({
 
       }
     })
+
+    
+
+
   },
   /**
    * 点击跳转
@@ -152,10 +161,10 @@ Page({
     })
   },
   toInvitefriends:function(){
-    wx.navigateTo({
-      url: '/pages/invite/invite'
+    wx.showToast({
+      title: '开发中',
+      icon: 'none'
     })
-    
   },
   // 点击经纪人页面进行跳转web-view
   managertowebview: function (e) {

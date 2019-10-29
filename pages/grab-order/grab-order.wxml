@@ -1,0 +1,26 @@
+<!--pages/grab-sheet/grab-sheet.wxml-->
+<!-- <text>pages/grab-sheet/grab-sheet.wxml</text> -->
+<!-- 抢单服务页面 -->
+<view class="grab-sheets" >
+    <!-- 今日抢单/个人中心 start -->
+    <view class="search_header">
+         <mp-searchbar placeholder="请输入关键字搜索" bindselectresult="selectResult" search="{{search}}" style="width: 100%; border-radius: 36rpx"></mp-searchbar>
+      
+    </view>
+    <!-- 今日抢单/个人中心 end -->
+
+
+    <!-- 个人中心 start  -->
+    <view class="customer-list" >
+        <view class="customer"  wx:for="{{orerList}}" wx:for-index="index"  wx:key="key" wx:for-item="item">
+            <view class="customer-left">
+                <text class="customer-name">客户姓名：{{item.contacts}}</text>
+                <text class="customer-tel">联系电话：{{item.phone}}</text>
+            </view>
+            <view class="customer-right"><image src="/images/grab-sheet/personal-arrow.png"></image></view>
+        </view>
+    </view>
+    <!-- 个人中心 end  -->
+
+    
+</view>

@@ -1,0 +1,100 @@
+/* pages/grab-sheet/grab-sheet.wxss */
+.grab-sheets {
+    background: #F9F9F9;
+    min-height: 1200rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+}
+.search_header {
+    width: 100%;
+    height: 112rpx;
+    line-height: 112rpx;
+    background: #fff;
+    color: #333333;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #DADADA;
+    position: fixed;
+    z-index: 10;
+}
+.search-input {
+   
+    margin: 20rpx 0;
+}
+.search-input input {
+    width: 600rpx;
+    height: 72rpx;
+    background:rgba(245,245,245,1);
+    border-radius:36rpx;
+    /* padding-left: 60rpx;
+    box-sizing: border-box; */
+
+}
+.weui-icon-search_in-box {
+    top: 5% !important;
+}
+.weui-search-bar__label, .weui-search-bar__form {
+    background: #F5F5F5 !important;
+}
+.weui-search-bar__form, .weui-search-bar__label {
+  border-radius: 36rpx !important;
+}
+.weui-search-bar {
+  background: #fff !important;
+  border-radius: 36rpx !important;
+}
+.weui-search-bar__input, .weui-search-bar__text, .weui-search-bar__label {
+  font-size: 30rpx !important;
+}
+.weui-icon-search {
+  margin-top: .7em !important;
+}
+.weui-search-bar__cancel-btn {
+  color: #EC9300 !important;
+  font-size: 30rpx;
+}
+/* .cancel {
+    color: #EC9300;
+    font-size: 30rpx;
+} */
+
+
+/* 个人中心 */
+.customer-list {
+    /* padding-top: 94rpx; */
+    padding-top: 110rpx;
+    width: 100%;
+    overflow: hidden;
+}
+.customer {
+    width: 100%;
+    height: 148rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 0px 4px 0px rgba(228,228,228,0.73);
+    box-sizing: border-box;
+    padding: 0 40rpx;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    margin-top: 20rpx;
+}
+.order {
+    margin-top: 30rpx;
+}
+.customer-right {
+    line-height: 148rpx;
+}
+.customer-right image {
+    width: 24rpx;
+    height: 34rpx;
+}
+.customer-left {
+    box-sizing: border-box;
+    padding: 15rpx 0;
+    color: #333333;
+    font-size: 30rpx;
+    line-height: 60rpx;
+}
+.customer-left text {
+    display: block;
+}

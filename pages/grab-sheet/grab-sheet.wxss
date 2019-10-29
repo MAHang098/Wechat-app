@@ -1,7 +1,7 @@
 /* pages/grab-sheet/grab-sheet.wxss */
 .grab-sheets {
     background: #F9F9F9;
-    height: 100%;
+    min-height: 1200rpx;
     font-family:PingFang SC;
     font-weight:500;
 }
@@ -128,4 +128,103 @@
     font-size: 30rpx;
     margin: 15%;
     text-align: center;
+    padding: 0
+}
+.grabOk {
+  border: none;
+  background: rgb(216, 212, 212) !important;
+}
+.modal-dialog {
+    width: 563rpx;
+    height: 438rpx;
+    background:rgba(255,255,255,1);
+    border-radius:16rpx;
+    position: fixed;
+    z-index: 12;
+    top: 25%;
+    left: 94rpx;
+}
+.modal-dialog text {
+    height:208rpx;
+    line-height: 208rpx;
+    font-size:40rpx;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.btn {
+    width:418rpx;
+    height:80rpx;
+    line-height: 70rpx;
+    border:2px solid rgba(236,147,0,1);
+    border-radius:40rpx;
+    color: #EC9300;
+    margin-bottom: 30rpx;
+}
+.isOK {
+    background:rgba(236,147,0,1);
+    color: #fff;
+    border: none;
+}
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 11;
+}
+.grabOk {
+  background: 
+}
+
+/* 个人中心 */
+.personal {
+    padding-top: 94rpx;
+    width: 100%;
+    overflow: hidden;
+}
+.personal-list {
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 0px 4px 0px rgba(228,228,228,0.73);
+    box-sizing: border-box;
+    padding: 0 40rpx 0 42rpx;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    margin-top: 20rpx;
+}
+.order {
+    margin-top: 30rpx;
+}
+.personal-list .right image {
+    width: 24rpx;
+    height: 34rpx;
+}
+.personal-list .left {
+    color: #333333;
+    font-size: 30rpx;
+}
+.personal-list .right {
+    color: #999999;
+    font-size: 28rpx;
+}
+
+.modal-image {
+    position: fixed;
+    z-index: 11;
+    top: 13%;
+    left: 3.5%;
+}
+.modal-image image {
+    width: 690rpx;
+    height: 875rpx;
 }

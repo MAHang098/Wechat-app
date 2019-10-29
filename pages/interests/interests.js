@@ -160,7 +160,7 @@ Page({
                       openId: openId
                     })
                     wx.request({
-                      url: app.globalData.domain+'/wechat/wxpay/wxpay',
+                      url: 'https://www.zhongjubang.com/api/wechat/wxpay/wxpay',
                       method: "POST",
                       data: {
                         openId: openId
@@ -193,7 +193,7 @@ Page({
                                       userId: userId
                                     })
                                     wx.request({
-                                      url: app.globalData.domain+'applet/applet/addviporder',
+                                      url: 'https://www.zhongjubang.com/api/applet/applet/addviporder',
                                       method: "POST",
                                       data: {
                                         vipOrderId: oderId,

@@ -1,27 +1,22 @@
 {
   "pages": [
-    "pages/followMessage/followMessage",
-    "pages/orderDetails/orderDetails",
-    "pages/invite/invite",
-    "pages/allRanked/allRanked",
-    "pages/user/user",
-    
+    "pages/grab-sheet/grab-sheet",
+    "pages/history-order/history-order",
+    "pages/grab-order/grab-order",
     "pages/login/login",
-   
     "pages/loding/loding",
     "pages/index/index",
-    "pages/grab-sheet/grab-sheet",
     "pages/withdrawal/withdrawal",
     "pages/occupation/occupation",
     "pages/Bank-card/Bank-card",
     "pages/Pay-treasure/Pay-treasure",
     "pages/assets/assets",
-    
+    "pages/user/user",
     "pages/About-us/About-us",
     "pages/earnings/earnings",
     "pages/all-category/all-category",
     "pages/consulting/consulting",
-    
+    "pages/followMessage/followMessage",
     "pages/integralDetail/integralDetail",
     "pages/interests/interests",
     "pages/recommend/recommend",
@@ -44,7 +39,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText":  "众居邦",
+    "navigationBarTitleText": "众居邦",
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
