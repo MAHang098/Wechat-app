@@ -3,7 +3,7 @@ App({
   onLaunch: function () {
     
     //用户类型跳转
-    this.appletUserTypeView();
+    // this.appletUserTypeView();
     //用户登录
     // this.appletUserLoding();
     //检查版本更新

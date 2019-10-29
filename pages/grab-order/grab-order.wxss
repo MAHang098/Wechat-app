@@ -98,3 +98,7 @@
 .customer-left text {
     display: block;
 }
+
+.weui-icon-clear {
+    top: -14rpx !important;
+}

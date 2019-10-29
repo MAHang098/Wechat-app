@@ -7,7 +7,15 @@ Page({
    */
   data: {
     screenBlock: true,
-    userId: ''
+    userId: '',
+    inviteList: [
+      {name: '张三', state: '未认证', reward: '+20'},
+      {name: '李四', state: '已认证', reward: '+80'},
+      {name: '王五', state: '未认证', reward: '+60'},
+      {name: '大壮', state: '已认证', reward: '+30'},
+      {name: '小明', state: '未认证', reward: '+50'},
+      {name: '小红', state: '已认证', reward: '+40'}
+    ]
   },
 
   /**

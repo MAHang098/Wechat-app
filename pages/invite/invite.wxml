@@ -23,7 +23,7 @@
   
 </view>
 <view class="inviteDetail">
-  <view class="inviteDetail-content">
+  <!-- <view class="inviteDetail-content">
     <text>会员名称</text>
     <text>状态</text>
     <text>奖励</text>
@@ -46,8 +46,24 @@
   <view class="inviteDetail-content2">
     <text>随风</text>
     <text>未认证</text>
-    <text>请等待</text>
+    <text>未认证</text>
+  </view> -->
+  <view class="inviteDetail-content">
+    <text>会员名称</text>
+    <text>状态</text>
+    <text>奖励</text>
   </view>
+  <view class="page-section page-section-spacing swiper">
+      <swiper autoplay="{{false}}" interval="3000" duration="500" vertical="{{true}}" circular="{{false}}" class="swiper-grab" display-multiple-items="3">
+        <block wx:for="{{inviteList}}" wx:key="index">
+          <swiper-item class="swiper-items" >
+            <text class="swiper-item">{{item.name}}</text>
+            <text class="swiper-item">{{item.state}}</text>
+            <text class="swiper-item">{{item.reward}}</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
 </view>
 
 <!-- 面对面邀请 -->

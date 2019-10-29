@@ -60,7 +60,7 @@
     <!-- 个人中心 start  -->
     <view class="personal" hidden="{{currentData != 1}}">
         <view class="personal-list order" ontap="goSheetOrder">
-            <view class="order-left left">已抢订单（6位）</view>
+            <view class="order-left left">已抢订单（{{sheerOrder}}位）</view>
             <view class="order-right right"><image src="/images/grab-sheet/personal-arrow.png"></image></view>
         </view>
         <view class="personal-list history-order" ontap="goHistoryOrder">

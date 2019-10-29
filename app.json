@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/invite/invite",
+    "pages/grab-order/grab-order",
     "pages/grab-sheet/grab-sheet",
     "pages/history-order/history-order",
-    "pages/grab-order/grab-order",
     "pages/login/login",
     "pages/loding/loding",
     "pages/index/index",
