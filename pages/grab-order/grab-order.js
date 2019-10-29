@@ -68,6 +68,12 @@ Page({
 	selectResult: function (e) {
 		console.log('select result', e.detail)
 	},
+  goOrderDetail: function(e) {
+    var grabSheetId = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../orderDetails/orderDetails?grabSheetId=' + grabSheetId
+    })
+  },
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */

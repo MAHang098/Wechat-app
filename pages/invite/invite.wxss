@@ -47,96 +47,43 @@
   background:rgba(255,255,255,1);
   box-shadow:0px -2rpx 9rpx 0px rgba(0,34,74,0.59);
   border-radius:20rpx;
+  box-sizing: border-box;
+  padding-top: 46rpx;
+  padding-bottom: 45rpx;
 }
 
-.myInvite-content{
-  height:100rpx;
-  line-height: 100rpx;
-  width: 50%;
-}
-
-
-.number-person{
-  /* position: absolute; */
-  /* margin-top: 56rpx;
-  margin-left: 134rpx; */
-  float: left;
-  font-size:66rpx;
-  font-family:PingFang SC;
-  font-weight:bold;
-  color:rgba(236,147,0,1);
-  line-height:40rpx;
-}
-.person{
-  /* position: absolute; */
-  float: left;
-  /* margin-top: 65rpx;
-  margin-left: 0; */
-  
-  width:33rpx;
-  height:32rpx;
-  font-size:34rpx;
-  font-family:PingFang SC;
-  font-weight:bold;
-  color:rgba(236,147,0,1);
-  line-height:40rpx;
-}
-.text-person{
-  position: absolute;
-  top: 146rpx;
-  left: 84rpx;
-  width:175rpx;
-  height:28rpx;
-  font-size:30rpx;
-  font-family:PingFang SC;
-  font-weight:500;
-  color:rgba(236,147,0,1);
-  line-height:40rpx;
-}
-.vertical{
-  position: absolute;
-  top: 46rpx;
-  left: 340rpx;
-  width:2rpx;
+.myInvite-content {
   height:143rpx;
-  background:rgba(255,143,65,1);
-}
-.number-reward{
-  position: absolute;
-  top: 56rpx;
-  left: 471rpx;
-  width:34rpx;
-  height:50rpx;
-  font-size:66rpx;
+  width: 49%;
+  text-align: center;
+  display: inline-block;
+  color: #EC9300;
   font-family:PingFang SC;
   font-weight:bold;
-  color:rgba(236,147,0,1);
-  line-height:40rpx;
 }
-.reward{
-  position: absolute;
-  top: 65rpx;
-  right: 20%;
-  width:33rpx;
-  height:32rpx;
+.myInvite-top {
+  height: 50%;
+  line-height: 50%;
+  margin-top: 27rpx;
+}
+.myInvite-content:first-child {
+  border-right: 2px solid #FF8F41;
+}
+.myInvite-top view {
+  display: inline;
+}
+
+.number-person, .number-reward {
+  font-size: 66rpx;
+}
+.person, .reward {
   font-size:34rpx;
-  font-family:PingFang SC;
-  font-weight:bold;
-  color:rgba(236,147,0,1);
-  line-height:40rpx;
 }
-.text-reward{
-  position: absolute;
-  top: 146rpx;
-  left: 453rpx;
-  width:175rpx;
-  height:28rpx;
-  font-size:30rpx;
-  font-family:PingFang SC;
+.text-person, .text-reward {
   font-weight:500;
-  color:rgba(236,147,0,1);
-  line-height:40rpx;
+  font-size:30rpx;
 }
+
 .inviteDetail{
   position: absolute;
   top: 1563rpx;
