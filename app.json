@@ -1,6 +1,6 @@
 {
   "pages": [
-
+    "pages/followMessage/followMessage",
     "pages/orderDetails/orderDetails",
     "pages/invite/invite",
     "pages/allRanked/allRanked",
@@ -21,7 +21,7 @@
     "pages/earnings/earnings",
     "pages/all-category/all-category",
     "pages/consulting/consulting",
-    "pages/followMessage/followMessage",
+    
     "pages/integralDetail/integralDetail",
     "pages/interests/interests",
     "pages/recommend/recommend",
