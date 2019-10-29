@@ -258,7 +258,7 @@ Page({
                           })
                           console.log(that.data.aliPayName);
                           wx.request({
-                            url: 'https://www.zhongjubang.com/api/applet/applet/adduserwithdraws',
+                            url: app.globalData.domain+'/applet/applet/adduserwithdraws',
                             method: 'post',
                             data: {
                               userId: res.data,
@@ -299,7 +299,7 @@ Page({
                             userId: userId
                           })
                           wx.request({
-                            url: 'https://www.zhongjubang.com/api/applet/applet/adduserwithdraws',
+                            url: app.globalData.domain+'/applet/applet/adduserwithdraws',
                             method: 'post',
                             data: {
                               userId: res.data,

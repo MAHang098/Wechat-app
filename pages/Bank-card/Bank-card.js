@@ -46,7 +46,7 @@ Page({
           })
 
           wx.request({
-            url: 'https://www.zhongjubang.com/api/applet/applet/addappletuserbankcard',
+            url: app.globalData.domain+'applet/applet/addappletuserbankcard',
             method: 'post',
             data: {
               userId: res.data,

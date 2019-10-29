@@ -29,7 +29,7 @@ Page({
         })
 
         wx.request({
-          url: 'https://www.zhongjubang.com/api/applet/applet//getbindbankcardalipaypd',
+          url: app.globalData.domain + '/getbindbankcardalipaypd',
           method: 'POST',
           data: {
             userId: res.data,

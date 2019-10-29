@@ -40,7 +40,7 @@
     </image>
 
     <image bindtap="skipRecommend" class="image" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/command.png"></image>
-
+    
     <image class="image" bindtap="toInvitefriends" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/invite.png"></image>
   </view>
   <!-- banner图片 -->

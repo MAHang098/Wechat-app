@@ -111,7 +111,7 @@ Page({
               sex: sex
             })
             wx.request({
-              url: "https://www.zhongjubang.com/api/applet/applet/updateuserdetails",
+              url: app.globalData.domain+"/applet/applet/updateuserdetails",
               method: "POST",
               data: {
                 userId: userId,

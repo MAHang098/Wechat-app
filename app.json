@@ -1,18 +1,22 @@
 {
   "pages": [
+
+    "pages/orderDetails/orderDetails",
+    "pages/invite/invite",
     "pages/allRanked/allRanked",
-    "pages/index/index",
+    "pages/user/user",
     
-    "pages/grab-sheet/grab-sheet",
     "pages/login/login",
+   
     "pages/loding/loding",
-    
+    "pages/index/index",
+    "pages/grab-sheet/grab-sheet",
     "pages/withdrawal/withdrawal",
     "pages/occupation/occupation",
     "pages/Bank-card/Bank-card",
     "pages/Pay-treasure/Pay-treasure",
     "pages/assets/assets",
-    "pages/user/user",
+    
     "pages/About-us/About-us",
     "pages/earnings/earnings",
     "pages/all-category/all-category",

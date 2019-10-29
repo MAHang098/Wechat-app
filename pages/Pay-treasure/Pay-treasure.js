@@ -45,7 +45,7 @@ Page({
             userId: userId
           })
           wx.request({
-            url: 'https://www.zhongjubang.com/api/applet/applet/addappletuseralipay',
+            url: app.globalData.domain+'/applet/applet/addappletuseralipay',
             method: 'post',
             data: {
               userId: res.data,
@@ -145,7 +145,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: 'https://www.zhongjubang.com/api/applet/applet/getbindbankcardalipaypd',
+          url: app.globalData.domain+'/applet/applet/getbindbankcardalipaypd',
           method: "POST",
           data: {
             userId: userId

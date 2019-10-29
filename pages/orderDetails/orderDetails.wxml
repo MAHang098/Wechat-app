@@ -1,0 +1,26 @@
+<view class="content">
+  <view class="left">上架时间：</view>
+  <view class="right">联系人：</view>
+</view>
+<view class="content">
+  <view class="left">地区：</view>
+  <view class="right">性别：</view>
+</view>
+<view class="content">
+  <view class="left">预购产品：</view>
+  <view class="right">电话：</view>
+</view>
+<view class="content">
+  <view class="left">意向品牌：</view>
+  <view class="right">户型：</view>
+</view>
+<view class="content">
+  <view class="left">装修风格：</view>
+  <view class="right">预算：</view>
+</view>
+<view class="content">
+  <view class="left">预计购买时间：</view>
+</view>
+<view class="content1">
+  <view class="left">备注：</view>
+</view>

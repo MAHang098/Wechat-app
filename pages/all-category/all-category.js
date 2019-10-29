@@ -106,11 +106,7 @@ Page({
     // console.log(this.data.aid)
     // console.log(options.id)
 
-    // 全局请求
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
 
     // 1.1导航和下拉导航
     this.navv();
@@ -136,7 +132,7 @@ Page({
     var that = this;
 
     wx.request({
-      url: this.data.domain + '/applet/applet/getbrandtypelistbysn',
+      url: app.globalData.domain + '/applet/applet/getbrandtypelistbysn',
       method: 'POST',
       data: {
         pageIndex: "1",
@@ -162,7 +158,7 @@ Page({
     // console.log(that.data.aid);
     if (that.data.aid === "" || that.data.aid === undefined){
       wx.request({
-        url: this.data.domain + '/applet/applet/getbrandlistbysn',
+        url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
         method: 'POST',
         data: {
           pageIndex: "1",
@@ -182,7 +178,7 @@ Page({
     }
     else{
       wx.request({
-        url: this.data.domain + '/applet/applet/getbrandlistbysn',
+        url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
         method: 'POST',
         data: {
           brandTypeId: that.data.aid,
@@ -263,7 +259,7 @@ Page({
     if (e.currentTarget.dataset.id==='0'){
       // 获取全部内容
       wx.request({
-        url: this.data.domain + '/applet/applet/getbrandlistbysn',
+        url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
         method: 'POST',
         data: {
           pageIndex: "1",
@@ -283,7 +279,7 @@ Page({
     }
 
     wx.request({
-      url: this.data.domain + '/applet/applet/getbrandlistbysn',
+      url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
       method: 'POST',
       data: {
         brandTypeId: e.currentTarget.dataset.id,

@@ -28,11 +28,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 全局接口
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
 
     // 2.0众咨询
     this.consulting();
@@ -43,7 +39,7 @@ Page({
   consulting() {
     var that = this;
     wx.request({
-      url: this.data.domain + '/controller/offcialweb/getoffcialwebnews',
+      url: app.globalData.domain + '/controller/offcialweb/getoffcialwebnews',
       method: 'POST',
       data: {
         newsType: "applet_news"
@@ -122,9 +118,9 @@ Page({
   getBannerNews: function (e) {
 
     var that = this;
-    // console.log(this.data.domain);
+    // console.log(app.globalData.domain);
     wx.request({
-      url: this.data.domain + 'public/public/getresourcesbyresourcestype',
+      url: app.globalData.domain + 'public/public/getresourcesbyresourcestype',
       method: 'POST',
       data: {
         resourcesTypeName: "applet_news_banner"

@@ -1,0 +1,176 @@
+/* .bg{
+  position: absolute;
+  background: url("http://www.zhongjubang.com/api/upload/applet_resource/bg.png") no-repeat 0 0;
+} */
+.bg{
+  position: absolute;
+  width: 754rpx;
+  height: 2411rpx;
+  /* margin-top: -20rpx; */
+  margin-left: -2rpx;
+  z-index: -1;
+}
+.button1{
+  position: absolute;
+  top: 900rpx;
+  left: 54rpx;
+  width: 290rpx;
+  height: 82rpx;
+  background:rgba(236,147,0,1);
+  box-shadow:0px 8rpx 0px 0px rgba(2,80,166,1);
+  border-radius:41rpx;
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+.button2{
+  position: absolute;
+  top: 900rpx;
+  left: 407rpx;
+  width: 290rpx;
+  height: 82rpx;
+  background:rgba(236,147,0,1);
+  box-shadow:0px 8rpx 0px 0px rgba(2,80,166,1);
+  border-radius:41rpx;
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+.myInvite{
+  position: relative;
+  top: 1124rpx;
+  left: 34rpx;
+  width:682rpx;
+  height:234rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px -2rpx 9rpx 0px rgba(0,34,74,0.59);
+  border-radius:20rpx;
+}
+
+
+.number-person{
+  position: absolute;
+  top: 56rpx;
+  left: 134rpx;
+  width:34rpx;
+  height:50rpx;
+  font-size:66rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(236,147,0,1);
+  line-height:40rpx;
+}
+.person{
+  position: absolute;
+  top: 65rpx;
+  left: 25.5%;
+  width:33rpx;
+  height:32rpx;
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(236,147,0,1);
+  line-height:40rpx;
+}
+.text-person{
+  position: absolute;
+  top: 146rpx;
+  left: 84rpx;
+  width:175rpx;
+  height:28rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(236,147,0,1);
+  line-height:40rpx;
+}
+.vertical{
+  position: absolute;
+  top: 46rpx;
+  left: 340rpx;
+  width:2rpx;
+  height:143rpx;
+  background:rgba(255,143,65,1);
+}
+.number-reward{
+  position: absolute;
+  top: 56rpx;
+  left: 471rpx;
+  width:34rpx;
+  height:50rpx;
+  font-size:66rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(236,147,0,1);
+  line-height:40rpx;
+}
+.reward{
+  position: absolute;
+  top: 65rpx;
+  right: 20%;
+  width:33rpx;
+  height:32rpx;
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(236,147,0,1);
+  line-height:40rpx;
+}
+.text-reward{
+  position: absolute;
+  top: 146rpx;
+  left: 453rpx;
+  width:175rpx;
+  height:28rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(236,147,0,1);
+  line-height:40rpx;
+}
+.inviteDetail{
+  position: absolute;
+  top: 1563rpx;
+  left: 36rpx;
+  width:682rpx;
+  height:312rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px -2rpx 9rpx 0px rgba(0,34,74,0.59);
+  border-radius:20rpx;
+}
+.inviteDetail-content{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 15rpx 69rpx;
+  border-bottom: 2rpx solid rgba(241,241,241,1);
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.inviteDetail-content1{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 15rpx 56rpx 15rpx 111rpx ;
+  border-bottom: 2rpx solid rgba(241,241,241,1);
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  z-index: -10;
+}
+.inviteDetail-content2{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 15rpx 56rpx 15rpx 111rpx ;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  z-index: -10;
+}

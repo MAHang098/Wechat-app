@@ -1,22 +1,24 @@
-var sub = function (val) {
+// sub
+// var sub = function (val) {
 
-  if (val.length == 0 || val == undefined) {
+//   if (val.length == 0 || val == undefined) {
 
-    return;
+//     return;
 
-  }
+//   }
 
-  if (val.length > 17) {
+//   if (val.length > 17) {
 
-    return val.substring(0, 12) + "...";
+//     return val.substring(0, 12) + "...";
 
-  } else {
+//   } else {
 
-    return val;
+//     return val;
 
-  }
+//   }
 
-}
+// }
+// sub2
 var sub2 = function (val) {
 
   if (val.length == 0 || val == undefined) {
