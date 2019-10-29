@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/invite/invite",
     "pages/grab-order/grab-order",
     "pages/grab-sheet/grab-sheet",
     "pages/history-order/history-order",
