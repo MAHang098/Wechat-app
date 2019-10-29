@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+const util = require('../../utils/util.js');
 const app = getApp()
 
 Page({
@@ -14,7 +15,8 @@ Page({
       { name: '小明', phone: '184****2519', type: '橱柜' },
       { name: '李四', phone: '184****7546', type: '桌椅' }
     ],
-    autoplay: true
+    autoplay: true,
+    sheetOrder: []
   },
   //事件处理函数
   bindViewTap: function () {
@@ -22,9 +24,43 @@ Page({
       url: '../logs/logs'
     })
   },
+  // 跳转到抢单页面
   goGrabSheet: function() {
-    wx.navigateTo({
-      url: '../grab-sheet/grab-sheet'
+    var that = this;
+    wx.getStorage({
+      key: 'userId',
+      success: function (res) {
+        that.setData({
+          userId: res.data
+        });
+      },
+    });
+    // 获取当前用户是否时会员   2(会员)   1（不是会员）
+    wx.request({
+      url: app.globalData.domain + 'applet/applet/getappletuservippdgradeidpd',
+      method: 'POST',
+      data: { userId: that.data.userId},
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function(res) {
+        if(res.data.code == 200) {
+          // wx.navigateTo({
+          //   url: '../grab-sheet/grab-sheet'
+          // })
+          var data = res.data.data;
+          // 如果时会员进入抢单页面否则进入充值页面
+          if (data.memberStatus == 2) {
+            wx.navigateTo({
+              url: '../grab-sheet/grab-sheet'
+            })
+          } else {
+            wx.navigateTo({
+              url: '../interests/interests'
+            })
+          }
+        }
+      }
     })
   },
   onLoad: function () {
@@ -36,7 +72,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        // console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -44,7 +79,6 @@ Page({
         wx.request({
           url: domain + '/applet/applet/getappletuservippdgrade',
           method: "POST",
-
           data: {
             userId: userId
           },
@@ -103,6 +137,28 @@ Page({
       })
     }
     
+    // 已抢单列表
+    var time = util.formatDate(new Date());
+    wx.request({
+      url: app.globalData.domain + 'admin/applet/getgrabsheettop',
+      method: 'POST',
+      data: {
+        pageIndex: 1,
+        pageSize: 100,
+        shelfTime: time
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          var data = res.data.data;
+          that.setData({
+            sheetOrder: data.dataList
+          });
+        }
+      }
+    })
     
   },
   onShow: function () {
@@ -111,7 +167,6 @@ Page({
     wx.getStorage({
       key: 'nickName',
       success: function (res) {
-        // console.log(res)
         var nickName = res.data
         that.setData({
           nickName: nickName,
@@ -124,9 +179,7 @@ Page({
     wx.getStorage({
       key: 'head',
       success: function (res) {
-        // console.log(res)
         var head = res.data
-        // console.log(head)
         that.setData({
           head: head
         })
@@ -147,7 +200,6 @@ Page({
     })
   },
   getUserInfo: function (e) {
-    // console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -167,7 +219,6 @@ Page({
   },
   // 点击经纪人页面进行跳转web-view
   managertowebview: function (e) {
-    // console.log(e.currentTarget.dataset.srcs);
     wx.navigateTo({
       url: '/pages/web-view/web-view?srcs=' + encodeURIComponent(e.currentTarget.dataset.srcs),
     });

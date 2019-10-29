@@ -54,6 +54,7 @@ Page({
 				}
 			}
 		});
+    // 已抢订单列表
 		wx.request({
 			url: app.globalData.domain + 'admin/applet/gethaslist',
 			method: 'POST',
@@ -72,7 +73,7 @@ Page({
 				});
 			  }
 			}
-		  })
+		})
 	},
 
 	/**

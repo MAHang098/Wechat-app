@@ -57,15 +57,15 @@
   </view>
 
   <!-- 抢单 start -->
-  <view class="grab-sheet">
-    <image class="grab-sheet_img" src="/images/manager/grab-sheet.png" bindtap="goGrabSheet"></image>
+  <view class="grab-sheet" bindtap="goGrabSheet">
+    <image class="grab-sheet_img" src="/images/manager/grab-sheet.png" ></image>
     <view class="page-section page-section-spacing swiper">
       <swiper autoplay="{{autoplay}}" interval="3000" duration="500" vertical="true" circular="true" class="swiper-grab">
-        <block wx:for="{{grabList}}" wx:key="index">
+        <block wx:for="{{sheetOrder}}" wx:key="index">
           <swiper-item  >
-            <text class="swiper-item">{{item.name}}</text>
+            <text class="swiper-item">{{item.contacts}}</text>
             <text class="swiper-item">{{item.phone}}</text>
-            <text class="swiper-item">{{item.type}}</text>
+            <text class="swiper-item">{{item.preOrderedProducts}}</text>
           </swiper-item>
         </block>
       </swiper>
