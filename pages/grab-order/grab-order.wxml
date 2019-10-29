@@ -12,7 +12,7 @@
 
     <!-- 个人中心 start  -->
     <view class="customer-list" >
-        <view class="customer"  wx:for="{{orerList}}" wx:for-index="index"  wx:key="key" wx:for-item="item">
+        <view class="customer"  wx:for="{{orerList}}" wx:for-index="index"  wx:key="key" wx:for-item="item" bindtap="goOrderDetail" data-id="{{item.grabSheetId}}">
             <view class="customer-left">
                 <text class="customer-name">客户姓名：{{item.contacts}}</text>
                 <text class="customer-tel">联系电话：{{item.phone}}</text>

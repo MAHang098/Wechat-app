@@ -1,11 +1,14 @@
 {
   "pages": [
+
     "pages/grab-order/grab-order",
+    "pages/index/index",
+    "pages/orderDetails/orderDetails",
+    "pages/invite/invite",
     "pages/grab-sheet/grab-sheet",
     "pages/history-order/history-order",
     "pages/login/login",
     "pages/loding/loding",
-    "pages/index/index",
     "pages/withdrawal/withdrawal",
     "pages/occupation/occupation",
     "pages/Bank-card/Bank-card",

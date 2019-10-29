@@ -10,7 +10,7 @@
 <!-- <image  bindtap="screenBlock" class="button2" src="/images/invite/button-facetoface.png"></image> -->
 
 <view class="myInvite">
-  <view class="myInvite-content">
+  <!-- <view class="myInvite-content">
     <view class="number-person">1000</view>
     <view class="person">人</view>
   </view>
@@ -21,9 +21,21 @@
    
   <view class="number-reward">0</view>
   <view class="reward">元</view>
-  <view class="text-reward">累计奖励 </view>
-    
-  
+  <view class="text-reward">累计奖励 </view> -->
+    <view class="left myInvite-content">
+		<view class="myInvite-top">
+			<view class="number-person">1000</view>
+			<view class="person">人</view>
+		</view>
+		<view class="text-person">成功邀请人数</view>
+    </view>
+    <view class="right myInvite-content">
+		<view class="myInvite-top">
+			<view class="number-reward">100000</view>
+			<view class="reward">元</view>
+		</view>
+		<view class="text-reward">累计奖励 </view>
+    </view>
 </view>
 <view class="inviteDetail">
   <!-- <view class="inviteDetail-content">
