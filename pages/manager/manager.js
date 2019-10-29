@@ -155,9 +155,8 @@ Page({
     })
   },
   toranking:function(){
-    wx.showToast({
-      title: '开发中',
-      icon: 'none'
+    wx.navigateTo({
+      url: '/pages/allRanked/allRanked',
     })
   },
   toInvitefriends:function(){

@@ -1,4 +1,9 @@
 {
-  "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {},
+  "onReachBottomDistance": 100,
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTitleText": "排行榜",
+  "navigationBarTextStyle": "white"
 }

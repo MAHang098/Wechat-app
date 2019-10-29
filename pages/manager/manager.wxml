@@ -27,28 +27,32 @@
   </view>
   <!-- 菜单内容 -->
   <view class="home-content">
+    <!-- 新手指引 -->
     <image 
       class="image" bindtap="managertowebview"
       src="http://www.zhongjubang.com/api/upload/applet_resource/manager/guide.png"
       data-srcs="https://www.zhongjubang.com/resource.html?name=http://www.zhongjubang.com/api/upload/d15ce97f-58d2-46e5-ac86-c762ca104af5-1481.png">
     </image>
+    <!-- 赚钱攻略 -->
     <image 
       bindtap="managertowebview" 
       class="image" 
       src="http://www.zhongjubang.com/api/upload/applet_resource/manager/make_money.png"    
       data-srcs="https://www.zhongjubang.com/resource.html?name=http://www.zhongjubang.com/api/upload/9f5cda24-2333-44c8-b344-379748582f3d-1724.png">
     </image>
-
+    <!-- 立即推荐 -->
     <image bindtap="skipRecommend" class="image" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/command.png"></image>
-
     <image class="image" bindtap="toInvitefriends" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/invite.png"></image>
   </view>
   <!-- banner图片 -->
   <view class="agent_banner">
+    <!-- 我的佣金 -->
     <image class="image1"  bindtap="toassets"    
       src="http://www.zhongjubang.com/api/upload/applet_resource/manager/commission.png">
     </image>
+    <!-- 排行榜 -->
     <image class="image1" bindtap="toranking" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/list.png"></image>
+    <!-- 任务专区 -->
     <image class="image1" bindtap="toscoreBlock" src="http://www.zhongjubang.com/api/upload/applet_resource/manager/mission.png"></image>
   </view>
 

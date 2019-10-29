@@ -22,7 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData.domain) 
+    // app.globalData.domain
     var that = this
     wx.getStorage({
       key: 'userId',
@@ -33,7 +33,39 @@ Page({
         })
       }
     })
-    console.log(that.data.userId)
+
+    wx.request({
+      url: app.globalData.domain + '/wechat/applet/appltqrcode',
+      method: "GET",
+      success: function (res) {
+        console.log(res.data.data.access_token)
+        var scene = decodeURIComponent(options.scene)
+
+        // 生成页面的二维码
+        wx.request({
+          //注意：下面的access_token值可以不可以直接复制使用，需要自己请求获取
+          url: 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=' + res.data.data.access_token,
+          data: {
+            scene: '000',
+            page: "pages/invite/invite"  //这里按照需求设置值和参数   
+          },
+          method: "POST",
+          responseType: 'arraybuffer',  //设置响应类型
+          success(res) {
+            console.log(res)
+            var src2 = wx.arrayBufferToBase64(res.data);  //对数据进行转换操作
+            that.setData({
+              src2
+            })
+          },
+          fail(e) {
+            console.log(e)
+          }
+        })
+      }
+    })
+
+    
 
   },
   
@@ -95,17 +127,6 @@ Page({
     
   },
   onShareFacetoface(){
-    wx.request({
-      url: 'https://api.weixin.qq.com/cgi-bin/token',
-      method: "GET",
-      data: {
-        grant_type: 'client_credential',
-        appid: 'wx904dc600917e75fb',
-        secret: 'f69ac6dceb5c6e0ee7ac5a7e8b9005ea'
-      },
-      success: function (res) {
-        console.log(res)
-      }
-    })
+    
   }
 })

@@ -47,36 +47,29 @@ Page({
     var domain = this.data.domain;
     var that = this;
     wx.getStorage({
-      key: 'openId',
+      key: 'userId',
       success: function (res) {
-        var openId = res.data
+        var userId = res.data
         that.setData({
-          loading: false,
-          openId: openId
+          userId: userId
         })
         wx.request({
-          url: domain + '/Home/Index/userSignContent',
+          url: domain + '/applet/applet/getappletuservippdgradeidpd',
+          method: "POST",
           data: {
-            openid: openId
+            userId: userId
+          },
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
             console.log(res)
-            var status = res.data.status;
-            if (status == 5) {
+            var status = res.data.code;
+            if (status == 200) {
+              
               that.setData({
-                real_name_score: res.data.data.real_name_score,
-                identity_score: res.data.data.identity_score,
-                recommend_customer_score: res.data.data.recommend_customer_score,
-                recommend_friend_score: res.data.data.recommend_friend_score,
-                business_check_status: res.data.data.business_check_status,
-                first_invite: res.data.data.first_invite,
-                first_recommend: res.data.data.first_recommend,
-                id_card_check_status: res.data.data.id_card_check_status,
-                sign_num: res.data.data.sign_num,
-                sign_score: res.data.data.sign_score,
-                score: res.data.data.score,
-                sign_status: res.data.data.sign_status,
-                loading: true
+                business_check_status: res.data.data.businessCardCheckStatus,
+                id_card_check_status: res.data.data.idCardCheckStatus
               })
             }
           }
@@ -85,67 +78,15 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+  
 
-  },
+  
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
+  
 
-  },
+  
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    var shareObj = {
-      title: "众居邦APP，邀请您一起赚钱",
-      path: '/pages/loading/loading', // 默认是当前页面，必须是以‘/’开头的完整路径
-      imgUrl: '../../images/inviteShare.png', //转发时显示的图片路径，支持网络和本地，不传则使用当前页默认截图。
-      success: function (res) {　 // 转发成功之后的回调　　　　　
-        if (res.errMsg == 'shareAppMessage:ok') {
-
-        }
-      },
-      fail: function () {　 // 转发失败之后的回调
-        if (res.errMsg == 'shareAppMessage:fail cancel') {
-          // 用户取消转发
-        } else if (res.errMsg == 'shareAppMessage:fail') {
-          // 转发失败，其中 detail message 为详细失败信息　　
-        }
-      },
-      complete: function () {
-        // 转发结束之后的回调（转发成不成功都会执行）
-      }
-    };　　 // 来自页面内的按钮的转发
-    // 　　if (options.from == 'button') {
-    //   　　　　var dataid = options.target.dataset; //上方data-id=shareBtn设置的值
-    //   　　　　// 此处可以修改 shareObj 中的内容
-    //   　　　　shareObj.path = '/pages/btnname/btnname?id=' + dataid.id;
-    // 　　}
-    // 返回shareObj
-
-    return shareObj;
-  },
+  
 
   /**
    * 签到
@@ -253,9 +194,8 @@ Page({
     })
   },
   tomessage:function(){
-    wx.showToast({
-      title: '开发中',
-      icon: 'none'
+    wx.navigateTo({
+      url: '/pages/invite/invite',
     })
   },
   signInPd: function () {

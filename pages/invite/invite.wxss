@@ -49,13 +49,18 @@
   border-radius:20rpx;
 }
 
+.myInvite-content{
+  height:100rpx;
+  line-height: 100rpx;
+  width: 50%;
+}
+
 
 .number-person{
-  position: absolute;
-  top: 56rpx;
-  left: 134rpx;
-  width:34rpx;
-  height:50rpx;
+  /* position: absolute; */
+  /* margin-top: 56rpx;
+  margin-left: 134rpx; */
+  float: left;
   font-size:66rpx;
   font-family:PingFang SC;
   font-weight:bold;
@@ -63,9 +68,11 @@
   line-height:40rpx;
 }
 .person{
-  position: absolute;
-  top: 65rpx;
-  left: 25.5%;
+  /* position: absolute; */
+  float: left;
+  /* margin-top: 65rpx;
+  margin-left: 0; */
+  
   width:33rpx;
   height:32rpx;
   font-size:34rpx;
