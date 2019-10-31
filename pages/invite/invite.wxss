@@ -37,7 +37,24 @@
   font-family:PingFang SC;
   font-weight:500;
   color:rgba(255,255,255,1);
+  text-align: center;
 }
+/* .button2{
+  position: absolute;
+  top: 900rpx;
+  left: 407rpx;
+  width: 290rpx;
+  height: 65rpx;
+  background:rgba(236,147,0,1);
+  box-shadow:0px 8rpx 0px 0px rgba(2,80,166,1);
+  border-radius:41rpx;
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  padding-top: 17rpx;
+} */
 .myInvite{
   position: relative;
   top: 1124rpx;
@@ -114,3 +131,68 @@
   text-align: center;
   display: inline-block;
 }
+
+
+/*------------------------------------------------------------------------3  */
+/*遮罩层 */  
+.shade{   
+  width:100%;   
+  height:2446rpx;   
+  top:0;   
+  background:rgba(0,0,0,0.5);   
+  overflow: hidden;   
+  /*要显示在wrap的上面 */   
+  z-index: 1;   
+  position: absolute;  
+  }   
+  
+/*显示与隐藏的内容即点击核算后所展示的详细内容 */  
+.conts{   
+  width: 709rpx;   
+  height: 804rpx;   
+  /* margin: 0 auto; */
+  /* background-color: white;    */
+  position: absolute;   
+  top: 240rpx;
+  left: 21rpx;
+  /* text-indent: 60rpx;   */
+  }  
+.conts image{
+  width: 709rpx;   
+  height: 804rpx;  
+} 
+/*显示整个conts */  
+.show{   
+  display: block;  
+  }  
+/*隐藏整个conts */  
+.hide{   
+  display: none;  
+  }  
+  
+/*关闭按钮（关闭整个conts） */  
+.closeImg{   
+  width: 60rpx;   
+  height: 60rpx;   
+  float: right;   
+  position: relative;   
+  top: -670rpx;   
+  left: 2rpx;   
+  background-color: white;   
+  border-radius: 50%;  
+  }  
+  .close{
+    margin-top: 15rpx;
+    margin-left: 20rpx;
+    transform:rotate(45deg);
+  }
+  .img{
+    margin-top: -580rpx;
+    margin-left: 145rpx;
+    width: 430rpx;
+    height: 430rpx;
+  }
+  .img image{
+    width: 430rpx;
+    height: 430rpx;
+  }

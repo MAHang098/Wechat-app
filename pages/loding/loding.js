@@ -27,6 +27,7 @@ Page({
     sex: "",
     occupation: "",
     mask: true,
+    pid: ''
   },
   changeInput(e) {
     let changed = {};
@@ -68,7 +69,7 @@ Page({
       var that = this;
       //发送短信的时候直接校验手机号码是否注册，没办法家里没条件
       wx.request({
-        url: 'https://www.zhongjubang.com/api/applet/applet/getuserphonepdbind',
+        url: app.globalData.domain + '/applet/applet/getuserphonepdbind',
         method: "Post",
         data: {
           phone: that.data.phone
@@ -81,7 +82,7 @@ Page({
 
             if (that.data.btntext === "获取验证码") {
               wx.request({
-                url: "https://www.zhongjubang.com/api/public/public/sendverificationcode",
+                url:  app.globalData.domain + "/public/public/sendverificationcode",
                 method: "Post",
                 data: {
                   type: "1",
@@ -155,13 +156,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (options.pid!=null){
+      console.log(options.pid)
+      this.setData({
+        pid: options.pid
+      })
+    }
+    
+   
+    
   },
 
   //用户不存在的场合 注册账号用的方法
   loginUser: function (e) {
     console.log(e.detail.userInfo);
     var that = this;
+    var th = this;
     if (e.detail.userInfo) {
       that.setData({
         userInfo: e.detail.userInfo,
@@ -218,6 +228,8 @@ Page({
                 //除了200外其他都会返回全部数据
                 if (data===''){
                   //验证码正确请求注册接口
+                  
+                  console.log(th.data.pid)
                   wx.request({
                     url: app.globalData.domain + "/applet/applet/addappletuserbind",
                     method: "Post",
@@ -227,7 +239,8 @@ Page({
                       occupation: that.data.occupation,
                       sex: that.data.userInfo.gender,
                       nickName: that.data.userInfo.nickName,
-                      head: that.data.userInfo.avatarUrl
+                      head: that.data.userInfo.avatarUrl,
+                      pid: th.data.pid
                     },
                     header: {
                       "Content-Type": "application/x-www-form-urlencoded"
@@ -265,55 +278,6 @@ Page({
         icon: 'none'
       });
     }
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
+  }
 
 })

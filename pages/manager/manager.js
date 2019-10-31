@@ -176,9 +176,8 @@ Page({
     })
   },
   toInvitefriends:function(){
-    wx.showToast({
-      title: '开发中',
-      icon: 'none'
+    wx.navigateTo({
+      url: '/pages/invite/invite',
     })
   },
   // 点击经纪人页面进行跳转web-view
