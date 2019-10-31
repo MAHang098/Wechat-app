@@ -1,19 +1,13 @@
 {
   "pages": [
-<<<<<<< HEAD
     "pages/login/login",
     "pages/occupation/occupation",
+    "pages/manager/manager",
     
     "pages/invite/invite",
     "pages/integral/integral",
     "pages/interests/interests",
     "pages/scoreBlock/scoreBlock",
-=======
-    "pages/manager/manager",
-    "pages/invite/invite",
-    "pages/integral/integral",
-    "pages/grab-order/grab-order",
->>>>>>> a956e3c63cea6ad35a34e7c9bbec2a38e6b6aaa1
     "pages/index/index",
     "pages/grab-order/grab-order",
     "pages/orderDetails/orderDetails",
