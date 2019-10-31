@@ -25,4 +25,8 @@ page{
   background:rgba(255,255,255,1);
   box-shadow:7rpx 3rpx 7rpx 0px rgba(228,228,228,0.73);
 }
+.text{
+  font-size: 28rpx;
+  color: #666;
+}
 

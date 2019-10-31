@@ -4,8 +4,14 @@
 <!-- <image class="button1" src="/images/invite/button-imm.png"
  open-type='share'></image> -->
 
-<button class="button1" open-type='share' bindtap="onShareAppMessage">立即邀请</button> 
-<button class="button2" bindtap="onShareFacetoface">面对面邀请</button> 
+<button class="button1" open-type='share' bindtap="onShareAppMessage">立即邀请</button>
+<!-- <button class="button2" bindtap="onShareFacetoface">面对面邀请</button>  -->
+<!-- <view class="button2"> -->
+  <!--2种切换时的状态（此处指“明细”）  -->
+  <button class="button2 hide{{showView? '' : 'show'}}" bindtap="onShareFacetoface">{{showView?'面对面邀请':'面对面邀请'}}</button>
+  <button class="button2 hide{{showView? 'show' : ''}}" bindtap="onShareFacetoface">{{showView?'面对面邀请':'面对面邀请'}} </button>
+<!-- </view> -->
+
 <!-- <button class="button1" @click="inviteImm"></button> -->
 <!-- <image  bindtap="screenBlock" class="button2" src="/images/invite/button-facetoface.png"></image> -->
 
@@ -22,20 +28,20 @@
   <view class="number-reward">{{inviteMoney}}</view>
   <view class="reward">元</view>
   <view class="text-reward">累计奖励 </view> -->
-    <view class="left myInvite-content">
-		<view class="myInvite-top">
-			<view class="number-person">{{inviteCount}}</view>
-			<view class="person">人</view>
-		</view>
-		<view class="text-person">成功邀请人数</view>
+  <view class="left myInvite-content">
+    <view class="myInvite-top">
+      <view class="number-person">{{inviteCount}}</view>
+      <view class="person">人</view>
     </view>
-    <view class="right myInvite-content">
-		<view class="myInvite-top">
-			<view class="number-reward">{{inviteMoney}}</view>
-			<view class="reward">元</view>
-		</view>
-		<view class="text-reward">累计奖励 </view>
+    <view class="text-person">成功邀请人数</view>
+  </view>
+  <view class="right myInvite-content">
+    <view class="myInvite-top">
+      <view class="number-reward">{{inviteMoney}}</view>
+      <view class="reward">元</view>
     </view>
+    <view class="text-reward">累计奖励 </view>
+  </view>
 </view>
 <view class="inviteDetail">
   <!-- <view class="inviteDetail-content">
@@ -68,30 +74,49 @@
     <text>状态</text>
     <text>奖励</text>
   </view>
+  <!-- <view wx:for="{{inviteList}}" wx:key="index">
+  <text>{{item.nickname}}</text>
+  <text>{{item.businessCardCheckStatus}}</text>
+  </view> -->
   <view class="page-section page-section-spacing swiper">
-      <swiper autoplay="{{false}}" interval="3000" duration="500" vertical="{{true}}" circular="{{false}}" class="swiper-grab" display-multiple-items="3">
-        <block wx:for="{{inviteList}}" wx:key="index">
-          <swiper-item class="swiper-items" >
-            <text class="swiper-item">{{item.nickname}}</text>
-            <text wx:if="{{item.businessCardCheckStatus == 1}}" class="swiper-item">待审核</text>
-            <text wx:elif="{{item.businessCardCheckStatus == 2}}" class="swiper-item">已审核</text>
-            <text wx:elif="{{item.businessCardCheckStatus == 3}}" class="swiper-item">不通过</text>
-            <text wx:else class="swiper-item">未审核</text>
-            <text wx:if="{{item.businessCardCheckStatus == 2}}" class="swiper-item">+20</text>
-            <text wx:else class="swiper-item">0</text>
-          </swiper-item>
-        </block>
-      </swiper>
-    </view>
+    <swiper autoplay="{{false}}" interval="3000" duration="500" vertical="{{true}}" circular="{{false}}" class="swiper-grab" display-multiple-items="3">
+      <block wx:for="{{inviteList}}" wx:key="index">
+        <swiper-item class="swiper-items">
+          <text class="swiper-item">{{item.nickname}}</text>
+          <text wx:if="{{item.businessCardCheckStatus == 1}}" class="swiper-item">待审核</text>
+          <text wx:elif="{{item.businessCardCheckStatus == 2}}" class="swiper-item">已审核</text>
+          <text wx:elif="{{item.businessCardCheckStatus == 3}}" class="swiper-item">不通过</text>
+          <text wx:else class="swiper-item">未审核</text>
+          <text wx:if="{{item.businessCardCheckStatus == 2}}" class="swiper-item">+20</text>
+          <text wx:else class="swiper-item">0</text>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
 </view>
 
 <!-- 面对面邀请 -->
 <view hidden="{{screenBlock}}">
-lqllqll
+  lqllqll
 </view>
-<!-- 二维码 -->
-<view>
-   <view class='img'>
-    <image src='data:image/png;base64,{{src2}}'></image>
-   </view>
+
+<view class="hide{{showView?'':'show'}}">
+  <!--遮罩层  -->
+  <view class="shade">
+    <!--面板内容  -->
+    <view class="conts">
+      <image src="/images/invite/faceToface.png"></image>
+      <!-- 二维码 -->
+      <view class='img'>
+        <image src='{{imageUrl}}'></image>
+      </view>
+      <!-- <view>
+        <view class='img'>
+          <image src='{{imageUrl}}'></image>
+        </view>
+      </view> -->
+      <!--右上角的关闭按钮（用于关闭整个conts)  -->
+      <view class="closeImg" bindtap="close"><view class="close">+</view> </view>
+    </view>
+  </view>
 </view>

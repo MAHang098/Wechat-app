@@ -1,26 +1,26 @@
 <view class="content">
-  <view class="left">上架时间：</view>
-  <view class="right">联系人：</view>
+  <view class="left">上架时间：<text class="text">{{shelfTime}}</text> </view>
+  <view class="right">联系人：<text class="text">{{contacts}}</text></view>
 </view>
 <view class="content">
-  <view class="left">地区：</view>
-  <view class="right">性别：</view>
+  <view class="left">地区：<text class="text">{{region}}</text></view>
+  <view class="right">性别：<text class="text">{{sex}}</text></view>
 </view>
 <view class="content">
-  <view class="left">预购产品：</view>
-  <view class="right">电话：</view>
+  <view class="left">预购产品：<text class="text">{{preOrderedProducts}}</text></view>
+  <view class="right">电话：<text class="text">{{phone}}</text></view>
 </view>
 <view class="content">
-  <view class="left">意向品牌：</view>
-  <view class="right">户型：</view>
+  <view class="left">意向品牌：<text class="text">{{intentionBrand}}</text></view>
+  <view class="right">户型：<text class="text">{{apartment}}</text></view>
 </view>
 <view class="content">
-  <view class="left">装修风格：</view>
-  <view class="right">预算：</view>
+  <view class="left">装修风格：<text class="text">{{decorationStyle}}</text></view>
+  <view class="right">预算：<text class="text">{{budget}}</text></view>
 </view>
 <view class="content">
-  <view class="left">预计购买时间：</view>
+  <view class="left">预计购买时间：<text class="text">{{preorderTime}}</text></view>
 </view>
 <view class="content1">
-  <view class="left">备注：</view>
+  <view class="left">备注：<text class="text">{{remarks}}</text></view>
 </view>

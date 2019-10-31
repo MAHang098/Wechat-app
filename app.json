@@ -1,17 +1,20 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/occupation/occupation",
+    
     "pages/invite/invite",
     "pages/integral/integral",
-    
-    "pages/grab-order/grab-order",
+    "pages/interests/interests",
+    "pages/scoreBlock/scoreBlock",
     "pages/index/index",
+    "pages/grab-order/grab-order",
     "pages/orderDetails/orderDetails",
     "pages/grab-sheet/grab-sheet",
     "pages/history-order/history-order",
-    "pages/login/login",
     "pages/loding/loding",
     "pages/withdrawal/withdrawal",
-    "pages/occupation/occupation",
+    
     "pages/Bank-card/Bank-card",
     "pages/Pay-treasure/Pay-treasure",
     "pages/assets/assets",
@@ -22,10 +25,8 @@
     "pages/consulting/consulting",
     "pages/followMessage/followMessage",
     "pages/integralDetail/integralDetail",
-    "pages/interests/interests",
     "pages/recommend/recommend",
     "pages/web-view/web-view",
-    
     "pages/Sign-in/Sign-in",
     "pages/myRanked/myRanked",
     "pages/scoreExchange/scoreExchange",

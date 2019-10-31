@@ -2,10 +2,8 @@
 App({
   onLaunch: function () {
     
-    //用户类型跳转
-    // this.appletUserTypeView();
     //用户登录
-    // this.appletUserLoding();
+    this.appletUserLoding();
     //检查版本更新
     this.updateVersion();
     if (wx.cloud) {
@@ -323,25 +321,7 @@ App({
     wx.showLoading({
       title: '加载中',
     })
-    //优先获取本地缓存
-    wx.getStorage({
-      key: 'occupation',
-      success: function (res) {
-        //判断职业跳转想对页面
-        if (res.data === '0') {
-          //优先跳转到主页
-          wx.switchTab({
-            url: '/pages/index/index'
-          })
-        }
-        if (res.data === '1') {
-          //优先跳转到主页
-          wx.switchTab({
-            url: '/pages/manager/manager'
-          })
-        }
-      },
-    })
+    
 
     this.appletUserPd();
   },
@@ -385,7 +365,7 @@ App({
   //获取用户是否存在
   appletUserPd() {
     var that = this;
-    //第一个方法穿过来的openid
+    //第一个方法传过来的openid
     var openid = '';
     this.appletUserOpenId().then(function (data) {
       openid = data;
@@ -450,37 +430,6 @@ App({
         }
       })
     });
-  },
-
-  //判断用户页面走向
-  appletUserTypeView() {
-    var that = this;
-    //通过职业判断页面走向
-    wx.getStorage({
-      key: 'occupation',
-      success: function (res) {
-        //判断职业跳转想对页面
-        if (res.data === '0') {
-          //优先跳转到主页
-          wx.switchTab({
-            url: '/pages/index/index'
-          })
-        } else if (res.data === '1') {
-          //优先跳转到经纪人
-          wx.switchTab({
-            url: '/pages/manager/manager'
-          })
-        } else {
-          //这里是没有选择职业的年轻人
-          wx.redirectTo({
-            url: '/pages/occupation/occupation'
-          })
-        }
-      },
-      fail: function (err) {
-        that.appletUserPd();
-      }
-    })
   },
 
   phoneCheck(phone) {
