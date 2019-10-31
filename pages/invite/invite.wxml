@@ -44,31 +44,7 @@
   </view>
 </view>
 <view class="inviteDetail">
-  <!-- <view class="inviteDetail-content">
-    <text>会员名称</text>
-    <text>状态</text>
-    <text>奖励</text>
-  </view>
-  <view class="inviteDetail-content1">
-    <text>随风</text>
-    <text>未认证</text>
-    <text>请等待</text>
-  </view>
-  <view class="inviteDetail-content1">
-    <text>随风</text>
-    <text>未认证</text>
-    <text>请等待</text>
-  </view>
-  <view class="inviteDetail-content1">
-    <text>随风</text>
-    <text>未认证</text>
-    <text>请等待</text>
-  </view>
-  <view class="inviteDetail-content2">
-    <text>随风</text>
-    <text>未认证</text>
-    <text>未认证</text>
-  </view> -->
+  
   <view class="inviteDetail-content">
     <text>会员名称</text>
     <text>状态</text>
@@ -79,7 +55,7 @@
   <text>{{item.businessCardCheckStatus}}</text>
   </view> -->
   <view class="page-section page-section-spacing swiper">
-    <swiper autoplay="{{false}}" interval="3000" duration="500" vertical="{{true}}" circular="{{false}}" class="swiper-grab" display-multiple-items="3">
+    <swiper autoplay="{{false}}" interval="3000" duration="500" vertical="{{true}}" circular="{{false}}" class="swiper-grab">
       <block wx:for="{{inviteList}}" wx:key="index">
         <swiper-item class="swiper-items">
           <text class="swiper-item">{{item.nickname}}</text>

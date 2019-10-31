@@ -40,56 +40,12 @@
         <view class="commission">¥{{item.cost}}</view>
       </view>
     </view>
-    <!-- 内容部分2 -->
-    <!-- <view class="wrap-content">
-      <view class="name1">
-        <view class="left">
-          <view class="rank1"><image src="/images/allRank/rank2.png"></image></view>
-          <view class="info-avate"><image></image></view>
-          <view class="info-name">流沙</view>
-        </view>
-        <view class="commission">¥16034</view>
-      </view>
-    </view> -->
-    <!-- 内容部分3 -->
-    <!-- <view class="wrap-content">
-      <view class="name1">
-        <view class="left">
-          <view class="rank1"><image src="/images/allRank/rank3.png"></image></view>
-          <view class="info-avate"><image></image></view>
-          <view class="info-name">流沙</view>
-        </view>
-        <view class="commission">¥16034</view>
-      </view>
-    </view> -->
-    <!-- 内容部分4 -->
-    <!-- <view class="wrap-content">
-      <view class="name1">
-        <view class="left">
-          <view class="rank6">4</view>
-          <view class="info-avate"><image></image></view>
-          <view class="info-name">流沙</view>
-        </view>
-        <view class="commission">¥16034</view>
-      </view>
-    </view> -->
-    <!-- 内容部分5 -->
-    <!-- <view class="wrap-content">
-      <view class="name10">
-        <view class="left">
-          <view class="rank6">5</view>
-          <view class="info-avate"><image></image></view>
-          <view class="info-name">流沙</view>
-        </view>
-        <view class="commission">¥16034</view>
-      </view>
-    </view> -->
   </view>
 </view>
 
 
 <view class="moreCommission">
-  <image src="/images/allRank/button.png"></image>
+  <image bindtap="PagetoCommission" src="/images/allRank/button.png"></image>
 </view>
 
 
