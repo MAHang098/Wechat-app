@@ -1,5 +1,6 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/login/login",
     "pages/occupation/occupation",
     
@@ -7,6 +8,12 @@
     "pages/integral/integral",
     "pages/interests/interests",
     "pages/scoreBlock/scoreBlock",
+=======
+    "pages/manager/manager",
+    "pages/invite/invite",
+    "pages/integral/integral",
+    "pages/grab-order/grab-order",
+>>>>>>> a956e3c63cea6ad35a34e7c9bbec2a38e6b6aaa1
     "pages/index/index",
     "pages/grab-order/grab-order",
     "pages/orderDetails/orderDetails",
@@ -35,8 +42,7 @@
     "pages/updateMessage/updateMessage",
     "pages/updateNickname/updateNickname",
     "pages/Add-card/Add-card",
-    "pages/search/search",
-    "pages/manager/manager"
+    "pages/search/search"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

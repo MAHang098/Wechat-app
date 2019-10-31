@@ -29,7 +29,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -45,39 +44,32 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res.data.data.memberStatus)
             // 判断是否是vip
             if (res.data.data.memberStatus == 1) {
-              console.log(11111)
               that.setData({
                 image: "https://www.zhongjubang.com/api/upload/applet_resource/interests/no-get.png"
               })
             } else if (res.data.data.memberStatus == 2) {
-              console.log(22222)
               that.setData({
                 image: "https://www.zhongjubang.com/api/upload/applet_resource/interests/get.png"
               })
             }
             // 身份认证是否通过
             if (res.data.data.businessCardCheckStatus == 1 || res.data.data.businessCardCheckStatus == 3) {
-              console.log(333333)
               that.setData({
                 image1: "/images/interests/go-certify.png"
               })
             } else if (res.data.data.businessCardCheckStatus == 2) {
-              console.log(44444)
               that.setData({
                 image1: "/images/interests/certify.png"
               })
             }
             // 实名认证是否通过
             if (res.data.data.idCardCheckStatus == 1 || res.data.data.idCardCheckStatus == 3) {
-              console.log(333333)
               that.setData({
                 image2: "/images/interests/go-certify.png"
               })
             } else if (res.data.data.idCardCheckStatus == 2) {
-              console.log(44444)
               that.setData({
                 image2: "/images/interests/certify.png"
               })
@@ -100,7 +92,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -117,15 +108,12 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res.data.data.memberStatus)
             // 判断是否是vip
             if (res.data.data.memberStatus == 1) {
-              console.log(11111)
               that.setData({
                 image: "https://www.zhongjubang.com/api/upload/applet_resource/interests/no-get.png"
               })
             } else if (res.data.data.memberStatus == 2) {
-              console.log(22222)
               that.setData({
                 image: "https://www.zhongjubang.com/api/upload/applet_resource/interests/get.png"
               })
@@ -150,11 +138,9 @@ Page({
 
               } else if (res.data.data.idCardCheckStatus == 2) {
                 //请求支付
-                console.log("请求支付");
                 wx.getStorage({
                   key: 'openId',
                   success: function (res) {
-                    console.log(res)
                     var openId = res.data
                     that.setData({
                       openId: openId
@@ -169,7 +155,6 @@ Page({
                         "Content-Type": "application/x-www-form-urlencoded"
                       },
                       success: function (res) {
-                        console.log(res.data.data.state);
                         if (res.data.data.state != "1") {
 
                           var oderId = res.data.data.package;
@@ -181,13 +166,11 @@ Page({
                               signType: 'MD5', // 签名算法，非必填，（预先约定或者后台传回）
                               paySign: res.data.data.paySign, // 签名 ，必填 （后台传回）
                               success: function (res) { // 成功后的回调函数
-                                console.log("支付成功");
                                 // do something
                                 //支付成功添加订单    需改用户id
                                 wx.getStorage({
                                   key: 'userId',
                                   success: function (res) {
-                                    console.log(res)
                                     var userId = res.data
                                     that.setData({
                                       userId: userId
@@ -253,7 +236,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -268,23 +250,18 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res.data.data.businessCardCheckStatus)
             // res.data.data.businessCardRewardStatus=2
             if (res.data.data.businessCardCheckStatus == 3 || res.data.data.businessCardCheckStatus == ""){
-              console.log(11111)
               wx.showToast({
                 title: '请先完成名片认证',
                 icon: 'none',
                 duration: 2000
               })
             }else{
-              console.log(2222222)
               wx.navigateTo({
                 url: '/pages/IDCard/IDCard',
               })
             }
-            // var json = JSON.parse(res.data)
-            // console.log(json.data);
           }
         })
       }
@@ -332,9 +309,7 @@ Page({
     wx.getStorage({
       key: 'nickName',
       success: function (res) {
-        console.log(res)
         var nickName = res.data
-        console.log(nickName)
         that.setData({
           nickName: nickName,
           loading: true
@@ -346,9 +321,7 @@ Page({
     wx.getStorage({
       key: 'head',
       success: function (res) {
-        console.log(res)
         var head = res.data
-        console.log(head)
         that.setData({
           head: head
         })
@@ -396,7 +369,6 @@ Page({
 
   },
   getUserInfo: function (e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
