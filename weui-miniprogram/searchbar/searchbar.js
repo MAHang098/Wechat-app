@@ -157,7 +157,8 @@ Component({
         },
         inputBlur: function inputBlur(e) {
             this.setData({
-                focus: false
+                focus: false,
+                searchState: false
             });
             this.triggerEvent('blur', e.detail);
         },

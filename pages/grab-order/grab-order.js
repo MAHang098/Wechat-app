@@ -24,7 +24,8 @@ Page({
 			method: 'POST',
 			data: {
 				pageIndex: 1,
-				pageSize: 100
+				pageSize: 100,
+        search: ''
 			},
 			header: {
 				"Content-Type": "application/x-www-form-urlencoded"
@@ -39,35 +40,35 @@ Page({
 			}
 		})
 	},
-	search: function (value) {
-		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				var that = this;
-				wx.request({
-					url: app.globalData.domain + 'admin/applet/gethaslist',
-					method: 'POST',
-					data: {
-						pageIndex: 1,
-						pageSize: 100
-					},
-					header: {
-						"Content-Type": "application/x-www-form-urlencoded"
-					},
-					success: function (res) {
-						if (res.data.code == 200) {
-							var data = res.data.data;
-							that.setData({
-								orerList: data.dataList
-							});
-						}
-					}
-				})
-			}, 200)
-		})
+  // 实时搜索
+	search: function (e) {
+    var that = this;
+    wx.request({
+      url: app.globalData.domain + 'admin/applet/gethaslist',
+      method: 'POST',
+      data: {
+        pageIndex: 1,
+        pageSize: 100,
+        search: e.detail.value
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          var data = res.data.data;
+          that.setData({
+            orerList: data.dataList
+          });
+        }
+      }
+    })
 	},
-	selectResult: function (e) {
-		console.log('select result', e.detail)
-	},
+  // input失去焦点
+  searchBlur: function() {
+
+  },
+  // 跳转到订单详情
   goOrderDetail: function(e) {
     var grabSheetId = e.currentTarget.dataset.id;
     wx.navigateTo({

@@ -4,7 +4,7 @@
 <view class="grab-sheets" >
     <!-- 今日抢单/个人中心 start -->
     <view class="search_header">
-         <mp-searchbar placeholder="请输入关键字搜索" bindselectresult="selectResult" search="{{search}}" style="width: 100%; border-radius: 36rpx"></mp-searchbar>
+         <mp-searchbar bindblur="searchBlur" bindinput="search" placeholder="请输入关键字搜索" value="{{search}}" style="width: 100%; border-radius: 36rpx" ></mp-searchbar>
       
     </view>
     <!-- 今日抢单/个人中心 end -->

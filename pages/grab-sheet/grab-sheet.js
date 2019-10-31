@@ -9,14 +9,16 @@ Page({
 	 */
 	data: {
 		domain: '', // 域名
-		isShowModal: false, // 是否显示模态窗
+		isShowModal1: false, // 是否显示模态窗
+    isShowModal2: false,
 		currentData: 0, // 当前的索引
 		isShowImg: false,
 		grabList: [],
 		userId: '', // 用户id
 		grabSheetId: '', // 抢单表id
 		visible: true, // true（立即抢单） false（抢单成功）
-		sheerOrder: 0 // 已抢订单人数
+		sheerOrder: 0, // 已抢订单人数
+    memberTime: ''  // 会员有效期
 	},
 
 	/**
@@ -24,58 +26,45 @@ Page({
 	 */
 	onLoad: function (options) {
 		var that = this;
-		var time = util.formatDate(new Date());
+	
 		wx.getStorage({
 			key: 'userId',
 			success: function (res) {
 				that.setData({
 					userId: res.data
 				});
+        that.init();
 			},
-		})
-		wx.request({
-			url: app.globalData.domain + 'admin/applet/getgrabsheettop',
-			method: 'POST',
-			data: {
-				pageIndex: 1,
-				pageSize: 100,
-				shelfTime: '2019-10-28 00:00:00'
-			},
-			header: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
-			success: function (res) {
-				if (res.data.code == 200) {
-					var data = res.data.data;
-					that.setData({
-						grabList: data.dataList
-					});
-
-				}
-			}
-		});
-    // 已抢订单列表
-		wx.request({
-			url: app.globalData.domain + 'admin/applet/gethaslist',
-			method: 'POST',
-			data: {
-			  pageIndex: 1,
-			  pageSize: 100
-			},
-			header: {
-			  "Content-Type": "application/x-www-form-urlencoded"
-			},
-			success: function (res) {
-			  if (res.data.code == 200) {
-				var data = res.data.data;
-				that.setData({
-					sheerOrder: data.dataList.length
-				});
-			  }
-			}
 		})
 	},
+  // 请求今日抢单数据
+  init: function() {
+    var that = this;
+    var time = util.formatDate(new Date());
+    wx.request({
+      url: app.globalData.domain + 'admin/applet/getgrabsheettop',
+      method: 'POST',
+      data: {
+        pageIndex: 1,
+        pageSize: 100,
+        shelfTime: time,
+      
+        userId: that.data.userId
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          var data = res.data.data;
+          that.setData({
+            grabList: data.dataList
+          });
 
+        }
+      }
+    });
+  },
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
@@ -127,17 +116,49 @@ Page({
 	// 显示弹窗
 	sheetGrab: function (e) {
 		var that = this;
-		that.setData({
-			isShowModal: true,
-			grabSheetId: e.currentTarget.dataset.id
-		})
+    // 获取当前用户是否时会员   2(会员)   1（不是会员）
+    wx.request({
+      url: app.globalData.domain + 'applet/applet/getappletuservippdgradeidpd',
+      method: 'POST',
+      data: { userId: that.data.userId },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          // wx.navigateTo({
+          //   url: '../grab-sheet/grab-sheet'
+          // })
+          var data = res.data.data;
+          // 如果时会员进入抢单页面否则进入充值页面
+          if (data.memberStatus == 2) {
+            
+            that.setData({
+              isShowModal1: true,
+              grabSheetId: e.currentTarget.dataset.id
+            })
+          } else {
+            // wx.navigateTo({
+            //   url: '../interests/interests'
+            // })
+            that.setData({
+              isShowModal2: true
+            })
+          }
+        }
+      }
+    })
+		
 	},
-	isOKOrder: function () {
+  // 加入会员
+  joinMember: function() {
+    wx.navigateTo({
+      url: '../interests/interests'
+    })
+  },
+	isOKOrder: function (e) {
+    console.log(e)
 		var that = this;
-		// that.setData({
-		//   visible: !that.data.visible
-		// })
-		// console.log(that.data.grabSheetId, that.data.userId);
 		wx.request({
 			header: {
 				"Content-Type": "application/x-www-form-urlencoded"
@@ -151,10 +172,36 @@ Page({
 			success: function (res) {
 				console.log(res)
 				if (res.data.code == 200) {
-					that.setData({
-						isShowModal: false,
-						visible: !that.data.visible
-					})
+          var data = res.data.data;
+          if (data.state == 0) {
+            wx.showToast({
+              title: '抢单失败',
+              icon: 'success',
+              duration: 2000//持续的时间
+            })
+          } else if (data.state == 1) {
+            wx.showToast({
+              title: '已保护',
+              icon: 'success',
+              duration: 2000//持续的时间
+            })
+          } else if (data.state == 2) {
+            wx.showToast({
+              title: '该用户已抢订单',
+              icon: 'success',
+              duration: 2000//持续的时间
+            })
+          } else {
+            wx.showToast({
+              title: '抢单成功',
+              icon: 'success',
+              duration: 2000//持续的时间
+            });
+          }
+          that.setData({
+            isShowModal1: false
+          });
+          that.init();
 				}
 			}
 		})
@@ -167,7 +214,8 @@ Page({
 	// 隐藏弹窗
 	hideModal: function () {
 		this.setData({
-			isShowModal: false
+			isShowModal1: false,
+      isShowModal2: false
 		});
 		this.setData({
 			isShowImg: false
@@ -180,11 +228,55 @@ Page({
 		if (that.data.currentData === e.target.dataset.current) {
 			return false;
 		} else {
-
 			that.setData({
 				currentData: e.target.dataset.current
 			})
 		}
+
+    if (that.data.currentData == 1) {
+      // 个人中心-已抢订单列表
+      wx.request({
+        url: app.globalData.domain + 'admin/applet/gethaslist',
+        method: 'POST',
+        data: {
+          pageIndex: 1,
+          pageSize: 100
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        success: function (res) {
+          if (res.data.code == 200) {
+            var data = res.data.data;
+            that.setData({
+              sheerOrder: data.dataList.length
+            });
+          }
+        }
+      });
+
+      // 获取会员截止日期
+      wx.request({
+        url: app.globalData.domain + 'applet/applet/getappletuservippdgradeidpd',
+        method: 'POST',
+        data: {
+          pageIndex: 1,
+          pageSize: 100,
+          userId: that.data.userId
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        success: function (res) {
+          if (res.data.code == 200) {
+            var data = res.data.data;
+            that.setData({
+              memberTime: data.memberTime
+            });
+          }
+        }
+      });
+    }
 	},
 	// 跳转到已抢订单
 	goSheetOrder: function () {

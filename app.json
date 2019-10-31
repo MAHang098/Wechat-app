@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/manager/manager",
-    "pages/invite/invite",
+    "pages/grab-sheet/grab-sheet",  
+    "pages/grab-order/grab-order",
+    "pages/interests/interests",
     "pages/integral/integral",
-    "pages/grab-order/grab-order",
+    "pages/invite/invite",
     "pages/index/index",
-    "pages/grab-order/grab-order",
     "pages/orderDetails/orderDetails",
-    "pages/grab-sheet/grab-sheet",
     "pages/history-order/history-order",
     "pages/login/login",
     "pages/loding/loding",
@@ -23,7 +23,6 @@
     "pages/consulting/consulting",
     "pages/followMessage/followMessage",
     "pages/integralDetail/integralDetail",
-    "pages/interests/interests",
     "pages/recommend/recommend",
     "pages/web-view/web-view",
     
