@@ -132,7 +132,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/updateuserdetails',
+          url: app.globalData.domain + '/applet/applet/updateuserdetails',
           method: "POST",
           data: {
             userId: userId,
@@ -180,7 +180,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/updateuserdetails',
+          url: app.globalData.domain + '/applet/applet/updateuserdetails',
           method: "POST",
           data: {
             userId: userId,

@@ -35,7 +35,7 @@ Page({
     changed[prop] = e.detail.value;
     this.setData(changed)
   },
-  // 点击登陆按钮跳转到其他页
+  // 点击登陆按钮跳转到首页
   goToPay() {
     const {
       accountNumber

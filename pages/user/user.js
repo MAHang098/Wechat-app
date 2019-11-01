@@ -72,9 +72,8 @@ Page({
     wx.getStorage({
       key: 'head',
       success: function (res) {
-        console.log(res)
         var head = res.data
-        console.log(head)
+        // console.log(head)
         that.setData({
           head: head
         })
@@ -94,7 +93,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -109,7 +107,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res)
             that.setData({
               cost: res.data.data.cost,
               score: res.data.data.score
@@ -142,11 +139,10 @@ Page({
     })
     var domain = this.data.domain;
     var that = this
-    console.log("签到事件");
+    // console.log("签到事件");
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -161,7 +157,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res.data.data.state)
             if (res.data.data.state === "2") {
               wx.showToast({
                 title: '你已签到',
@@ -191,7 +186,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -206,15 +200,12 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res.data.data.state)
             if (res.data.data.state === "2") {
-              console.log("okk");
               that.setData({
                 signin: '已签到'
               })
               // that.onShow();
             } else {
-              console.log("s");
               that.setData({
                 signin: '签到'
               })

@@ -1,23 +1,23 @@
 // sub
-// var sub = function (val) {
+var sub = function (val) {
 
-//   if (val.length == 0 || val == undefined) {
+  if (val.length == 0 || val == undefined) {
 
-//     return;
+    return;
 
-//   }
+  }
 
-//   if (val.length > 17) {
+  if (val.length > 17) {
 
-//     return val.substring(0, 12) + "...";
+    return val.substring(0, 12) + "...";
 
-//   } else {
+  } else {
 
-//     return val;
+    return val;
 
-//   }
+  }
 
-// }
+}
 // sub2
 var sub2 = function (val) {
 
@@ -27,9 +27,9 @@ var sub2 = function (val) {
 
   }
 
-  if (val.length > 5) {
+  if (val.length > 10) {
 
-    return val.substring(0, 4) + "...";
+    return val.substring(0, 8) + "...";
 
   } else {
 
@@ -39,5 +39,5 @@ var sub2 = function (val) {
 
 }
 
-// module.exports.sub = sub;
+module.exports.sub = sub;
 module.exports.sub2 = sub2;

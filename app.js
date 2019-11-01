@@ -51,7 +51,9 @@ App({
       }
     })
   },
-  
+  data:{
+    nickName: ""
+  },
 
 
   globalData: {
@@ -365,6 +367,7 @@ App({
   //获取用户是否存在
   appletUserPd() {
     var that = this;
+    var th = this;
     //第一个方法传过来的openid
     var openid = '';
     this.appletUserOpenId().then(function (data) {
@@ -380,6 +383,7 @@ App({
           "Content-Type": "application/x-www-form-urlencoded"
         }
       }).then(function (data) {
+        // 1为用户存在
         if (data.userPd === '1') {
           //优先跳转到主页
           // wx.switchTab({
@@ -397,11 +401,14 @@ App({
               "Content-Type": "application/x-www-form-urlencoded"
             }
           }).then(function (data) {
+
+            
             wx.setStorage({ key: 'nickName', data: data.nickname, });
             wx.setStorage({ key: 'occupation', data: data.occupation, });
             wx.setStorage({ key: 'sex', data: data.sex, });
             wx.setStorage({ key: 'userId', data: data.userId, });
             wx.setStorage({ key: 'head', data: data.head, });
+
             //判断职业跳转想对页面
             if (data.occupation === '0') {
               //优先跳转到主页
@@ -431,6 +438,7 @@ App({
       })
     });
   },
+  
 
   phoneCheck(phone) {
     //这个方法用于校验手机号，当格式正确的时候返回false
