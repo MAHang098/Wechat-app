@@ -78,8 +78,8 @@
         <view class="personal-list member-time">
             <view class="order-left left">会员时间</view>
             
-             <view class="order-right right" wx:if="{{memberTime == ''}}">您不是会员</view>
-            <view class="order-right right" wx-else>有效期至{{memberTime}}</view>
+             <view class="order-right right" wx:if="{{memberTime == ''}}">您还不是会员</view>
+            <view class="order-right right" wx:else>有效期至{{memberTime}}</view>
         </view>
         <view class="personal-list explain" bindtap="clickExplain">
             <view class="order-left left">抢单说明</view>
