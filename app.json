@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/Pay-treasure/Pay-treasure",
     "pages/loding/loding",
+    "pages/Pay-treasure/Pay-treasure",
+    
     "pages/invite/invite",
     "pages/login/login",
     "pages/occupation/occupation",

@@ -5,7 +5,7 @@ App({
     //用户登录
     this.appletUserLoding();
     //检查版本更新
-    this.updateVersion();
+    // this.updateVersion();
     if (wx.cloud) {
       wx.cloud.init({
         traceUser: true

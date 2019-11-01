@@ -9,9 +9,16 @@
               <text class="order-name">客户姓名：{{item.contacts}}</text>
               <text class="order-tel">联系电话：{{item.phone}}</text>
           </view>
-          <view class="order-right">{{item.count < 6 ? "抢单成功" : "已保护"}}</view>
+          <view class="order-right" data-state="{{item.state}}" data-sheetId="{{item.grabSheetId}}" wx:if="{{item.state == 0}}" bindtap="sheetOrder"><text class="sheetOrder">可抢单</text></view>
+          <view class="order-right" wx:else>{{item.contacts < 6 ? "抢单成功" : "已保护"}}</view>
       </view>
         
     </view>
     <!-- 历史订单 end  -->
+    <view class="modal-mask" bindtap="hideModal"  wx:if="{{isShowModal1}}"></view>
+    <view class="modal-dialog" wx:if="{{isShowModal1}}">
+            <text> 您是否要抢购此订单？</text>
+            <button class="btn isOK" bindtap="isOKOrder">是</button>
+            <button class="btn" bindtap="hideModal">否</button>
+    </view>
 </view>

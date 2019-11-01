@@ -179,9 +179,6 @@
     opacity: 0.5;
     z-index: 11;
 }
-.grabOk {
-  background: 
-}
 
 /* 个人中心 */
 .personal {
