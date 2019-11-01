@@ -55,14 +55,13 @@ Page({
   // 抢单
   sheetOrder: function(e) {
     var that = this;
-    console.log(e.currentTarget.dataset)
-    if (e.currentTarget.dataset.state == 0) {
+    console.log(e)
+    
       that.setData({
         isShowModal1: true,
-        grabSheetId: e.currentTarget.dataset.sheetid
+        grabSheetId: e.currentTarget.dataset.id
       })
      
-    }
     
   },
   isOKOrder: function (e) {

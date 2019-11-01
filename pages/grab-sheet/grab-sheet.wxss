@@ -132,7 +132,8 @@
 }
 .grabOk {
   border: none;
-  background: rgb(216, 212, 212) !important;
+  background: #fff !important;
+  color: #EC9300 !important;
 }
 .modal-dialog {
     width: 563rpx;
