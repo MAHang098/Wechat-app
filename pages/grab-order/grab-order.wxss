@@ -1,7 +1,9 @@
 /* pages/grab-sheet/grab-sheet.wxss */
+page {
+  height: 100%;
+  background: #F9F9F9;
+}
 .grab-sheets {
-    background: #F9F9F9;
-    min-height: 1200rpx;
     font-family:PingFang SC;
     font-weight:500;
 }
