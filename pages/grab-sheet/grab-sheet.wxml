@@ -40,7 +40,7 @@
                 </view>
                 <view class="immediately-grab" >
                     <view bindtap="sheetGrab" data-id="{{item.grabSheetId}}" wx:if="{{item.state == 0}}">立即抢单</view>
-                    <view class="grabOk" wx:else >抢单成功</view>
+                    <view class="grabOk" wx:else >{{item.count < 6 ? '抢单成功': '已保护'}}</view>
                 </view>
             </view>
             <!-- 用户置办时间/产品 end -->
