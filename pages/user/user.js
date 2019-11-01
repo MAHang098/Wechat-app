@@ -21,7 +21,7 @@ Page({
   // 点击跳转派单服务
   interests() {
     wx.navigateTo({
-      url: '/pages/interests/interests',
+      url: '/pages/grab-sheet/grab-sheet',
     })
   },
   // 点击跳转我的推荐

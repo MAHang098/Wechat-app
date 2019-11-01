@@ -1,21 +1,19 @@
 {
   "pages": [
-    "pages/invite/invite",
+    "pages/history-order/history-order",
+    "pages/grab-sheet/grab-sheet",  
     "pages/login/login",
+    "pages/invite/invite",
     "pages/occupation/occupation",
     "pages/manager/manager",
-    "pages/grab-sheet/grab-sheet",  
     "pages/grab-order/grab-order",
     "pages/interests/interests",
     "pages/integral/integral",
-    
     "pages/scoreBlock/scoreBlock",
     "pages/index/index",
     "pages/orderDetails/orderDetails",
-    "pages/history-order/history-order",
     "pages/loding/loding",
     "pages/withdrawal/withdrawal",
-    
     "pages/Bank-card/Bank-card",
     "pages/Pay-treasure/Pay-treasure",
     "pages/assets/assets",
