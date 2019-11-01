@@ -89,7 +89,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res.data)
             if (res.data.code === "200") {
               that.setData({
                 arrayLog: res.data.data

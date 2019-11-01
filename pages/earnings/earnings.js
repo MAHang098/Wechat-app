@@ -13,7 +13,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(1)
     // 全局接口
     this.setData({
       domain: app.globalData.domain
@@ -27,11 +26,9 @@ Page({
   // 封装收益明细填充
   addCar() {
     var that = this;
-    // console.log(this.data.domain);
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -48,7 +45,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            // console.log(res);
 
             that.setData({
               navimage: res.data.data
@@ -71,7 +67,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-console.log(2)
   },
 
   /**

@@ -28,7 +28,6 @@ Page({
 
   },
   tabSelect(e) {
-    console.log(e);
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60
@@ -44,14 +43,12 @@ Page({
       domain: app.globalData.domain,
       fid: fid,
     })
-    console.log(fid)
     var domain = this.data.domain;
     var that = this;
     // 数据加载,判断是否已经名片认证
     // wx.getStorage({
     //   key: 'userId',
     //   success: function (res) {
-    //     console.log(res)
     //     var userId = res.data
     //     that.setData({
     //       userId: userId
@@ -93,13 +90,12 @@ Page({
   onShow: function() {
     var domain = this.data.domain;
     var fid = this.data.fid;
-    console.log(fid)
+    // console.log(fid)
     var that = this;
     // 拿取数据
     wx.getStorage({
       key: 'userId',
       success: function(res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -117,9 +113,7 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function(res) {
-            console.log(res)
-            console.log(res.data.data)
-            console.log(res.data.data[0].tpRecommendId)
+            // console.log(res.data.data[0].tpRecommendId)
             that.setData({
               budget: res.data.data[0].budget,
               create_time: res.data.data[0].createTime,
@@ -141,7 +135,6 @@ Page({
                 "Content-Type": "application/x-www-form-urlencoded"
               },
               success: function(res) {
-                console.log(res.data.data)
                 that.setData({
                   feedBackArr:res.data.data
                 })
@@ -153,7 +146,6 @@ Page({
 
 
             // var json = JSON.parse(res.data.data)
-            // console.log(json.intention);
 
           }
         })

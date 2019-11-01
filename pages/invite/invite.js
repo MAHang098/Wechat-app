@@ -77,11 +77,9 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success(res) {
-            console.log('cechi::::'+res.data.data.dataList)
             that.setData({
               inviteList: res.data.data.dataList
             })
-            console.log(that.data.inviteList)
           }
 
         })

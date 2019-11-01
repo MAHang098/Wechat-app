@@ -65,7 +65,7 @@ Page({
   },
   // 点击经纪人页面进行跳转web-view
   managertowebview: function (e) {
-    console.log(e.currentTarget.dataset.srcs);
+    // console.log(e.currentTarget.dataset.srcs);
     wx.navigateTo({
       url: '/pages/web-view/web-view?srcs=' + encodeURIComponent(e.currentTarget.dataset.srcs),
     });

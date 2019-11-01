@@ -39,20 +39,28 @@
                     <text>{{item.preOrderedProducts}}</text>
                 </view>
                 <view class="immediately-grab" >
-                    <view bindtap="sheetGrab" data-id="{{item.grabSheetId}}" wx:if="{{visible}}">立即抢单</view>
+                    <view bindtap="sheetGrab" data-id="{{item.grabSheetId}}" wx:if="{{item.state == 0}}">立即抢单</view>
                     <view class="grabOk" wx:else >抢单成功</view>
                 </view>
             </view>
             <!-- 用户置办时间/产品 end -->
+            
         </view>
     </view>
     <!-- 抢单列表 end -->
     
-    <!-- 抢单列表 模态窗 start -->
-    <view class="modal-mask" bindtap="hideModal"  wx:if="{{isShowModal}}"></view>
-    <view class="modal-dialog" wx:if="{{isShowModal}}">
+   <!-- 抢单列表 模态窗 start -->
+    <view class="modal-mask" bindtap="hideModal"  wx:if="{{isShowModal1}}"></view>
+    <view class="modal-dialog" wx:if="{{isShowModal1}}">
             <text> 您是否要抢购此订单？</text>
             <button class="btn isOK" bindtap="isOKOrder">是</button>
+            <button class="btn" bindtap="hideModal">否</button>
+    </view>
+
+    <view class="modal-mask" bindtap="hideModal"  wx:if="{{isShowModal2}}"></view>
+    <view class="modal-dialog" wx:if="{{isShowModal2}}">
+            <text> 您还不是会员，是否加入？</text>
+            <button class="btn isOK" bindtap="joinMember">是</button>
             <button class="btn" bindtap="hideModal">否</button>
     </view>
     <!-- 抢单列表 模态窗 end -->
@@ -69,7 +77,7 @@
         </view>
         <view class="personal-list member-time">
             <view class="order-left left">会员时间</view>
-            <view class="order-right right">有效期至2020.10.25</view>
+            <view class="order-right right">有效期至{{memberTime}}</view>
         </view>
         <view class="personal-list explain" bindtap="clickExplain">
             <view class="order-left left">抢单说明</view>

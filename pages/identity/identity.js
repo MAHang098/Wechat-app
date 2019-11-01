@@ -38,7 +38,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -53,8 +52,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res)
-            console.log(res.data.data.businessCardCheckStatus)
             that.setData({
               business_card_check_status: res.data.data.businessCardCheckStatus
             })
@@ -62,7 +59,6 @@ Page({
             // var Pic2 = res.data.data.idCardPic2
 
 
-            console.log(1111)
             that.setData({
               identityImgPath: Pic,
               getCompanyName: res.data.data.companyName,
@@ -115,7 +111,7 @@ Page({
           content: '是否确认上传名片?',
           success(res) {
             if (res.confirm) {
-              console.log('用户点击确定')
+              // console.log('用户点击确定')
               //将文件传给开发者服务器
               wx.uploadFile({
                 url: domain+'/upload', //后台接口
@@ -126,18 +122,16 @@ Page({
                 name: 'file', //文件名
                 success: function(res) {
                   
-                  console.log(res)
                   var json = JSON.parse(res.data)
-                  console.log(json.data.fileUrl);
                   that.setData({
                     identityImgPath: json.data.fileUrl,
                     businessCardPic: json.data.fileName
                   })
-                  console.log('传输成功')
+                  // console.log('传输成功')
                 }
               })
             } else if (res.cancel) {
-              console.log('用户点击取消')
+              // console.log('用户点击取消')
             }
           }
         })

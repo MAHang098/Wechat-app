@@ -78,7 +78,6 @@ Page({
   },
 //  已选下拉框
   mySelect(e) {
-    // console.log(e)
     var name = e.currentTarget.dataset.name
     this.setData({
       grade_name: name,
@@ -146,12 +145,10 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        // console.log(res);
         // 通过 setData 方法设置页面数据更新
         that.setData({
           lists: that.data.lists.concat(res.data.data.dataList),
         });
-        // console.log(that.data.lists)
       }
     })
   },
@@ -172,7 +169,6 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
         },
         success: function (res) {
-          // console.log(res);
           // 通过 setData 方法设置页面数据更新
           that.setData({
             shopImgs: res.data.data.dataList
@@ -193,7 +189,6 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
         },
         success: function (res) {
-          // console.log(res)
           that.setData({
             shopImgs: res.data.data.dataList
           });
@@ -257,7 +252,6 @@ Page({
       this.setData({
         aid: ii
       })
-      // console.log(this.data.aid)
       
     var that = this;
     if (e.currentTarget.dataset.id==='0'){
@@ -273,7 +267,6 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
         },
         success: function (res) {
-          // console.log(res);
           // 通过 setData 方法设置页面数据更新
           that.setData({
             shopImgs: res.data.data.dataList
@@ -294,7 +287,6 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        // console.log(res);
         that.setData({
           shopImgs: res.data.data.dataList
         })

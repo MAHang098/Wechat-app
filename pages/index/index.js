@@ -65,7 +65,6 @@ Page({
   // 1.0 封装轮播图请求
   getSliderData() {
     var that = this;
-    // console.log(this.data.domain);
     wx.request({
       url: this.data.domain + 'public/public/getresourcesbyresourcestype',
       method:'POST',
@@ -76,7 +75,6 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        // console.log(res);
         // 通过 setData 方法设置页面数据更新
         that.setData({
           slider: res.data.data
@@ -99,7 +97,6 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        // console.log(res);
         // 通过 setData 方法设置页面数据更新
         that.setData({
           navimage: res.data.data.dataList
@@ -120,7 +117,6 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        // console.log(res);
         // 通过 setData 方法设置页面数据更新
         that.setData({
           navimages: res.data.data.dataList
@@ -144,7 +140,6 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        // console.log(res);
         // 通过 setData 方法设置页面数据更新
         that.setData({
           shopImgs: res.data.data.dataList
@@ -168,9 +163,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        // console.log(res.data.data);
         // 通过 setData 方法设置页面数据更新
-        // console.log(res);
         that.setData({
           shimag: res.data.data.dataList
         });
@@ -192,7 +185,6 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        // console.log(res);
         // 通过 setData 方法设置页面数据更新
         that.setData({
           loadingMore: false,
@@ -271,9 +263,6 @@ Page({
   //       "Content-Type": "application/x-www-form-urlencoded"
   //     },
   //     success: function (res) {
-  //       console.log(res);
-  //       //请求成功调用函数
-  //       // console.log(res.data.data.dataList[0].typeName)
   //       //在这里，可以将请求到的数据赋值给原始数据，我只是举一个栗子，具体如何赋值，跟后台返回参数的形式有关
   //       that.data.typeName = res.data.data.dataList.typeName;
   //       console.log(that.data.typeName)
@@ -288,9 +277,7 @@ Page({
 // 点击导航菜单获取id
   bindTap: function (e) {
     var that = this;
-    // console.log(e)
   var a = e.currentTarget.id;
-    // console.log(a)
     wx.navigateTo({
       url: '/pages/all-category/all-category?id=' + a,
     })

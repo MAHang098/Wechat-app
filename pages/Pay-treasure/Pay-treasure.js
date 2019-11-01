@@ -22,7 +22,6 @@ Page({
     this.setData(changed)
   },
   submitMessage: function (e) {
-    console.log(this.data);
     if (this.data.aliPayAccount===""||this.data.aliPayAccount===null){
       wx.showToast({
         title: '请填写你的支付宝账号',
@@ -35,11 +34,9 @@ Page({
       });
     }else{
       var that = this;
-      // console.log(this.data.domain);
       wx.getStorage({
         key: 'userId',
         success: function (res) {
-          console.log(res)
           var userId = res.data
           that.setData({
             userId: userId
@@ -56,7 +53,6 @@ Page({
               "Content-Type": "application/x-www-form-urlencoded"
             },
             success: function (res) {
-              console.log(res.data.code);
               if (res.data.code === "200") {
                 wx.showToast({
                   title: '绑定成功',
@@ -139,7 +135,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -154,14 +149,12 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res);
             that.setData({
               aliPayAccount: res.data.data.alipayAccount,
               aliPayName:res.data.data.alipayName
             })
             
             // var json = JSON.parse(res.data)
-            // console.log(json.data);
           }
         })
       }

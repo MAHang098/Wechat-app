@@ -34,7 +34,7 @@
   margin-top: 24rpx;
   font-size: 30rpx;
   float: left;
-background-color: white;
+  background-color: white;
 }
 
 .hangx{
@@ -55,4 +55,8 @@ background-color: white;
   line-height: 100rpx;
   position: fixed;
   bottom: 0;
+}
+
+input{
+  width: 500rpx;
 }

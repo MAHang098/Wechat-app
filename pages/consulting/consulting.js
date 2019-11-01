@@ -52,7 +52,6 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        // console.log(res.data.data);
         // 通过 setData 方法设置页面数据更新
 
         that.setData({
@@ -112,7 +111,7 @@ Page({
 
   // 点击众资讯进行跳转web-view
   informationtowebview: function (e) {
-    console.log(e.currentTarget.dataset.srcs);
+    // console.log(e.currentTarget.dataset.srcs);
     wx.navigateTo({
       url: '/pages/web-view/web-view?srcs=' + encodeURIComponent(e.currentTarget.dataset.srcs),
     });
@@ -122,7 +121,6 @@ Page({
   getBannerNews: function (e) {
 
     var that = this;
-    // console.log(this.data.domain);
     wx.request({
       url: this.data.domain + 'public/public/getresourcesbyresourcestype',
       method: 'POST',
@@ -133,7 +131,6 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        console.log(res.data.data);
         // const {
         //   a
         // } = res.data.data;

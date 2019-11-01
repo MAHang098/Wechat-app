@@ -169,7 +169,7 @@ Page({
 
   //用户不存在的场合 注册账号用的方法
   loginUser: function (e) {
-    console.log(e.detail.userInfo);
+    // console.log(e.detail.userInfo);
     var that = this;
     var th = this;
     if (e.detail.userInfo) {
@@ -177,7 +177,7 @@ Page({
         userInfo: e.detail.userInfo,
         hasUserInfo: true
       })
-      console.log(that.data.userInfo.avatarUrl)
+      // console.log(that.data.userInfo.avatarUrl)
       if (this.data.phone === "") {
         wx.showToast({
           title: '手机号不能为空',
@@ -229,7 +229,7 @@ Page({
                 if (data===''){
                   //验证码正确请求注册接口
                   
-                  console.log(th.data.pid)
+                  // console.log(th.data.pid)
                   wx.request({
                     url: app.globalData.domain + "/applet/applet/addappletuserbind",
                     method: "Post",
@@ -248,7 +248,6 @@ Page({
                     success: function (res) {
                       if (res.data.code === '200') {
                         //注册成功后获取用户资料
-                        console.log(res);
                         app.appletUserLoding();
                       } else {
                         wx.showToast({

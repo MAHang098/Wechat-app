@@ -32,11 +32,9 @@ Page({
   //1.0 封装余额
   getSliderData() {
     var that = this;
-    // console.log(this.data.domain);
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -52,7 +50,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            // console.log(res);
             // const {
             //   a
             // } = res.data.data;
@@ -120,11 +117,9 @@ Page({
    */
   bun: function () {
     var that = this;
-    // console.log(this.data.domain);
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -139,7 +134,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            // console.log(res);
             // 判读是否绑定银行卡
             if (res.data.data.bankCardPd === "0" && res.data.data.aLiPayPd === "0") {
               that.setData({
@@ -147,7 +141,6 @@ Page({
                 limitBlock: false,
               })
             } else {
-              console.log(1)
               wx.navigateTo({
                 url: '/pages/withdrawal/withdrawal',
               })
@@ -179,11 +172,9 @@ Page({
   // 点击银行卡
   toAddCard:function(){
     var that = this;
-    // console.log(this.data.domain);
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -199,7 +190,7 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res.data.data.bankCardList.length);
+            // console.log(res.data.data.bankCardList.length);
             if (res.data.data.bankCardList.length !== 0) {
 
               wx.navigateTo({

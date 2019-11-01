@@ -17,7 +17,6 @@ Page({
     this.setData(changed)
   },
   submitMessage: function (e) {
-    console.log(this.data);
     if (this.data.openaccount === "" || this.data.openaccount === null) {
       wx.showToast({
         title: '请填写你的开户人姓名',
@@ -39,7 +38,6 @@ Page({
       wx.getStorage({
         key: 'userId',
         success: function (res) {
-          console.log(res)
           var userId = res.data
           that.setData({
             userId: userId
@@ -58,7 +56,6 @@ Page({
               "Content-Type": "application/x-www-form-urlencoded"
             },
             success: function (res) {
-              console.log(res);
               if (res.data.code === "200") {
                 wx.showToast({
                   title: '绑定成功',

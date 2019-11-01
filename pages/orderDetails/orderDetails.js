@@ -68,6 +68,9 @@ Page({
           var blueurl1 = res.data.data.preorderTime
           var reg1 = /([T][^/]+)$/;
           var blueurl1 = blueurl1.replace(reg1,"")
+          if (res.data.data.remarks==null){
+            res.data.data.remarks = ""
+          }
           that.setData({
             shelfTime: blueurl,
             region: res.data.data.region,

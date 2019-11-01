@@ -10,11 +10,7 @@ Page({
     userId: [],
     nickName: [],
     head: [],
-    grabList : [
-      {name: '张三', phone: '184****7941', type: '沙发'},
-      { name: '小明', phone: '184****2519', type: '橱柜' },
-      { name: '李四', phone: '184****7546', type: '桌椅' }
-    ],
+    grabList : [],
     autoplay: true,
     sheetOrder: []
   },
@@ -26,42 +22,10 @@ Page({
   },
   // 跳转到抢单页面
   goGrabSheet: function() {
-    var that = this;
-    wx.getStorage({
-      key: 'userId',
-      success: function (res) {
-        that.setData({
-          userId: res.data
-        });
-      },
-    });
-    // 获取当前用户是否时会员   2(会员)   1（不是会员）
-    wx.request({
-      url: app.globalData.domain + 'applet/applet/getappletuservippdgradeidpd',
-      method: 'POST',
-      data: { userId: that.data.userId},
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      success: function(res) {
-        if(res.data.code == 200) {
-          // wx.navigateTo({
-          //   url: '../grab-sheet/grab-sheet'
-          // })
-          var data = res.data.data;
-          // 如果时会员进入抢单页面否则进入充值页面
-          if (data.memberStatus == 2) {
-            wx.navigateTo({
-              url: '../grab-sheet/grab-sheet'
-            })
-          } else {
-            wx.navigateTo({
-              url: '../interests/interests'
-            })
-          }
-        }
-      }
+    wx.navigateTo({
+      url: '../grab-sheet/grab-sheet'
     })
+    
   },
   onLoad: function () {
     this.setData({
@@ -137,7 +101,7 @@ Page({
       })
     }
     
-    // 已抢单列表
+    // 今日抢单列表
     var time = util.formatDate(new Date());
     wx.request({
       url: app.globalData.domain + 'admin/applet/getgrabsheettop',

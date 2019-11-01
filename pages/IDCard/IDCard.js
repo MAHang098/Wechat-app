@@ -35,7 +35,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -51,17 +50,13 @@ Page({
           },
           success: function (res) {
             
-            console.log(res)
-            console.log(res.data.data.businessCardCheckStatus)
             // res.data.data.businessCardRewardStatus = 2
             if (res.data.data.businessCardCheckStatus != 2) {
-              console.log(11111)
               that.setData({
                 maskBlock: false,
                 limitBlock: false
               })
             } else {
-              console.log(2222222)
               that.setData({
                 idCardImgPathFront: "https://www.zhongjubang.com/api/upload/applet_resource/idCardFront.png",
                 idCardImgPathBack: "https://www.zhongjubang.com/api/upload/applet_resource/idCardBack.png",
@@ -79,7 +74,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -94,8 +88,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res)
-            console.log(res.data.data.idCardCheckStatus)
             that.setData({
               idCardStatus: res.data.data.idCardCheckStatus
             })
@@ -155,14 +147,11 @@ Page({
                 name: 'file', //文件名
                 success: function (res) {
 
-                  console.log(res)
                   var json = JSON.parse(res.data)
-                  console.log(json.data.fileUrl);
                   that.setData({
                     idCardImgPathFront: json.data.fileUrl,
                     idCardPic1: json.data.fileName
                   })
-                  console.log('传输成功')
                 }
               })
             } else if (res.cancel) {
@@ -199,9 +188,7 @@ Page({
                 name: 'file', //文件名
                 success: function (res) {
 
-                  console.log(res)
                   var json = JSON.parse(res.data)
-                  console.log(json.data.fileUrl);
                   that.setData({
                     idCardImgPathBack: json.data.fileUrl,
                     idCardPic2: json.data.fileName

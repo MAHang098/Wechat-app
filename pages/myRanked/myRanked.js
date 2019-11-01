@@ -27,7 +27,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res)
         var userId = res.data
         that.setData({
           userId: userId
@@ -43,10 +42,8 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
-            console.log(res.data.data.level)
             if (res.data.data.level == 1) {
               
-              console.log(11111)
               that.setData({
                 image: "http://www.zhongjubang.com/api/upload/applet_resource/myRanked/icon_1.png",
                 level: "青铜"
