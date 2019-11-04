@@ -9,6 +9,7 @@ Page({
     historyList: [],
     userId: '', // 用户id
     isShowModal1: false,
+    isShowModal2: false,
     grabSheetId: '' // 抢单id
   },
 
@@ -56,13 +57,39 @@ Page({
   sheetOrder: function(e) {
     var that = this;
     console.log(e)
-    
-      that.setData({
-        isShowModal1: true,
-        grabSheetId: e.currentTarget.dataset.id
-      })
-     
-    
+    wx.request({
+      url: app.globalData.domain + 'applet/applet/getappletuservippdgradeidpd',
+      method: 'POST',
+      data: { userId: that.data.userId },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          var data = res.data.data;
+          // 如果时会员进入抢单页面否则进入充值页面
+          if (data.memberStatus == 2) {
+            that.setData({
+              isShowModal1: true,
+              grabSheetId: e.currentTarget.dataset.id
+            })
+          } else {
+            // wx.navigateTo({
+            //   url: '../interests/interests'
+            // })
+            that.setData({
+              isShowModal2: true
+            })
+          }
+        }
+      }
+    })
+  },
+  // 加入会员
+  joinMember: function () {
+    wx.navigateTo({
+      url: '../interests/interests'
+    })
   },
   isOKOrder: function (e) {
     var that = this;
@@ -116,7 +143,8 @@ Page({
   // 隐藏弹窗
   hideModal: function () {
     this.setData({
-      isShowModal1: false
+      isShowModal1: false,
+      isShowModal2: false
     });
   },
 })

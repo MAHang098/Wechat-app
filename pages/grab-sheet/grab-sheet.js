@@ -237,7 +237,8 @@ Page({
         method: 'POST',
         data: {
           pageIndex: 1,
-          pageSize: 100
+          pageSize: 100,
+          userId: that.data.userId
         },
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -273,6 +274,8 @@ Page({
           }
         }
       });
+    } else {
+      this.init();
     }
 	},
 	// 跳转到已抢订单
