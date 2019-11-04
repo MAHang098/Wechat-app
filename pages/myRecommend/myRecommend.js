@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    domain: '',  // 域名
     loading: false,  // 数据加载
     myRecommendArr: [],
     items: [
@@ -28,10 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
     var that = this;
     // 拿取数据
     wx.getStorage({
@@ -42,7 +38,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/gettprecommendclient',
+          url: app.globalData.domain + '/applet/applet/gettprecommendclient',
           method: "POST",
           data: {
             userId: userId,
@@ -119,44 +115,7 @@ Page({
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    var domain = this.data.domain;
-    var last_recommend_id = this.data.last_recommend_id;
-    var myRecommendArr = this.data.myRecommendArr;
-    var checkboxArr = this.data.checkboxArr;
-    var getMessage = this.data.getMessage;
-    var that = this;
-    wx.getStorage({
-      key: 'openId',
-      success: function (res) {
-        var openId = res.data
-        wx.request({
-          url: domain + '/Home/Index/myRecommend',
-          data: {
-            openid: openId,
-            last_id: last_recommend_id,
-            status: checkboxArr,
-            phone: getMessage
-          },
-          success: function (res) {
-            var status = res.data.status;
-            var moreArr = myRecommendArr.concat(res.data.data)
-            if (status == 5) {
-              that.setData({
-                myRecommendArr: moreArr,
-                last_recommend_id: res.data.last_recommend_id,
-                loading: true
-              })
-            }
-          }
-        })
-      }
-    })
-  },
-
+  
   
 
   /**
@@ -203,9 +162,8 @@ Page({
   submitMessage: function() {
     var checkboxArr = this.data.checkboxArr;
     var getMessage = this.data.getMessage;
-    var domain = this.data.domain;
     var that = this;
-    // 拿取数据
+    // 通过电话号码和状态查询
     wx.getStorage({
       key: 'userId',
       success: function (res) {
@@ -214,7 +172,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/gettprecommendclient',
+          url: app.globalData.domain + '/applet/applet/gettprecommendclient',
           method: "POST",
           data: {
             userId: userId,
@@ -226,6 +184,7 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
+            console.log(res)
             // console.log(res.data.data[0].intention)
             that.setData({
               myRecommendArr: res.data.data,

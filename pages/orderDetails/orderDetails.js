@@ -66,8 +66,8 @@ Page({
           var blueurl = blueurl.replace(reg,"")
           // 正则预计购买时间
           var blueurl1 = res.data.data.preorderTime
-          var reg1 = /([T][^/]+)$/;
-          var blueurl1 = blueurl1.replace(reg1,"")
+          // var reg1 = /(\d{4}))/;
+          var blueurl1 = blueurl1.substring(0, 7);
           if (res.data.data.remarks==null){
             res.data.data.remarks = ""
           }

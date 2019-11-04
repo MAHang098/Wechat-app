@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/grab-order/grab-order",
-    "pages/invite/invite",
     "pages/loding/loding",
-    "pages/Pay-treasure/Pay-treasure",
+    "pages/grab-order/grab-order",
+    
     "pages/login/login",
+    "pages/Pay-treasure/Pay-treasure",
+    
+    "pages/invite/invite",
     "pages/occupation/occupation",
     "pages/manager/manager",
     "pages/orderDetails/orderDetails",

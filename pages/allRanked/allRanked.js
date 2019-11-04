@@ -59,7 +59,7 @@ Page({
   },
   PagetoCommission(){
     wx.navigateTo({
-      url: '/pages/assets/assets',
+      url: '/pages/recommend/recommend',
     })
   }
   

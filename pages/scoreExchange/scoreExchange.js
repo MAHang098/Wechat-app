@@ -7,17 +7,14 @@ Page({
    */
   data: {
     loading: false,// 加载数据
-    domain: '',// 域名
+    
     score: "",  //我的积分
     score_exchange: 100, //兑换比例
     userId: []
   },
 
   onShow: function () {
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
     var that = this;
     wx.getStorage({
       key: 'userId',
@@ -28,7 +25,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/getappletuserscore',
+          url: app.globalData.domain + '/applet/applet/getappletuserscore',
           method: "POST",
           data: {
             userId: userId
@@ -105,7 +102,6 @@ Page({
    * 兑换积分
    */
   exchangeSubmit: function() {
-    var domain = this.data.domain;
     var getMoney = this.data.getMoney;
     var score = this.data.score; 
     console.log(score)
@@ -158,7 +154,7 @@ Page({
             loading: false
           })
           wx.request({
-            url: domain + '/applet/applet/updateappletscripttocost',
+            url: app.globalData.domain + '/applet/applet/updateappletscripttocost',
             method: "POST",
             data: {
               userId: userId,
@@ -191,7 +187,7 @@ Page({
                       userId: userId
                     })
                     wx.request({
-                      url: domain + '/applet/applet/getappletuserscore',
+                      url: app.globalData.domain + '/applet/applet/getappletuserscore',
                       method: "POST",
                       data: {
                         userId: userId

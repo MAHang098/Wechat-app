@@ -4,6 +4,8 @@ App({
     
     //用户登录
     this.appletUserLoding();
+    //修改有问题的昵称
+    this.updateNickName();
     //检查版本更新
     // this.updateVersion();
     if (wx.cloud) {
@@ -53,6 +55,51 @@ App({
   },
   data:{
     nickName: ""
+  },
+  //修改微信昵称为正常明文
+  updateNickName: function () {
+    var that = this;
+    var openid = '';
+    this.appletUserOpenId().then(function (data) {
+      openid = data;
+      that.zjbPost({
+        url: "applet/applet/getusermeansbyuserid",
+        method: "POST",
+        data: {
+          openId: openid
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      }).then(function (data) {
+        //判断昵称是否存在问题有的话就修改
+        if (data.nickname === '666') {
+          //获取用户昵称等信息
+          wx.getUserInfo({
+            success: function (res) {
+              var userInfo = res.userInfo;
+              var nickName = userInfo.nickName;
+              //修改错误的昵称
+              wx.request({
+                url: that.globalData.domain + 'applet/applet/updateuserdetails',
+                method: "Post",
+                data: {
+                  userId: data.userId,
+                  nickName: nickName
+                },
+                header: {
+                  "Content-Type": "application/x-www-form-urlencoded"
+                },
+                success: function (res) {
+                  //成功失败都不做处理
+                }
+              })
+
+            }
+          })
+        }
+      })
+    })
   },
 
 
@@ -431,7 +478,7 @@ App({
         } else {
           //用户不存在的话
           wx.reLaunch({
-            url: '/pages/login/login'
+            url: '/pages/loding/loding'
           })
           wx.hideLoading();
         }

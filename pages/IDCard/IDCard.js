@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    domain: '',  // 域名
     loading: false,  // 数据加载
     idCardImgPathFront: "https://www.zhongjubang.com/api/upload/applet_resource/idCardFront.png",  //身份证图片正面
     idCardImgPathBack: "https://www.zhongjubang.com/api/upload/applet_resource/idCardBack.png",  //身份证图片反面
@@ -26,10 +25,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      loading: true,
-      domain: app.globalData.domain
+      loading: true
     })
-    var domain = this.data.domain;
     var that = this;
     // 数据加载,判断是否已经名片认证
     wx.getStorage({
@@ -40,7 +37,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/getappletuserbusiness',
+          url: app.globalData.domain + '/applet/applet/getappletuserbusiness',
           method: "POST",
           data: {
             userId: userId
@@ -79,7 +76,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/getappletuseridentity',
+          url: app.globalData.domain + '/applet/applet/getappletuseridentity',
           method: "POST",
           data: {
             userId: userId,
@@ -210,7 +207,6 @@ Page({
    * 提交文字内容，且请求上传图片方法
    */
   submitMessage: function () {
-    var domain = this.data.domain;
     var idCardPic1 = this.data.idCardPic1;
     var idCardPic2 = this.data.idCardPic2;
     // var uploadIdCardImgPathFront = this.data.uploadIdCardImgPathFront;
@@ -249,7 +245,7 @@ Page({
             userId: userId
           })
           wx.request({
-            url: domain + '/applet/applet/updateuserdetails',
+            url: app.globalData.domain + '/applet/applet/updateuserdetails',
             method: "POST",
             data: {
               userId: userId,
@@ -272,61 +268,9 @@ Page({
       })
       
     }
-  },
-
-  /**
-   * 图片上传（正面）
-   */
-  uploadImgFront: function (uploadIdCardImgPathFront, uploadIdCardImgPathBack, openId) {
-    var domain = this.data.domain;
-    var that = this;
-    wx.uploadFile({
-      url: domain + '/Home/Index/idCardUpload',
-      filePath: uploadIdCardImgPathFront,
-      name: 'file',
-      formData: {
-        'openid': openId,
-        'type': 1
-      },
-      success(res) {
-      },
-      complete: function (complete) {
-        that.uploadImgBack(uploadIdCardImgPathBack, openId);
-      }
-    })
-  },
-
-  /**
-   * 图片上传（反面）
-   */
-  uploadImgBack: function (uploadIdCardImgPathBack, openId) {
-    var domain = this.data.domain;
-    var that = this;
-    wx.uploadFile({
-      url: domain + '/Home/Index/idCardUpload',
-      filePath: uploadIdCardImgPathBack,
-      name: 'file',
-      formData: {
-        'openid': openId,
-        'type': 2
-      },
-      success(res) {
-      },
-      complete: function (complete) {
-        wx.showToast({
-          title: '操作成功',
-          icon: 'success!',
-          duration: 2000,
-          success: function (res) {
-            that.setData({
-              loading: true
-            })
-            setTimeout(function () {
-              wx.navigateBack({})
-            }, 1000)
-          }
-        })
-      }
-    })
   }
+
+  
+
+  
 })

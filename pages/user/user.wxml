@@ -51,7 +51,7 @@
 
 
         <image class="images3" bindtap="interests" src="http://www.zhongjubang.com/api/upload/applet_resource/user/mission.png"></image>
-
+        <!-- 关于我们 -->
         <image class="images4" bindtap="Aboutus" src="http://www.zhongjubang.com/api/upload/applet_resource/user/about.png"></image>
 
     </view>

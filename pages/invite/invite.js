@@ -19,7 +19,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
 
     
 
@@ -77,17 +76,20 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success(res) {
+            console.log(res)
             that.setData({
               inviteList: res.data.data.dataList
             })
           }
 
         })
-        // 邀请二维码
+        // 面对面邀请二维码
+        // const scene = de
+        
         wx.request({
           url: app.globalData.domain + '/wechat/applet/appltqrcode',
           data: {
-            scene: 'pid='+res.data,
+            scene: res.data,
             page: 'pages/loding/loding',
             width: 430,
             userId: res.data
@@ -142,7 +144,7 @@ Page({
     // if (res.from === 'button') {
     //   // 来自页面内转发按钮
     // }
-    
+    console.log('cechi:::'+this.data.userId) 
     return {
       title: "众居邦微信小程序",
       path: 'pages/loding/loding?pid=' + this.data.userId

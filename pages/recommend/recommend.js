@@ -7,7 +7,6 @@ Page({
    */
   data: {
     loading: true,// 加载数据
-    domain: '',// 域名
     userId: '',
     recommendStatusArr: ['未装修', '已装修'], //装修状态
     objectArray: [
@@ -37,7 +36,6 @@ Page({
   onLoad: function (options) {
     this.setData({
       intention: options.used_name,
-      domain: app.globalData.domain,
       recommendMessageArr: [{
         name: "",
         phone: "",
@@ -255,7 +253,6 @@ Page({
    * 请求上传数据
    */
   submitMessage: function() {
-    var domain = this.data.domain;
     var that = this;
     wx.getStorage({
       key: 'userId',
@@ -271,7 +268,7 @@ Page({
         for (var i = 0; i<recommendArr.length;i++){
           console.log(recommendArr[i].name)
           wx.request({
-            url: domain + '/applet/applet/addtprecommendclient',
+            url: app.globalData.domain + '/applet/applet/addtprecommendclient',
             method: "POST",
             data: {
               userId: userId,

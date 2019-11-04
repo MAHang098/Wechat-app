@@ -5,7 +5,6 @@ const app = getApp()
 
 Page({
   data: {
-    domain: '', // 域名
     level: "青铜",
     userId: [],
     nickName: [],
@@ -28,10 +27,7 @@ Page({
     
   },
   onLoad: function () {
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
     var that = this;
     wx.getStorage({
       key: 'userId',
@@ -41,7 +37,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/getappletuservippdgrade',
+          url: app.globalData.domain + '/applet/applet/getappletuservippdgrade',
           method: "POST",
           data: {
             userId: userId
