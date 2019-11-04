@@ -97,7 +97,7 @@
     </radio-group>
     <view class="screenName">客户筛选</view>
     <view class="inputStyle">
-      <input type="number" value="{{getMessage}}" placeholder="请输入客户姓名或手机号码" maxlength="11" bindinput="getMessage"></input>
+      <input type="number" value="{{getMessage}}" placeholder="请输入手机号码" maxlength="11" bindinput="getMessage"></input>
     </view>
   </view>
   <view class="buttonModule">

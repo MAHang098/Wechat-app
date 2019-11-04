@@ -32,7 +32,6 @@ Page({
     // 点击请选择银行卡
     Bankk: true,
     Bank: true,
-    domain: '',  // 域名
     cash_out: 0,
     // 1.0余额
     cost:'',
@@ -60,7 +59,6 @@ Page({
   //1.0 封装余额
   getSliderData() {
     var that = this;
-    // console.log(this.data.domain);
     wx.getStorage({
       key: 'userId',
       success: function (res) {
@@ -71,7 +69,7 @@ Page({
         })
 
         wx.request({
-          url: that.data.domain + '/applet/applet/getappletuserscore',
+          url: app.globalData.domain + '/applet/applet/getappletuserscore',
           method: 'POST',
           data: {
             userId: res.data,
@@ -98,7 +96,6 @@ Page({
 // 2.0封装支付宝账号
   treasure() {
     var that = this;
-    // console.log(this.data.domain);
     wx.getStorage({
       key: 'userId',
       success: function (res) {
@@ -108,7 +105,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: that.data.domain + '/applet/applet//getbindbankcardalipaypd',
+          url: app.globalData.domain + '/applet/applet//getbindbankcardalipaypd',
           method: 'POST',
           data: {
             userId: res.data,
@@ -149,7 +146,7 @@ Page({
         })
 
         wx.request({
-          url: that.data.domain + '/applet/applet//getbindbankcardalipaypd',
+          url: app.globalData.domain + '/applet/applet//getbindbankcardalipaypd',
           method: 'POST',
           data: {
             userId: res.data,
@@ -168,7 +165,6 @@ Page({
         })
       }
     })
-    // console.log(this.data.domain);
     
   },
 
@@ -176,11 +172,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 全局接口
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
 
 
     // 2.0 填充支付宝信息
@@ -192,7 +184,6 @@ Page({
   // 点击提现弹框菜单
   bun: function () {
     var that = this;
-    // console.log(this.data.domain);
     wx.getStorage({
       key: 'userId',
       success: function (res) {
@@ -202,7 +193,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: that.data.domain + '/applet/applet/getbindbankcardalipaypd',
+          url: app.globalData.domain + '/applet/applet/getbindbankcardalipaypd',
           method: 'POST',
           data: {
             userId: res.data,
@@ -376,10 +367,6 @@ Page({
       openPerson: this.data.Addcard[e.detail.value].openPerson,
       openBank: this.data.Addcard[e.detail.value].openBank,
     })
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
     var that = this;
   },
   // 点击删除提交弹框菜单

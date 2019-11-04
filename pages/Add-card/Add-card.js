@@ -18,7 +18,6 @@ Page({
 // 填充银行卡信息
   addCar() {
     var that = this;
-    // console.log(this.data.domain);
     wx.getStorage({
       key: 'userId',
       success: function (res) {
@@ -28,7 +27,7 @@ Page({
         })
 
         wx.request({
-          url: 'https://www.zhongjubang.com/api/applet/applet//getbindbankcardalipaypd',
+          url: app.globalData.domain + '/applet/applet//getbindbankcardalipaypd',
           method: 'POST',
           data: {
             userId: res.data,
@@ -56,11 +55,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 全局接口
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
 
     // 填充银行卡信息
     this.addCar();

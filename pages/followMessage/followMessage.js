@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    domain: '', // 域名
     loading: true, // 数据加载
     fid: "",
     product: "",
@@ -40,10 +39,8 @@ Page({
   onLoad: function(options) {
     var fid = options.id;
     this.setData({
-      domain: app.globalData.domain,
-      fid: fid,
+      fid: fid
     })
-    var domain = this.data.domain;
     var that = this;
     // 数据加载,判断是否已经名片认证
     // wx.getStorage({
@@ -88,21 +85,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var domain = this.data.domain;
     var fid = this.data.fid;
-    // console.log(fid)
+    console.log(fid)
     var that = this;
     // 拿取数据
     wx.getStorage({
       key: 'userId',
       success: function(res) {
         var userId = res.data
+        console.log(userId)
         that.setData({
           userId: userId
         })
         // 渲染客户基本信息
         wx.request({
-          url: domain + '/applet/applet/gettprecommendclient',
+          url: app.globalData.domain + '/applet/applet/gettprecommendclient',
           method: "POST",
           data: {
             userId: userId,
@@ -113,6 +110,7 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function(res) {
+            console.log(res)
             // console.log(res.data.data[0].tpRecommendId)
             that.setData({
               budget: res.data.data[0].budget,
@@ -125,8 +123,9 @@ Page({
               loading: true
             })
             // 渲染平台反馈
+            console.log(res.data.data[0].tpRecommendId)
             wx.request({
-              url: domain + '/applet/applet/getrecommendstatebyrecommendid',
+              url: app.globalData.domain + '/applet/applet/getrecommendstatebyrecommendid',
               method: "POST",
               data: {
                 recommendId: res.data.data[0].tpRecommendId
@@ -135,6 +134,7 @@ Page({
                 "Content-Type": "application/x-www-form-urlencoded"
               },
               success: function(res) {
+                console.log(res)
                 that.setData({
                   feedBackArr:res.data.data
                 })
@@ -189,7 +189,6 @@ Page({
 
   },
   sendMessage: function(res) {
-    var domain = this.data.domain;
     var fid = this.data.fid;
     var leavingMessage = this.data.leavingMessage;
     var tpRecommendId = this.data.tpRecommendId;
@@ -202,7 +201,7 @@ Page({
         console.log(res)
         var userId = res.data
         wx.request({
-          url: domain + '/applet/applet/addleavingmessagebyrecommendid',
+          url: app.globalData.domain + '/applet/applet/addleavingmessagebyrecommendid',
           method: "POST",
           data: {
             userId: userId,

@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    domain: '',  // 域名
     loading: false,  // 数据加载
     getNickname: "",
     userId: [],
@@ -18,9 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      domain: app.globalData.domain
-    })
+    
   },
 
   /**
@@ -140,7 +137,6 @@ Page({
       }
     })
     
-    var domain = this.data.domain;
     
     var that = this;
     if (nickName == null) {

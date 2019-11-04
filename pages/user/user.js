@@ -4,7 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    domain: '',  // 域名
     score: '',
     cost: '',
     userId: [],
@@ -81,10 +80,8 @@ Page({
       }
     })
 
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
+
     var that = this;
 
 
@@ -98,7 +95,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/getappletuserscore',
+          url: app.globalData.domain + '/applet/applet/getappletuserscore',
           method: "POST",
           data: {
             userId: userId
@@ -134,10 +131,7 @@ Page({
     })
   },
   usersignin: function () {
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
     var that = this
     // console.log("签到事件");
     wx.getStorage({
@@ -148,7 +142,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/adduserscriptlogbysignin',
+          url: app.globalData.domain + '/applet/applet/adduserscriptlogbysignin',
           method: "POST",
           data: {
             userId: userId
@@ -178,10 +172,9 @@ Page({
     })
   },
   signInPd: function () {
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
+    
+    
     var that = this
     wx.getStorage({
       key: 'userId',
@@ -191,7 +184,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/getuserscriptlogbysigninpd',
+          url: app.globalData.domain + '/applet/applet/getuserscriptlogbysigninpd',
           method: "POST",
           data: {
             userId: userId

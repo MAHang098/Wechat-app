@@ -7,7 +7,6 @@ Page({
    */
   data: {
     loading: true,// 加载数据
-    domain: '',// 域名
     openId: '',
     real_name_score: "1000",  //实名认证积分
     identity_score: "1000",  //身份认证积分
@@ -27,9 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      domain: app.globalData.domain
-    })
+    
     this.signInPd();
   },
 
@@ -44,7 +41,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var domain = this.data.domain;
+    
     var that = this;
     wx.getStorage({
       key: 'userId',
@@ -54,7 +51,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/getappletuservippdgradeidpd',
+          url: app.globalData.domain + '/applet/applet/getappletuservippdgradeidpd',
           method: "POST",
           data: {
             userId: userId
@@ -93,14 +90,13 @@ Page({
    */
   signIn: function () {
     var openId = this.data.openId;
-    var domain = this.data.domain;
     var that = this;
     if (openId != '') {
       that.setData({
         loading: false
       })
       wx.request({
-        url: domain + '/Home/Index/userSign',
+        url: app.globalData.domain + '/Home/Index/userSign',
         data: {
           openid: openId
         },
@@ -144,10 +140,6 @@ Page({
     })
   },
   signIn: function () {
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
     var that = this
     console.log("签到事件");
     wx.getStorage({
@@ -159,7 +151,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/adduserscriptlogbysignin',
+          url: app.globalData.domain + '/applet/applet/adduserscriptlogbysignin',
           method: "POST",
           data: {
             userId: userId
@@ -199,10 +191,6 @@ Page({
     })
   },
   signInPd: function () {
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
     var that = this
     console.log("签到事件");
     wx.getStorage({
@@ -214,7 +202,7 @@ Page({
           userId: userId
         })
         wx.request({
-          url: domain + '/applet/applet/getuserscriptlogbysigninpd',
+          url: app.globalData.domain + '/applet/applet/getuserscriptlogbysigninpd',
           method: "POST",
           data: {
             userId: userId

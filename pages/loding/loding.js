@@ -156,14 +156,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.pid!=null){
-      console.log(options.pid)
-      this.setData({
+    var that = this;
+    console.log(options)
+    if (options.pid){
+      that.setData({
         pid: options.pid
       })
     }
-    
-   
+    if (options.scene) {
+      const scene = decodeURIComponent(options.scene);
+      if (scene) {
+        that.setData({
+          pid: scene
+        })
+      }
+    }
+    console.log('kaixin:::' + that.data.pid)
     
   },
 
@@ -171,7 +179,6 @@ Page({
   loginUser: function (e) {
     // console.log(e.detail.userInfo);
     var that = this;
-    var th = this;
     if (e.detail.userInfo) {
       that.setData({
         userInfo: e.detail.userInfo,
@@ -229,7 +236,7 @@ Page({
                 if (data===''){
                   //验证码正确请求注册接口
                   
-                  // console.log(th.data.pid)
+                  console.log(that.data.pid)
                   wx.request({
                     url: app.globalData.domain + "/applet/applet/addappletuserbind",
                     method: "Post",
@@ -240,7 +247,7 @@ Page({
                       sex: that.data.userInfo.gender,
                       nickName: that.data.userInfo.nickName,
                       head: that.data.userInfo.avatarUrl,
-                      pid: th.data.pid
+                      pid: that.data.pid
                     },
                     header: {
                       "Content-Type": "application/x-www-form-urlencoded"

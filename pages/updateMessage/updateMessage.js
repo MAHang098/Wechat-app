@@ -22,7 +22,6 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    domain: '',  // 域名
     loading: false,  // 数据加载
     openId: "",
     business_card_check_status: "",
@@ -103,13 +102,6 @@ Page({
 
   },
   onLoad: function () {
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
-    var that = this;
-    
-    //渲染数据
     
 
   },
@@ -118,10 +110,6 @@ Page({
     this.setData({
       index: e.detail.value
     })
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
     var that = this;
     wx.getStorage({
       key: 'userId',
@@ -166,10 +154,6 @@ Page({
     this.setData({
       index2: e.detail.value
     })
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
     var that = this;
     wx.getStorage({
       key: 'userId',
@@ -243,11 +227,7 @@ Page({
     })
   },
   chooseImg: function () {
-    this.setData({
-      domain: app.globalData.domain,
-      image: this.data.image
-    })
-    var domain = this.data.domain;
+    
     var image = this.data.image;
     console.log(image)
     var that = this;
@@ -265,7 +245,7 @@ Page({
               console.log('用户点击确定')
               //将文件传给开发者服务器
               wx.uploadFile({
-                url: domain + '/upload', //后台接口
+                url: app.globalData.domain + '/upload', //后台接口
                 header: {
                   "Content-Type": "multipart/form-data"
                 }, //类型
