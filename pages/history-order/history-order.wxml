@@ -33,7 +33,7 @@
                     <text>{{item.preOrderedProducts}}</text>
                 </view>
                 <view class="immediately-grab" >
-                    <view bindtap="sheetOrder" data-id="{{item.grabSheetId}}" wx:if="{{item.state == 0}}">可抢单</view>
+                    <view bindtap="sheetOrder" data-id="{{item.grabSheetId}}" wx:if="{{item.state == 0 && item.count < 6}}">可抢单</view>
                     <view class="grabOk" wx:else >{{item.count < 6 ? '抢单成功' : '已保护'}}</view>
                 </view>
             </view>
