@@ -18,6 +18,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    
     wx.getStorage({
       key: 'userId',
       success: function (res) {
@@ -132,6 +133,7 @@ Page({
               icon: 'success',
               duration: 2000//持续的时间
             });
+            that.sheetOrders();
           }
           that.setData({
             isShowModal1: false
@@ -148,4 +150,31 @@ Page({
       isShowModal2: false
     });
   },
+  // 获取已抢订单及设置上一页的数据
+  sheetOrders: function() {
+    var that = this;
+    var pages = getCurrentPages() //  获取页面栈  
+    var prevPage = pages[pages.length - 2];
+    
+    wx.request({
+      url: app.globalData.domain + 'admin/applet/gethaslist',
+      method: 'POST',
+      data: {
+        pageIndex: 1,
+        pageSize: 100,
+        userId: that.data.userId
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          var data = res.data.data;
+          prevPage.setData({
+            sheerOrder: data.dataList.length
+          })
+        }
+      }
+    });
+  }
 })

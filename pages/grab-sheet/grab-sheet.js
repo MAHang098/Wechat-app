@@ -37,6 +37,29 @@ Page({
 			},
 		})
 	},
+  onShow: function (options) {
+    var that = this;
+    wx.request({
+      url: app.globalData.domain + 'admin/applet/gethaslist',
+      method: 'POST',
+      data: {
+        pageIndex: 1,
+        pageSize: 100,
+        userId: that.data.userId
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          var data = res.data.data;
+          that.setData({
+            sheerOrder: data.dataList.length
+          });
+        }
+      }
+    });
+  },
   // 请求今日抢单数据
   init: function() {
     var that = this;
