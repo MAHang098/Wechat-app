@@ -48,7 +48,6 @@ Page({
         pageIndex: 1,
         pageSize: 100,
         shelfTime: time,
-      
         userId: that.data.userId
       },
       header: {

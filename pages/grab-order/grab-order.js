@@ -7,7 +7,8 @@ Page({
 	 */
 	data: {
 		search: '',
-		orerList: []
+		orerList: [],
+    userId: ''
 	},
 
 	/**
@@ -18,28 +19,41 @@ Page({
 		that.setData({
 			search: that.search.bind(that)
 		});
-
-		wx.request({
-			url: app.globalData.domain + 'admin/applet/gethaslist',
-			method: 'POST',
-			data: {
-				pageIndex: 1,
-				pageSize: 100,
-        search: ''
-			},
-			header: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
-			success: function (res) {
-				if (res.data.code == 200) {
-					var data = res.data.data;
-					that.setData({
-						orerList: data.dataList
-					});
-				}
-			}
-		})
+    wx.getStorage({
+      key: 'userId',
+      success: function (res) {
+        that.setData({
+          userId: res.data
+        });
+        that.init();
+      },
+    })
+		
 	},
+  init: function() {
+    var that = this;
+    wx.request({
+      url: app.globalData.domain + 'admin/applet/gethaslist',
+      method: 'POST',
+      data: {
+        pageIndex: 1,
+        pageSize: 100,
+        search: '',
+        userId: that.data.userId
+			},
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          var data = res.data.data;
+          that.setData({
+            orerList: data.dataList
+          });
+        }
+      }
+    })
+  },
   // 实时搜索
 	search: function (e) {
     var that = this;

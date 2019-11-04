@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/grab-order/grab-order",
+    "pages/invite/invite",
     "pages/loding/loding",
     "pages/Pay-treasure/Pay-treasure",
-    
-    "pages/invite/invite",
     "pages/login/login",
     "pages/occupation/occupation",
     "pages/manager/manager",
@@ -12,7 +12,6 @@
     "pages/interests/interests",
     "pages/scoreBlock/scoreBlock",
     "pages/index/index",
-    "pages/grab-order/grab-order",
     "pages/grab-sheet/grab-sheet",
     "pages/history-order/history-order",
     "pages/withdrawal/withdrawal",
