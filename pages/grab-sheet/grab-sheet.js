@@ -75,7 +75,7 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+    this.checkCurrent()
 	},
 
 	/**
@@ -129,7 +129,7 @@ Page({
           //   url: '../grab-sheet/grab-sheet'
           // })
           var data = res.data.data;
-          // 如果时会员进入抢单页面否则进入充值页面
+          // 如果是会员进入抢单页面否则进入充值页面
           if (data.memberStatus == 2) {
             
             that.setData({
