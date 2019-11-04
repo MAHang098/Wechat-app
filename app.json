@@ -2,7 +2,6 @@
   "pages": [
     "pages/loding/loding",
     "pages/grab-order/grab-order",
-    "pages/invite/invite",
     
     "pages/login/login",
     "pages/Pay-treasure/Pay-treasure",

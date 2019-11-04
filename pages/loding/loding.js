@@ -159,19 +159,15 @@ Page({
     var that = this;
     console.log(options)
     if (options.pid){
-      that.setData({
-        pid: options.pid
-      })
+      wx.setStorageSync('pid', options.pid);
     }
     if (options.scene) {
       const scene = decodeURIComponent(options.scene);
       if (scene) {
-        that.setData({
-          pid: scene
-        })
+        wx.setStorageSync('pid', options.scene);
       }
     }
-    console.log('kaixin:::' + that.data.pid)
+    console.log('kaixin:::' + wx.getStorageSync("pid"))
     
   },
 
@@ -247,7 +243,7 @@ Page({
                       sex: that.data.userInfo.gender,
                       nickName: that.data.userInfo.nickName,
                       head: that.data.userInfo.avatarUrl,
-                      pid: that.data.pid
+                      pid: wx.getStorageSync("pid")
                     },
                     header: {
                       "Content-Type": "application/x-www-form-urlencoded"
