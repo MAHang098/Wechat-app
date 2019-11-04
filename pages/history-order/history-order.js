@@ -38,8 +38,8 @@ Page({
       data: {
         pageIndex: 1,
         pageSize: 100,
-        // userId: that.data.userId
-        userId: '158'
+        userId: that.data.userId
+       
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
