@@ -37,9 +37,8 @@ page {
 }
 .weui-search-bar__label, .weui-search-bar__form {
     background: #F5F5F5 !important;
-}
-.weui-search-bar__form, .weui-search-bar__label {
-  border-radius: 36rpx !important;
+    border-radius: 36rpx !important;
+    height: 70rpx
 }
 .weui-search-bar {
   background: #fff !important;
