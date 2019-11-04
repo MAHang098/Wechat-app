@@ -1,6 +1,7 @@
 
 .bg{
-  width: 750rpx;
+  margin-left: -4rpx;
+  width: 756rpx;
   height: 534rpx;
   z-index: -1;
 }
