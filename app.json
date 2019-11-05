@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/grab-sheet/grab-sheet",
     "pages/loding/loding",
     "pages/grab-order/grab-order",
@@ -12,7 +13,6 @@
     "pages/integral/integral",
     "pages/interests/interests",
     "pages/scoreBlock/scoreBlock",
-    "pages/index/index",
     "pages/history-order/history-order",
     "pages/withdrawal/withdrawal",
     "pages/Bank-card/Bank-card",
