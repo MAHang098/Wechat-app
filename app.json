@@ -1,14 +1,14 @@
 {
   "pages": [
+    "pages/all-category/all-category",
+    "pages/manager/manager",
     "pages/followMessage/followMessage",
     "pages/index/index",
     "pages/loding/loding",
 
     "pages/myRecommend/myRecommend",
     "pages/recommend/recommend",
-    "pages/manager/manager",
     "pages/grab-sheet/grab-sheet",  
-    "pages/all-category/all-category",
     "pages/grab-order/grab-order", 
     "pages/login/login",
     "pages/Pay-treasure/Pay-treasure",
