@@ -18,7 +18,8 @@ Page({
 		grabSheetId: '', // 抢单表id
 		visible: true, // true（立即抢单） false（抢单成功）
 		sheerOrder: 0, // 已抢订单人数
-    memberTime: ''  // 会员有效期
+    memberTime: '',  // 会员有效期
+    isShowMessage: false // 暂无抢单信息
 	},
 
 	/**
@@ -37,29 +38,6 @@ Page({
 			},
 		})
 	},
-  onShow: function (options) {
-    var that = this;
-    wx.request({
-      url: app.globalData.domain + 'admin/applet/gethaslist',
-      method: 'POST',
-      data: {
-        pageIndex: 1,
-        pageSize: 100,
-        userId: that.data.userId
-      },
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      success: function (res) {
-        if (res.data.code == 200) {
-          var data = res.data.data;
-          that.setData({
-            sheerOrder: data.dataList.length
-          });
-        }
-      }
-    });
-  },
   // 请求今日抢单数据
   init: function() {
     var that = this;
@@ -79,9 +57,15 @@ Page({
       success: function (res) {
         if (res.data.code == 200) {
           var data = res.data.data;
-          that.setData({
-            grabList: data.dataList
-          });
+          if (data.dataList.length == 0) {
+            that.setData({
+              isShowMessage: true
+            })
+          } else {
+            that.setData({
+              grabList: data.dataList
+            });
+          }
 
         }
       }
@@ -254,6 +238,9 @@ Page({
 
     if (that.data.currentData == 1) {
       // 个人中心-已抢订单列表
+      that.setData({
+        isShowMessage: false
+      });
       wx.request({
         url: app.globalData.domain + 'admin/applet/gethaslist',
         method: 'POST',

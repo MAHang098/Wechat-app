@@ -48,7 +48,7 @@
         </view>
     </view>
     <!-- 抢单列表 end -->
-    
+    <view class="no-sheetOrder" wx:if="{{isShowMessage}}">-- 暂无抢单信息 --</view>
    <!-- 抢单列表 模态窗 start -->
     <view class="modal-mask" bindtap="hideModal"  wx:if="{{isShowModal1}}"></view>
     <view class="modal-dialog" wx:if="{{isShowModal1}}">

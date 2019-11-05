@@ -154,7 +154,7 @@ Page({
   sheetOrders: function() {
     var that = this;
     var pages = getCurrentPages() //  获取页面栈  
-    var prevPage = pages[pages.length - 2];
+    var prevPage = pages[pages.length - 2]; // 上一个页面
     
     wx.request({
       url: app.globalData.domain + 'admin/applet/gethaslist',
@@ -170,6 +170,7 @@ Page({
       success: function (res) {
         if (res.data.code == 200) {
           var data = res.data.data;
+          // 给上一个页面所需要改变的变量赋值
           prevPage.setData({
             sheerOrder: data.dataList.length
           })

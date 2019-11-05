@@ -2,17 +2,9 @@
 <view class="container-to">
 <!-- 导航栏部分 -->
 <view class="nav">
-  
-  <scroll-view scroll-x  scroll-left="{{menuIndex}}" >
-
-  <!-- <scroll-view scroll-x scroll-into-view="my{{aid}}"> -->
-    <view id='#haha' class='all' style='width:{{menuWidth}}px;'>
-    <!-- <view id='#haha' class='all'> -->
-      <block wx:key="index" wx:for="{{lists}}"  wx:for-index="index">
-        <view id="my" class="{{index==aid?'menu':''}}" data-menuindex='{{index}}' data-id="{{item.brandTypeId}}" bindtap="jumpIndex">{{item.typeName}}</view>
-      </block>
-    </view>
-  </scroll-view>
+ <scroll-view scroll-x scroll-into-view="{{items}}">
+    <view id="items{{item.brandTypeId}}"  wx:key="index" wx:for="{{lists}}"  wx:for-index="index" class="my {{currentItem==item.brandTypeId ?'menu':''}}"  data-id="{{item.brandTypeId}}" bindtap="jumpIndex">{{item.typeName}}</view>
+  </scroll-view> 
 
   <view class='top'>
 
@@ -31,17 +23,15 @@
      <!-- 下拉内容 -->
     <view class="select_box" wx:if="{{select}}">
      <view>
-      <view class="select_one" bindtap="mySelect" data-name="{{item}}">
+      <view class="select_one">
        <view class="nr-one">
-          <!-- <view class="one-a">全部</view>  -->
-          <view  wx:for="{{lists}}" wx:key="index" wx:for-index="index" bindtap="hidearrow">
-            <view class="one-a" data-menuindex='{{index}}' data-id="{{item.brandTypeId}}" bindtap="jumpIndex">{{ item.typeName }}</view>
+          <view wx:for="{{lists}}" wx:key="index" wx:for-index="index" bindtap="selectBrand" data-id="{{item.brandTypeId}}" >
+            <text class="one-a {{currentItem==item.brandTypeId ?'in':''}}" data-sli="{{item.brandTypeId}}">{{ item.typeName }}</text>
           </view>
         </view>
        </view>
       </view>
     </view>
-  
   </view>
 
 </view>

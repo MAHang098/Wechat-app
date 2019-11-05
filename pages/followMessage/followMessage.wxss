@@ -251,4 +251,13 @@ button{
 
 .nav .cu-item {
   width: 50%;
+  border-right: 1px solid #E0E0E0;
+}
+.in {
+  color: #EC9300;
+  border-bottom: 2px solid #EC9300;
+}
+.nav .cu-item text {
+  height: 86rpx;
+  display: inline-block;
 }

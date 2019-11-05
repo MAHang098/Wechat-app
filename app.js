@@ -107,9 +107,9 @@ App({
     userInfo: null,
     openId: '',
     // 生产环境
-    // domain: 'https://www.zhongjubang.com/api/',
+    domain: 'https://www.zhongjubang.com/api/',
     // 测试环境
-    domain: 'https://www.zhongjubang.com/test/',
+    // domain: 'https://www.zhongjubang.com/test/',
     // 本地环境
     // domain: 'http://localhost:8899/test/',
     loading: false,
