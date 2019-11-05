@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/all-category/all-category",
     "pages/manager/manager",
     "pages/followMessage/followMessage",
-    "pages/index/index",
     "pages/loding/loding",
 
     "pages/myRecommend/myRecommend",
