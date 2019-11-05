@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/grab-sheet/grab-sheet",
+    "pages/all-category/all-category",
     "pages/loding/loding",
     "pages/grab-order/grab-order",
     "pages/login/login",
@@ -20,7 +21,7 @@
     "pages/user/user",
     "pages/About-us/About-us",
     "pages/earnings/earnings",
-    "pages/all-category/all-category",
+    
     "pages/consulting/consulting",
     "pages/followMessage/followMessage",
     "pages/integralDetail/integralDetail",

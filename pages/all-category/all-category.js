@@ -10,15 +10,6 @@ Page({
     arrowto: false,
    // 导航栏id
     brandTypeId:'',
-    brandTypeI:"0",
-    one: "1",
-    tow:"2",
-    there:"3",
-    fowr:"4",
-    fing:"5",
-    sis:"6",
-    seven:"7",
-    ati:"8",
     // limitBlock: true, //限制弹窗显示
 
     isChecked1: true,
@@ -56,6 +47,8 @@ Page({
     lists: [
       {typeName: "全部",brandTypeId: "0"} 
     ],
+    items: '',
+    currentItem: 0,
   },
 
   // bindShowMsg
@@ -76,14 +69,7 @@ Page({
       arrowto: false,
     })
   },
-//  已选下拉框
-  mySelect(e) {
-    var name = e.currentTarget.dataset.name
-    this.setData({
-      grade_name: name,
-      select: false,
-    })
-  },
+
 
 // 我要推荐
   torecommends: function (e) {
@@ -102,7 +88,6 @@ Page({
       this.setData({
         aid: options.id,
       })
-    // console.log(this.data.aid)
     // console.log(options.id)
 
     
@@ -144,6 +129,8 @@ Page({
         // 通过 setData 方法设置页面数据更新
         that.setData({
           lists: that.data.lists.concat(res.data.data.dataList),
+          items: 'items' + that.data.aid,
+          currentItem: that.data.aid
         });
       }
     })
@@ -151,134 +138,51 @@ Page({
 
   // 2.0封装品牌图文
   brand() {
-    var that = this;
-    // console.log(that.data.aid);
-    if (that.data.aid === "" || that.data.aid === undefined){
-      wx.request({
-        url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
-        method: 'POST',
-        data: {
-          pageIndex: "1",
-          pageSize: "99"
-        },
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        success: function (res) {
-          // 通过 setData 方法设置页面数据更新
-          that.setData({
-            shopImgs: res.data.data.dataList
-          });
-        }
-      })
+    let that = this;
+    let params = {
+      pageIndex: "1",
+      pageSize: "999",
+      brandTypeId: that.data.aid
     }
-    else{
-      wx.request({
-        url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
-        method: 'POST',
-        data: {
-          brandTypeId: that.data.aid,
-          pageIndex: "1",
-          pageSize: "99"
-        },
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        success: function (res) {
-          that.setData({
-            shopImgs: res.data.data.dataList
-          });
-        }
-      })
+    if (that.data.aid === "" || that.data.aid === undefined) {
+      params.brandTypeId = '';
     }
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    // 上拉底部提示
-    // this.setData({
-    //   loadingMore: true,
-    //   loadingOver: false,
-    // })
-    // this.shang();
-    
+    console.log(that.data.aid != "" || that.data.aid != undefined)
+    wx.request({
+      url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
+      method: 'POST',
+      data:params,
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        // 通过 setData 方法设置页面数据更新
+        that.setData({
+          shopImgs: res.data.data.dataList
+        });
+      }
+    })
   },
 
   // 点击导航菜单获取id和数据渲染
   jumpIndex: function (e) {
-      var ii = e.currentTarget.dataset.menuindex
-      this.setData({
-        aid: ii
-      })
-      
-    var that = this;
-    if (e.currentTarget.dataset.id==='0'){
-      // 获取全部内容
-      wx.request({
-        url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
-        method: 'POST',
-        data: {
-          pageIndex: "1",
-          pageSize: "99"
-        },
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        success: function (res) {
-          // 通过 setData 方法设置页面数据更新
-          that.setData({
-            shopImgs: res.data.data.dataList
-          });
-        }
-      })
+    let id = e.currentTarget.dataset.id;
+    let that = this;
+    that.setData({
+      currentItem: id,
+      items: 'items' + id,
+    })
+    let params = {
+      pageIndex: "1",
+      pageSize: "999"
     }
-
+    if (e.currentTarget.dataset.id != '0') {
+      params.brandTypeId = e.currentTarget.dataset.id
+    }
     wx.request({
       url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
       method: 'POST',
-      data: {
-        brandTypeId: e.currentTarget.dataset.id,
-        pageIndex: "1",
-        pageSize: "999"
-      },
+      data: params,
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -286,24 +190,39 @@ Page({
         that.setData({
           shopImgs: res.data.data.dataList
         })
-        
+
       }
     })
-
   },
-
-// 点击隐藏下拉按钮
-  hidearrow(){
-    this.setData({
-      arrowto: false,
-      arrow: true,
+  // 选择下拉框下的品牌
+  selectBrand: function(e) {
+    let id = e.currentTarget.dataset.id;
+    let that = this;
+    let params = {
+      pageIndex: "1",
+      pageSize: "999"
+    }
+    if (e.currentTarget.dataset.id != '0') {
+      params.brandTypeId = e.currentTarget.dataset.id
+    }
+    wx.request({
+      url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
+      method: 'POST',
+      data: params,
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        that.setData({
+          shopImgs: res.data.data.dataList
+        })
+        that.setData({
+          currentItem: id,
+          items: 'items' + id,
+          select: !that.data.select,
+          arrowto: false,
+        });
+      }
     })
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

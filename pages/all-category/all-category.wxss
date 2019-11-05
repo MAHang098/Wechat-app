@@ -33,32 +33,19 @@ margin-left: 38rpx;
 /* background-color: green; */
 margin-bottom: 10rpx;
 }
-#my{
+.my{
 width: 170rpx;
 height:54rpx;
-/* margin-right: 10px; */
 text-align: center;
 font-size: 28rpx;
-margin-right: 40rpx;
-  /* background-color: pink; */
-  margin-top: 10rpx;
+display: inline-block
 }
-#my:first-child{
-  width: 50px;
-height:27px;
-/* background-color: red; */
-margin-top: 10rpx;
-}
-#my:hover{
-color: #EC9300;
-border-bottom: 2px solid #EC9300;
-}
+
 .menu{
 width: 70px;
 height:26px;
 color: #EC9300;
 border-bottom: 2px solid #EC9300;
-/* margin-right: 10px; */
 text-align: center;
 font-size: 28rpx;
 }
@@ -142,7 +129,7 @@ right: 30rpx;
     float: left;
   width: 126rpx;
   height: 36rpx;
-  background-color: white;
+  /* background-color: white; */
   text-align: center;
   font-size: 24rpx;
   color: #808080;
@@ -151,9 +138,14 @@ right: 30rpx;
   border: 1rpx solid #DFDFDF;
 
 }
-.nr-one .one-a:hover{
+/* .nr-one .one-a:hover{
   color: white;
   background-color: #EC9300;
+} */
+.in {
+  background: #EC9300;
+  color: #fff !important;
+
 }
 .nr-one .one-a:first-child{
   margin-left: 50rpx;
