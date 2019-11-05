@@ -62,7 +62,7 @@
           <text wx:if="{{item.businessCardCheckStatus == 1}}" class="swiper-item">待审核</text>
           <text wx:elif="{{item.businessCardCheckStatus == 2}}" class="swiper-item">已审核</text>
           <text wx:elif="{{item.businessCardCheckStatus == 3}}" class="swiper-item">不通过</text>
-          <text wx:else class="swiper-item">未审核</text>
+          <text wx:else class="swiper-item">未认证</text>
           <text wx:if="{{item.businessCardCheckStatus == 2}}" class="swiper-item">+20</text>
           <text wx:else class="swiper-item">0</text>
         </swiper-item>

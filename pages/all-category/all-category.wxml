@@ -4,7 +4,10 @@
 <view class="nav">
   
   <scroll-view scroll-x  scroll-left="{{menuIndex}}" >
+
+  <!-- <scroll-view scroll-x scroll-into-view="my{{aid}}"> -->
     <view id='#haha' class='all' style='width:{{menuWidth}}px;'>
+    <!-- <view id='#haha' class='all'> -->
       <block wx:key="index" wx:for="{{lists}}"  wx:for-index="index">
         <view id="my" class="{{index==aid?'menu':''}}" data-menuindex='{{index}}' data-id="{{item.brandTypeId}}" bindtap="jumpIndex">{{item.typeName}}</view>
       </block>

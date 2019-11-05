@@ -7,7 +7,7 @@ App({
     //修改有问题的昵称
     this.updateNickName();
     //检查版本更新
-    // this.updateVersion();
+    this.updateVersion();
     if (wx.cloud) {
       wx.cloud.init({
         traceUser: true
@@ -478,7 +478,7 @@ App({
         } else {
           //用户不存在的话
           wx.reLaunch({
-            url: '/pages/loding/loding'
+            url: '/pages/login/login'
           })
           wx.hideLoading();
         }

@@ -53,9 +53,8 @@ Page({
     // 菜单总长
     menuWidth: 0,
     aid: [],
-    lists: [
-      {typeName: "全部",brandTypeId: "0"} 
-    ],
+    scrollLeft: ''
+    
   },
 
   // bindShowMsg
@@ -99,6 +98,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.id)
       this.setData({
         aid: options.id,
       })
@@ -142,6 +142,7 @@ Page({
       },
       success: function (res) {
         // 通过 setData 方法设置页面数据更新
+        console.log(res)
         that.setData({
           lists: that.data.lists.concat(res.data.data.dataList),
         });
@@ -187,7 +188,13 @@ Page({
         success: function (res) {
           that.setData({
             shopImgs: res.data.data.dataList
-          });
+          })
+          const scrollLeft = 500
+          that.setData({
+            scrollLeft: that.data.scrollLeft
+          })
+          console.log(that.data.scrollLeft)
+
         }
       })
     }
