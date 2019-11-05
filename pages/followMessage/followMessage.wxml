@@ -3,8 +3,8 @@
 
 <!-- 信息展示 -->
 <scroll-view scroll-x class="bg-white nav text-center fixed">
-  <view class="cu-item {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabNav}}" wx:key bindtap='tabSelect' data-id="{{index}}">
-    {{tabNav[index]}}
+  <view class="cu-item" wx:for="{{tabNav}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+    <text class="{{index==TabCur?'in':''}}">{{tabNav[index]}}</text>
   </view>
 </scroll-view>
 <!-- 基本信息 -->

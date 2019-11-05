@@ -86,14 +86,12 @@ Page({
    */
   onShow: function() {
     var fid = this.data.fid;
-    console.log(fid)
     var that = this;
     // 拿取数据
     wx.getStorage({
       key: 'userId',
       success: function(res) {
         var userId = res.data
-        console.log(userId)
         that.setData({
           userId: userId
         })
@@ -110,8 +108,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function(res) {
-            console.log(res)
-            // console.log(res.data.data[0].tpRecommendId)
             that.setData({
               budget: res.data.data[0].budget,
               create_time: res.data.data[0].createTime,
@@ -123,7 +119,6 @@ Page({
               loading: true
             })
             // 渲染平台反馈
-            console.log(res.data.data[0].tpRecommendId)
             wx.request({
               url: app.globalData.domain + '/applet/applet/getrecommendstatebyrecommendid',
               method: "POST",
@@ -134,7 +129,6 @@ Page({
                 "Content-Type": "application/x-www-form-urlencoded"
               },
               success: function(res) {
-                console.log(res)
                 that.setData({
                   feedBackArr:res.data.data
                 })
@@ -192,13 +186,11 @@ Page({
     var fid = this.data.fid;
     var leavingMessage = this.data.leavingMessage;
     var tpRecommendId = this.data.tpRecommendId;
-    console.log(fid)
     var that = this;
     // 拿取数据
     wx.getStorage({
       key: 'userId',
       success: function(res) {
-        console.log(res)
         var userId = res.data
         wx.request({
           url: app.globalData.domain + '/applet/applet/addleavingmessagebyrecommendid',
@@ -212,7 +204,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function(res) {
-            console.log(res)
             wx.showToast({
               title: '留言提交成功',
               icon: 'success!',
