@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/loding/loding",
+    "pages/index/index",
     "pages/all-category/all-category",
     "pages/manager/manager",
-    "pages/followMessage/followMessage",
-    "pages/index/index",
 
+    "pages/followMessage/followMessage",
     "pages/myRecommend/myRecommend",
     "pages/recommend/recommend",
     "pages/grab-sheet/grab-sheet",  

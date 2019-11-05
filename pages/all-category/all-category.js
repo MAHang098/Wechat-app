@@ -73,7 +73,6 @@ Page({
 
 // 我要推荐
   torecommends: function (e) {
-    // console.log(e.currentTarget.dataset.used_name);
     var that = this;
     
     wx.navigateTo({
@@ -85,14 +84,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
       this.setData({
         aid: options.id,
       })
-    // console.log(options.id)
-
-    
-
     // 1.1导航和下拉导航
     this.navv();
 
@@ -128,7 +122,6 @@ Page({
       },
       success: function (res) {
         // 通过 setData 方法设置页面数据更新
-        console.log(res)
         that.setData({
           lists: that.data.lists.concat(res.data.data.dataList),
           items: 'items' + that.data.aid,
@@ -149,7 +142,6 @@ Page({
     if (that.data.aid === "" || that.data.aid === undefined) {
       params.brandTypeId = '';
     }
-    console.log(that.data.aid != "" || that.data.aid != undefined)
     wx.request({
       url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
       method: 'POST',
