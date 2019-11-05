@@ -8,7 +8,8 @@ Page({
 	data: {
 		search: '',
 		orerList: [],
-    userId: ''
+    userId: '',
+    isShowMessage: false
 	},
 
 	/**
@@ -47,8 +48,14 @@ Page({
       success: function (res) {
         if (res.data.code == 200) {
           var data = res.data.data;
+          if (data.dataList.length == 0) {
+            that.setData({
+              isShowMessage: true
+            });
+          }
           that.setData({
-            orerList: data.dataList
+            orerList: data.dataList,
+            isShowMessage: false
           });
         }
       }

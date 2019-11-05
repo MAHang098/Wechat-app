@@ -22,5 +22,6 @@
     </view>
     <!-- 个人中心 end  -->
 
+    <view class="no-sheetOrder" wx:if="{{isShowMessage}}">-- 暂无抢单信息 --</view>
     
 </view>

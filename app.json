@@ -1,11 +1,10 @@
 {
   "pages": [
+    "pages/grab-sheet/grab-sheet",
     "pages/loding/loding",
     "pages/grab-order/grab-order",
-    
     "pages/login/login",
     "pages/Pay-treasure/Pay-treasure",
-    
     "pages/invite/invite",
     "pages/occupation/occupation",
     "pages/manager/manager",
@@ -14,7 +13,6 @@
     "pages/interests/interests",
     "pages/scoreBlock/scoreBlock",
     "pages/index/index",
-    "pages/grab-sheet/grab-sheet",
     "pages/history-order/history-order",
     "pages/withdrawal/withdrawal",
     "pages/Bank-card/Bank-card",
