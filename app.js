@@ -7,7 +7,7 @@ App({
     //修改有问题的昵称
     this.updateNickName();
     //检查版本更新
-    // this.updateVersion();
+    this.updateVersion();
     if (wx.cloud) {
       wx.cloud.init({
         traceUser: true
@@ -107,9 +107,9 @@ App({
     userInfo: null,
     openId: '',
     // 生产环境
-    // domain: 'https://www.zhongjubang.com/api/',
+    domain: 'https://www.zhongjubang.com/api/',
     // 测试环境
-    domain: 'https://www.zhongjubang.com/test/',
+    // domain: 'https://www.zhongjubang.com/test/',
     // 本地环境
     // domain: 'http://localhost:8899/test/',
     loading: false,
@@ -478,7 +478,7 @@ App({
         } else {
           //用户不存在的话
           wx.reLaunch({
-            url: '/pages/loding/loding'
+            url: '/pages/login/login'
           })
           wx.hideLoading();
         }

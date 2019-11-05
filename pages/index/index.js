@@ -10,7 +10,6 @@ Page({
     pageBackgroundColor: '',
     // 1.0 初始化轮播图数据
     slider: [],
-    domain:"",
     // 2.0导航栏
     navimage:[],
     navimages: [],
@@ -41,11 +40,7 @@ Page({
    */
   onLoad: function (options) {
     
-    // 全局接口
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
+    
     
     // 1.1 调用轮播图请求
     this.getSliderData();
@@ -66,7 +61,7 @@ Page({
   getSliderData() {
     var that = this;
     wx.request({
-      url: this.data.domain + 'public/public/getresourcesbyresourcestype',
+      url: app.globalData.domain + 'public/public/getresourcesbyresourcestype',
       method:'POST',
       data:{
         resourcesTypeName:"applet_index_banner"
@@ -87,7 +82,7 @@ Page({
   nav() {
     var that = this;
     wx.request({
-      url: this.data.domain + '/applet/applet/getbrandtypelistbysn',
+      url: app.globalData.domain + '/applet/applet/getbrandtypelistbysn',
       method: 'POST',
       data:{
         pageIndex: "1",
@@ -107,7 +102,7 @@ Page({
   nava() {
     var that = this;
     wx.request({
-      url: this.data.domain + '/applet/applet/getbrandtypelistbysn',
+      url: app.globalData.domain + '/applet/applet/getbrandtypelistbysn',
       method: 'POST',
       data: {
         pageIndex: "2",
@@ -130,7 +125,7 @@ Page({
     var that = this;
     // 1.0 向服务器发送请求，获取轮播图数据
     wx.request({
-      url: this.data.domain + '/applet/applet/getbrandlistbysn',
+      url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
       method: 'POST',
       data:{
         pageIndex:"1",
@@ -152,7 +147,7 @@ Page({
   consulting() {
     var that = this;
     wx.request({
-      url: this.data.domain + '/controller/offcialweb/getoffcialwebnews',
+      url: app.globalData.domain + '/controller/offcialweb/getoffcialwebnews',
       method: 'POST',
       data: {
         pageIndex: "1",
@@ -175,7 +170,7 @@ Page({
   shangla() {
     var that = this;
     wx.request({
-      url: this.data.domain + '/applet/applet/getbrandlistbysn',
+      url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
       method: 'POST',
       data: {
         pageIndex: "1",

@@ -1,7 +1,9 @@
 .big-box{
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   top: 0rpx;
-  height: 1600rpx;
+  height: 100%;
+  /* height: 1600rpx; */
   width: 750rpx;
   background-color: white;
 }

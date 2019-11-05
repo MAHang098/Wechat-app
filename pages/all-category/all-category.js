@@ -73,7 +73,6 @@ Page({
 
 // 我要推荐
   torecommends: function (e) {
-    // console.log(e.currentTarget.dataset.used_name);
     var that = this;
     
     wx.navigateTo({
@@ -88,10 +87,6 @@ Page({
       this.setData({
         aid: options.id,
       })
-    // console.log(options.id)
-
-    
-
     // 1.1导航和下拉导航
     this.navv();
 
@@ -147,7 +142,6 @@ Page({
     if (that.data.aid === "" || that.data.aid === undefined) {
       params.brandTypeId = '';
     }
-    console.log(that.data.aid != "" || that.data.aid != undefined)
     wx.request({
       url: app.globalData.domain + '/applet/applet/getbrandlistbysn',
       method: 'POST',
