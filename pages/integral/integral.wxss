@@ -63,6 +63,7 @@ page{
   font-family:PingFang SC;
   font-weight:700;
   color:rgba(255,45,35,1);
+  margin: 0 20rpx;
 }
 .detail{
   /* float: left;

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/integralDetail/integralDetail",
     "pages/loding/loding",
     "pages/index/index",
     "pages/all-category/all-category",
@@ -27,7 +28,6 @@
     "pages/earnings/earnings",
     
     "pages/consulting/consulting",
-    "pages/integralDetail/integralDetail",
     "pages/web-view/web-view",
     "pages/Sign-in/Sign-in",
     "pages/myRanked/myRanked",

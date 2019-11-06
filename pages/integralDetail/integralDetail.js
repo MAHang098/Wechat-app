@@ -1,4 +1,5 @@
 // pages/integralDetail/integralDetail.js
+const util = require('../../utils/util.js');
 const app = getApp();
 Page({
 
@@ -7,67 +8,15 @@ Page({
    */
   data: {
     domain : "",
-    arrayLog:[]
+    arrayLog:[],
+    isShowMessage: false // 暂无抢单信息
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      domain: app.globalData.domain
-    })
-    var domain = this.data.domain;
     this.getintegralDetail();
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   },
 
   /**
@@ -90,6 +39,16 @@ Page({
           },
           success: function (res) {
             if (res.data.code === "200") {
+              if (res.data.data.length == 0) {
+                that.setData({
+                  isShowMessage: true
+                })
+              } else {
+                // for (var i = 0; i < res.data.data.length; i++) {
+                //   res.data.data[i].createTime = util.formatDate(new Date());
+                // }
+              }
+              console.log(res)
               that.setData({
                 arrayLog: res.data.data
               })

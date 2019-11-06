@@ -38,3 +38,8 @@ page{
   color:rgba(51,51,51,1);
   line-height: 80rpx;
 }
+.no-sheetOrder {
+  text-align: center;
+  padding-top: 50%;
+  color: #666;
+}

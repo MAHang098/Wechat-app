@@ -1,5 +1,7 @@
+
+
 <view class="big-box">
-<view wx:for="{{arrayLog}}">
+<view wx:for="{{arrayLog}}" wx:key="index">
   <view class="note">
     <view>
       <view class="signe">{{item.integralLog}}</view>
@@ -9,3 +11,5 @@
   </view>
 </view>
 </view>
+<!-- 当一个签到都没有时显示 -->
+<view class="no-sheetOrder" wx:if="{{isShowMessage}}">-- 亲，您还有没有签到记录! --</view>
