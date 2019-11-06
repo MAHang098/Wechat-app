@@ -1,19 +1,21 @@
 {
   "pages": [
-    "pages/integralDetail/integralDetail",
     "pages/loding/loding",
+    "pages/integralDetail/integralDetail",
     "pages/index/index",
     "pages/all-category/all-category",
     "pages/manager/manager",
-    "pages/login/login",
+
     "pages/followMessage/followMessage",
     "pages/myRecommend/myRecommend",
     "pages/recommend/recommend",
     "pages/grab-sheet/grab-sheet",  
     "pages/grab-order/grab-order", 
+    "pages/login/login",
     "pages/Pay-treasure/Pay-treasure",
     "pages/invite/invite",
     "pages/occupation/occupation",
+    
     "pages/integral/integral",
     "pages/interests/interests",
     "pages/scoreBlock/scoreBlock",
@@ -24,6 +26,7 @@
     "pages/user/user",
     "pages/About-us/About-us",
     "pages/earnings/earnings",
+    
     "pages/consulting/consulting",
     
     "pages/web-view/web-view",

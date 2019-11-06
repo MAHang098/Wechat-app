@@ -3,11 +3,11 @@ App({
   onLaunch: function () {
     
     //用户登录
-    // this.appletUserLoding();
+    this.appletUserLoding();
     //修改有问题的昵称
-    // this.updateNickName();
+    this.updateNickName();
     //检查版本更新
-    // this.updateVersion();
+    this.updateVersion();
     if (wx.cloud) {
       wx.cloud.init({
         traceUser: true

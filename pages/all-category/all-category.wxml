@@ -4,7 +4,7 @@
 <view class="nav">
  <scroll-view scroll-x scroll-into-view="{{items}}" class="scroll-view">
     <view id="items{{item.brandTypeId}}"  wx:key="index" wx:for="{{lists}}"  wx:for-index="index" class="my {{currentItem==item.brandTypeId ?'menu':''}}"  data-id="{{item.brandTypeId}}" bindtap="jumpIndex">{{item.typeName}}</view>
-  </scroll-view> 
+  </scroll-view>
 
   <view class='top'>
 
