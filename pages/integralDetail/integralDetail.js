@@ -1,4 +1,6 @@
 // pages/integralDetail/integralDetail.js
+const util = require('../../utils/util.js');
+
 const app = getApp();
 Page({
 
@@ -90,8 +92,13 @@ Page({
           },
           success: function (res) {
             if (res.data.code === "200") {
+              let data = res.data.data;
+              for(let d in data) {
+                let date = util.formatDates(data[d].createTime);
+                data[d].createTime = date;
+              }
               that.setData({
-                arrayLog: res.data.data
+                arrayLog: data
               })
             }
           },
