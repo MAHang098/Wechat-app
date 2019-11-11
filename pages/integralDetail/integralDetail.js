@@ -1,5 +1,5 @@
 // pages/integralDetail/integralDetail.js
-const util = require('../../utils/util.js');
+
 const app = getApp();
 Page({
 
@@ -44,14 +44,13 @@ Page({
                   isShowMessage: true
                 })
               } else {
-                // for (var i = 0; i < res.data.data.length; i++) {
-                //   res.data.data[i].createTime = util.formatDate(new Date());
-                // }
+                that.setData({
+                  arrayLog: res.data.data
+                })
               }
-              console.log(res)
-              that.setData({
-                arrayLog: res.data.data
-              })
+              
+              
+              
             }
           },
         })

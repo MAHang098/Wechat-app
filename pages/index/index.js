@@ -301,10 +301,22 @@ Page({
 
   // 点击众资讯进行跳转web-view
   informationtowebview: function (e) {
-    // console.log(e.currentTarget.dataset.srcs);
     wx.navigateTo({
-      url: '/pages/web-view/web-view?srcs=' + encodeURIComponent(e.currentTarget.dataset.srcs),
+      url: '/pages/web-view/web-view?srcs=' + encodeURIComponent(e.currentTarget.dataset.srcs.url),
     });
+    //新增访问量
+    wx.request({
+      url: app.globalData.domain + '/controller/offcialweb//addnewspageview',
+      method: 'POST',
+      data: {
+        newsId: e.currentTarget.dataset.srcs.newsId
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+      }
+    })
   },
 
     // 点击关闭公告

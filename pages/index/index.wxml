@@ -9,7 +9,7 @@
   interval="3000"
   indicator-color="rgba(255,255,255,.3)"
   indicator-active-color="#fff">
-    <block wx:for="{{slider}}" wx:key="">
+    <block wx:for="{{slider}}" wx:key="index">
       <swiper-item>
       <image bindtap="bannertoresource" class="slider-image" src="{{item.resource}}" data-srcs="{{item.url}}">
       </image> 
@@ -108,7 +108,7 @@
 
   <view class="tuwen-dibuu">
     <block wx:for="{{shimag}}" wx:key="newsId">
-      <view class="image-d" bindtap="informationtowebview" data-srcs="{{item.url}}">
+      <view class="image-d" bindtap="informationtowebview" data-srcs="{{item}}">
         <image src="{{ item.newsImg }}"></image>
         <view class="zhi-a">{{tools.sub(item.newsTitle)}}</view>
       </view>

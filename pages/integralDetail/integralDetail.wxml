@@ -1,5 +1,4 @@
 
-
 <view class="big-box">
 <view wx:for="{{arrayLog}}" wx:key="index">
   <view class="note">

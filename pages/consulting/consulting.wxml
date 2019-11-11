@@ -3,13 +3,13 @@
 <!-- 2.0 轮播图模块 -->
 <!-- 轮播图 -->
 <view class="lunbo">
-<swiper class="swiper-box" indicator-dots="true" autoplay interval="{{interval}}" circular previous-margin="{{leftMargin}}" next-margin="{{rightMargin}}" bindchange="handleChange">
+<swiper class="swiper-box" indicator-dots="true" autoplay interval="{{interval}}" circular previous-margin="{{leftMargin}}" next-margin="{{rightMargin}}" bindchange="">
     <!-- 渲染的方式 -->
     <!-- <block wx:for="{{imgUrls}}"> -->
-    <block wx:for="{{bannerNewList}}">
+    <block wx:for="{{bannerNewList}}" wx:key="index">
       <swiper-item>
         <!-- <image src="{{item}}" class="slide-image {{currentIndex == index ? 'active': ''}}"/> -->
-        <view bindtap="informationtowebview" data-srcs="{{item.url}}">
+        <view bindtap="informationtowebview" data-srcs="{{item}}">
           <image class="slide-image" src="{{item.resource}}"></image>
         </view>
       </swiper-item>
@@ -22,7 +22,7 @@
   <!-- 图文 -->
   <view class="tuwen"  wx:for="{{shimag}}" wx:key="newsId">
 
-    <view bindtap="informationtowebview" data-srcs="{{item.url}}">
+    <view bindtap="informationtowebview" data-srcs="{{item}}">
       <view class="tuwen-a">
         <image src="{{ item.newsImg }}"></image>
       </view>
@@ -32,7 +32,7 @@
             <view class="xiaa">
               <image src="/images/eyes.png"></image>
             </view>
-            <view class="liulan">浏览量500</view>
+            <view class="liulan">浏览量{{item.pageView}}</view>
           </view>
       </view>
       <!-- 横线 -->
