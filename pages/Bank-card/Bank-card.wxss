@@ -7,36 +7,34 @@
   position: fixed;
 }
 .pay-a{
+  position: relative;
   font-size: 30rpx;
-  margin-left: 30rpx;
-  margin-bottom: 20rpx;
-  margin-top: 28rpx;
-  /* padding-top: 20rpx; */
-  /* height: 100rpx; */
-  /* background-color: yellow; */
+  
+  height: 90rpx;
+  border-bottom: 1rpx solid #DADADA;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+
 }
 .pay-aa{
+  position: absolute;
+  left: 30rpx;
+  top: 25rpx;
   font-size: 30rpx;
-  float: left;
+  /* float: left; */
   margin-right: 30rpx;
-  margin-top: 0rpx;
 }
 input{
-  margin-top: -4rpx;
+  position: absolute;
+  left: 144rpx;
+  /* top: 25rpx; */
   font-size: 30rpx;
   background-color: white;
   color: #333333;
-}
-.pay-b{
-  color: #333333;
-  font-size: 28rpx;
-  margin-left: 30rpx;
-  margin-bottom: 20rpx;
-  margin-top: 28rpx;
-}
-.hangx{
-  height: 2rpx;
-  background-color: #DADADA;
+  height: 100%;
+  width: 600rpx;
+  /* line-height: 70rpx; */
+
 }
 
 /* 按钮 */

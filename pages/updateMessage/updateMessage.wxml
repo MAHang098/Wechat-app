@@ -5,7 +5,7 @@
 <view class="big">
 
 <!-- 个人信息 —— 头像 -->
-<view class="messageIcon">
+<view class="messageIcon"  bindtap="chooseImg">
   <view class="messageName">
     修改头像
   </view>
@@ -15,7 +15,7 @@
   <view wx:else>
     <image bindtap="bindViewTap" class="userinfo-avatar" src="{{head}}" mode="cover"></image>
   </view> -->
-  <image bindtap="chooseImg" class="userinfo-avatar" src="{{head}}" mode="cover"></image>
+  <image class="userinfo-avatar" src="{{head}}" mode="cover"></image>
   <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
   <!-- <block wx:else> -->
     <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{head}}" mode="cover"></image> -->
@@ -53,10 +53,10 @@
 </navigator>
 <!-- 性别 -->
 <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-  <view class="messageModule">
+  <view class="messageModule1">
     <template is="head" data="{{title: 'picker'}}" />
 
-    <view class="messageTitle weui-input">性别
+    <view class="messageTitle">性别
       <text class="gender">{{array[index]}}</text> </view>
 
     <view class="messageRight">
@@ -69,11 +69,11 @@
 
 <!-- 职业 -->
 <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
-  <view class="messageModule">
+  <view class="messageModule1">
 
     <template is="head" data="{{title: 'picker'}}" />
 
-    <view class="messageTitle weui-input">职业
+    <view class="messageTitle">职业
       <text class="gender">{{array2[index2]}}</text> </view>
 
     <view class="messageRight">

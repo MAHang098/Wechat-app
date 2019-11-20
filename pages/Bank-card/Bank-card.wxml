@@ -1,24 +1,23 @@
-
 <view class="pay">
   <view class="pay-a">
-    <view class="pay-aa">开户人</view>   <input placeholder="请输入开户人" name="openaccount" bindinput='changeInput' data-prop='openaccount'></input>
-    </view>
-  <view class="hangx"></view>
-
-  <view class="pay-b">
-    <view class="pay-aa">银行卡</view>   <input placeholder="请输入银行卡号" name="Bankcard" bindinput='changeInput' data-prop='Bankcard' type="number"></input>
-    </view>
-  <view class="hangx"></view>
-  
-  <view class="pay-b">
-    <view class="pay-aa">开户行</view>   <input placeholder="请输入开户行"  name="Where" bindinput='changeInput' data-prop='Where'></input>
-    </view>
-  <view class="hangx"></view>
-
-<view >
-  <view class="idCardMessageButtonModule" bindtap="submitMessage">
-    绑定
+    <view class="pay-aa">开户人</view>
+    <input placeholder="请输入开户人" name="openaccount" bindinput='changeInput' data-prop='openaccount'></input>
   </view>
-</view> 
-</view>
+  <!-- <view class="hangx"></view> -->
 
+  <view class="pay-a">
+    <view class="pay-aa">银行卡</view>
+    <input placeholder="请输入银行卡号" name="Bankcard" bindinput='changeInput' data-prop='Bankcard' type="number"></input>
+  </view>
+
+  <view class="pay-a">
+    <view class="pay-aa">开户行</view>
+    <input placeholder="请输入开户行" name="Where" bindinput='changeInput' data-prop='Where'></input>
+  </view>
+
+  <view>
+    <view class="idCardMessageButtonModule" bindtap="submitMessage">
+      绑定
+    </view>
+  </view>
+</view>

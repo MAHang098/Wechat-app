@@ -31,7 +31,19 @@
 }
 .payto input{
   color: #333333;
-  margin-top: 24rpx;
+  /* margin-top: 24rpx; */
+  width: 534rpx;
+  height: 91rpx;
+  font-size: 30rpx;
+  float: left;
+  background-color: white;
+}
+
+#input{
+  color: #333333;
+  /* margin-top: 24rpx; */
+  width: 500rpx;
+  height: 91rpx;
   font-size: 30rpx;
   float: left;
   background-color: white;

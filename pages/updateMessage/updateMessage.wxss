@@ -32,7 +32,7 @@
   line-height: 140rpx;
   height: 140rpx;
   float: left;
-  margin-left: 4%;
+  margin-left: 30rpx;
   color: #333333
 }
 
@@ -53,7 +53,19 @@
   position: relative;
   width: 750rpx;
   /* margin-left: 4%; */
-  padding-left: 4%;
+  padding-left: 30rpx;
+  height: 100rpx;
+  border-bottom: 1rpx #e6e6e6 solid;
+  line-height: 100rpx;
+  color: #646464;
+  font-size: 30rpx;
+  background-color: white;
+}
+.messageModule1 {
+  position: relative;
+  width: 750rpx;
+  /* margin-left: 4%; */
+  padding-left: 40rpx;
   height: 100rpx;
   border-bottom: 1rpx #e6e6e6 solid;
   line-height: 100rpx;
@@ -77,7 +89,11 @@
 }
 .messageTitle {
   float: left;
-  width: 30%;
+  /* width: 30%; */
+}
+.messageTitle1 {
+  float: left;
+  /* width: 30%; */
 }
 
 .messageContent {
@@ -102,82 +118,6 @@
   color: #bfbfbf;
 }
  /* 原始样式 */
- .bottomLine {
-  border-bottom: 1rpx #e6e6e6 solid;
-}
-
-.clear {
-  clear: both;
-}
-
-.moduleContainer {
-  width: 750rpx;
-  border-bottom: 1rpx #e6e6e6 solid;
-  padding-bottom: 20rpx;
-}
-
-.borderRight {
-  border-right: 1px #efefef solid;
-}
-
-.inputLine {
-  width: 90%;
-  margin: 20rpx auto;
-  border-bottom: 1px #cccccc solid; 
-}
-
-.fl {
-  float: left;
-}
-
-.fr {
-  float: right;
-}
-
-.mask{
-  width:750rpx;
-  height:100%;
-  position:fixed;
-  background-color:#353535;
-  z-index:9998;
-  top:0;
-  left:0;
-  opacity:0.5;
-}
-
-/* 底部按钮 */
-.bottomButton {
-  height: 80rpx;
-  width: 100%;
-  line-height: 80rpx;
-  color: #fff;
-  background-color: #ff6600;
-  text-align: center;
-  font-size: 26rpx;
-  position: absolute;
-  bottom: 0;
-}
-
-.bottomButtonGrey {
-  height: 80rpx;
-  width: 100%;
-  line-height: 80rpx;
-  color: #fff;
-  background-color: #999999;
-  text-align: center;
-  font-size: 26rpx;
-  position: absolute;
-  bottom: 0;
-}
-
-.noMessage {
-  font-size: 26rpx;
-  width: 100%;
-  height: 120rpx;
-  text-align: center;
-  line-height: 120rpx;
-  color: #353535;
-}
 
 
 

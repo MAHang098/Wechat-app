@@ -19,11 +19,11 @@
       <label class="fl">意向产品 :</label><input class="inputStyle2" name="intention" bindblur='setInputValue' data-tag="intention" data-index="{{index}}" type="text" placeholder="请填写欲购产品" value="{{intention}}"></input>
     </view>
     <picker class="recommendMessageInput3 fl" data-index="{{index}}" data-tag="homeStatus" name="status" bindchange="bindPickerChange" value="" range="{{recommendStatusArr}}">
-      <view class="fl">
+      <!-- <view class="fl"> -->
       
-        状态： <text class="text2">{{recommendStatusArr[item.homeStatus]?recommendStatusArr[item.homeStatus]:"请选择"}}</text>
+       <view class="text200">状态：</view>  <view class="text2">{{recommendStatusArr[item.homeStatus]?recommendStatusArr[item.homeStatus]:"请选择"}}</view>
         <!-- 状态： <text class="text2">{{recommendStatusArr[item.homeStatus]?recommendStatusArr[item.recommendStatus]:"请选择"}}</text> -->
-      </view>
+      <!-- </view> -->
     </picker>
     <view class="deleteModule" hidden="{{recommendMessageArr.length > 1 ? false : true}}">
       <image src="http://www.zhongjubang.com/api/upload/applet_resource/delete.png" data-index="{{index}}" bindtap="delRecommendMessage"></image>

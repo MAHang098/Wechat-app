@@ -21,7 +21,7 @@
     <view class="pay-b">
       支付宝用户名:
     </view>
-    <input name="aliPayName" bindinput='changeInput' value="{{aliPayName}}" data-prop='aliPayName'></input>
+    <input id="input" name="aliPayName" bindinput='changeInput' value="{{aliPayName}}" data-prop='aliPayName'></input>
   </view>
   <view class="hangx"></view>
 
